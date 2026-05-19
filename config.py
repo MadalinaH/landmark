@@ -31,6 +31,12 @@ CLIP_MODEL = "ViT-B-16"
 CLIP_PRETRAINED = "openai"
 EMBEDDING_DIM = 512
 
+# Fine-tuned weights - set to a checkpoint path to use fine-tuned CLIP instead
+# of the OpenAI pretrained weights.  None means use the original pretrained model.
+# Example: CLIP_WEIGHTS_PATH = DATA_DIR / "checkpoints" / "clip_finetuned_best.pt"
+_clip_weights_env = os.getenv("CLIP_WEIGHTS_PATH")
+CLIP_WEIGHTS_PATH = Path(_clip_weights_env) if _clip_weights_env else None
+
 # Retrieval
 TOP_K = 3
 

@@ -25,7 +25,7 @@ from PIL import Image
 from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).parents[2]))
-from config import CLIP_MODEL, CLIP_PRETRAINED, DATA_DIR, IMAGES_DIR
+from config import CLIP_MODEL, CLIP_PRETRAINED, CLIP_WEIGHTS_PATH, DATA_DIR, IMAGES_DIR
 from src.utils import sanitize_folder_name
 
 
@@ -34,6 +34,10 @@ def _load_model(device: str = "cpu"):
     model, _, preprocess = open_clip.create_model_and_transforms(
         CLIP_MODEL, pretrained=CLIP_PRETRAINED
     )
+    if CLIP_WEIGHTS_PATH is not None:
+        checkpoint = torch.load(CLIP_WEIGHTS_PATH, map_location="cpu")
+        model.load_state_dict(checkpoint["state_dict"])
+        print(f"Loaded fine-tuned weights from {CLIP_WEIGHTS_PATH}")
     model.eval()
     model.to(device)
     return model, preprocess

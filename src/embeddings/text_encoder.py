@@ -27,7 +27,7 @@ import torch
 from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).parents[2]))
-from config import CLIP_MODEL, CLIP_PRETRAINED, DATA_DIR
+from config import CLIP_MODEL, CLIP_PRETRAINED, CLIP_WEIGHTS_PATH, DATA_DIR
 
 _MAX_TOKENS = 77  # CLIP hard limit — longer sequences are silently truncated
 
@@ -37,6 +37,11 @@ def _load_model(device: str = "cpu"):
         CLIP_MODEL, pretrained=CLIP_PRETRAINED
     )
     tokenizer = open_clip.get_tokenizer(CLIP_MODEL)
+    if CLIP_WEIGHTS_PATH is not None:
+        import torch
+        checkpoint = torch.load(CLIP_WEIGHTS_PATH, map_location="cpu")
+        model.load_state_dict(checkpoint["state_dict"])
+        print(f"Loaded fine-tuned weights from {CLIP_WEIGHTS_PATH}")
     model.eval()
     model.to(device)
     return model, tokenizer
