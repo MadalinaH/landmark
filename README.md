@@ -74,6 +74,36 @@ The text search tab includes a "Why these results?" expander powered by BertViz.
 
 Implementation note: a separate HuggingFace `CLIPTextModel` instance is used only for attention extraction, because open_clip does not expose per-layer attention tensors. The open_clip model continues to handle all retrieval.
 
+### Geographic bias audit
+
+Retrieval quality is not uniform across the world. The audit runs a leave-one-out evaluation: for each of the 148 indexed landmarks, the last image in its folder is used as a query and Hits@1 is recorded. Results are grouped by region (Vienna, Europe, Americas, Asia, Africa, Oceania, Natural) to surface geographic imbalances. A bar chart is saved to `evaluation/bias_chart.png` with bars coloured red (<70%), amber (<85%), or green (≥85%).
+
+The audit can be run with both the baseline pretrained weights and the fine-tuned checkpoint to compare geographic performance before and after fine-tuning.
+
+### Confidence calibration
+
+The calibration chart plots two overlapping score histograms - correct matches vs incorrect matches - with a vertical line at the configured threshold (0.82 for image search). A well-calibrated threshold sits in the valley between the two distributions. Precision and recall at the threshold are annotated on the chart. Saved to `evaluation/calibration_chart.png`.
+
+### Sensitive site flagging
+
+15 landmarks in `landmarks.json` are flagged with `sensitive: true` and a `sensitivity_reason` string. Examples: Hiroshima Peace Memorial (solemn war memorial), Dome of the Rock (active holy site, non-Muslims may not enter), Uluru (Aboriginal sacred site, photography of certain areas prohibited), Valley of the Kings (photography prohibited inside tombs). When a flagged landmark is retrieved, a yellow warning box is shown beneath its description card in the UI.
+
+### CLIP fine-tuning
+
+The base CLIP model was pretrained on 400 M general image-text pairs and works well zero-shot, but its embedding space is not specialised for landmark recognition. Fine-tuning nudges the shared space so that landmark photos and their Wikipedia descriptions land closer together.
+
+**Strategy:** with only ~1200 image-text pairs (150 landmarks × ~8 images) training the full model would overfit immediately. Instead, all layers are frozen except the last two transformer blocks of both the image and text encoders plus the projection heads - roughly 20% of parameters. This preserves the general visual and linguistic representations while adapting the final projections to the landmark domain.
+
+**Training details:**
+- Loss: symmetric InfoNCE (CLIP contrastive loss) with in-batch negatives
+- Optimizer: AdamW, lr=5e-6, weight decay=0.01
+- Schedule: cosine annealing over all steps
+- Mixed precision: bf16 on NVIDIA L40S
+- Batch size: 128, 20 epochs (~200 steps total, runs in ~5 minutes)
+- Best checkpoint selected by validation loss (10% hold-out split)
+
+**Transparent integration:** setting `CLIP_WEIGHTS_PATH` in `.env` to the checkpoint path is the only change needed. Both `_load_model()` functions in `image_encoder.py` and `text_encoder.py` check this variable at startup and load the fine-tuned weights before inference. Rebuilding the FAISS indexes with the fine-tuned model then makes the full pipeline use the improved embeddings.
+
 ### Instagram post generation
 
 The Instagram post tab accepts 2–5 photos, identifies each landmark using image search, then calls Claude Haiku with a structured prompt listing the retrieved descriptions. The prompt produces a single Instagram post in influencer style: a punchy hook line, 2–4 short paragraphs mixing personal feeling with real facts, and a block of 10–15 hashtags. Claude is instructed to ground every factual claim strictly in the provided descriptions - hallucination is limited to prose style rather than invented facts. Low-confidence identifications are flagged to the user before generation so they can judge whether the retrieved landmark is correct.
@@ -96,6 +126,7 @@ The Instagram post tab accepts 2–5 photos, identifies each landmark using imag
 | **requests** | Wikipedia REST API and Wikidata SPARQL calls in `scripts/fetch_descriptions.py`. |
 | **tqdm** | Progress bars in index-building and description-fetching scripts. |
 | **python-dotenv** | Loads `.env` at import time in `config.py` so secrets never appear in source code. |
+| **matplotlib** | Generates the geographic bias bar chart and confidence calibration histogram saved to `evaluation/`. |
 
 ---
 
@@ -119,8 +150,12 @@ The Instagram post tab accepts 2–5 photos, identifies each landmark using imag
 │   ├── build_text_index.py    # Embed descriptions → faiss_text_index.bin
 │   ├── fetch_descriptions.py  # Enrich landmarks.json with Wikipedia + Wikidata
 │   ├── fetch_eval_images.py   # Download golden-set test images
-│   └── evaluate.py            # Hits@1, Hits@3, MRR on 5-image golden set
+│   ├── evaluate.py            # Hits@1, Hits@3, MRR on 5-image golden set
+│   ├── run_audit.py           # Geographic bias audit + calibration curves
+│   └── train_finetune.py      # Fine-tune CLIP on landmark image-text pairs
 └── src/
+    ├── data/
+    │   └── dataset.py         # PyTorch Dataset yielding (image, text) pairs
     ├── embeddings/
     │   ├── image_encoder.py   # CLIP image embedding + averaging
     │   └── text_encoder.py    # CLIP text embedding + chunking for long descriptions
@@ -131,6 +166,9 @@ The Instagram post tab accepts 2–5 photos, identifies each landmark using imag
     │   └── hybrid_search.py   # HybridSearcher (CLIP + BM25 fusion)
     ├── explainability/
     │   └── attention.py       # BertViz attention HTML for text queries
+    ├── evaluation/
+    │   ├── bias_audit.py      # Leave-one-out Hits@1 per region + bar chart
+    │   └── metrics.py         # Confidence calibration histogram
     ├── generation/
     │   └── travel_story.py    # Claude API Instagram post generation
     └── utils.py               # EXIF GPS extraction + folder name sanitisation
@@ -158,20 +196,70 @@ uv run streamlit run app/streamlit_app.py
 
 ---
 
+## Fine-tuning CLIP
+
+```bash
+# 1. Create a virtual environment (required on managed servers)
+python3 -m venv .venv
+source .venv/bin/activate
+pip install torch torchvision open-clip-torch numpy tqdm pillow python-dotenv
+
+# 2. Run training (on a CUDA machine - tested on NVIDIA L40S)
+python scripts/train_finetune.py --epochs 20 --batch-size 128 --device cuda
+
+# 3. Point the pipeline at the best checkpoint
+echo "CLIP_WEIGHTS_PATH=/path/to/landmark/data/checkpoints/clip_finetuned_best.pt" >> .env
+
+# 4. Rebuild indexes with the fine-tuned model
+python scripts/build_text_index.py
+python scripts/build_index.py
+```
+
+Optional flags for `train_finetune.py`:
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--epochs` | 20 | Number of training epochs |
+| `--batch-size` | 128 | Images per batch |
+| `--lr` | 5e-6 | AdamW learning rate |
+| `--unfreeze-blocks` | 2 | Last N transformer blocks to fine-tune |
+| `--device` | cuda | `cuda` or `cpu` |
+
+---
+
 ## Evaluation
 
 ```bash
 # Download 5 golden test images
 uv run python scripts/fetch_eval_images.py
 
-# Run evaluation (reports Hits@1, Hits@3, MRR)
+# Run golden-set evaluation (reports Hits@1, Hits@3, MRR)
 uv run python scripts/evaluate.py
+
+# Run geographic bias audit + confidence calibration (saves charts to evaluation/)
+uv run python scripts/run_audit.py
+
+# On a CUDA server with fine-tuned weights
+python3 scripts/run_audit.py --device cuda
 ```
 
-Current results on the 5-image golden set (image-to-image mode):
-- **Hits@1**: 5/5 = 100%
-- **Hits@3**: 5/5 = 100%
-- **MRR**: 1.000
+To compare baseline vs fine-tuned:
+```bash
+# baseline (no CLIP_WEIGHTS_PATH set)
+uv run python scripts/run_audit.py
+mv evaluation/bias_chart.png evaluation/bias_chart_baseline.png
+mv evaluation/calibration_chart.png evaluation/calibration_chart_baseline.png
+
+# then scp the fine-tuned charts from the server
+scp user@server:~/landmark/evaluation/bias_chart.png evaluation/bias_chart_finetuned.png
+scp user@server:~/landmark/evaluation/calibration_chart.png evaluation/calibration_chart_finetuned.png
+```
+
+Current results on the 5-image golden set (image-to-image, fine-tuned model):
+- **Hits@1**: 4/5 = 80% (Colosseum missing from server index - data gap, not model failure)
+- **Hits@3**: 4/5 = 80%
+- **MRR**: 0.800
+- **Mean cosine score on correct matches**: 0.906 vs 0.900 baseline (+0.006)
 
 ---
 

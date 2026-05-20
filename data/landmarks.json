@@ -6,7 +6,9 @@
     "description": "Schönbrunn Palace was the main summer residence of the Habsburg rulers, located in Hietzing, the 13th district of Vienna. The name Schönbrunn has its roots in an artesian well from which water was consumed by the court.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sch%C3%B6nbrunn_Palace",
     "lat": 48.184516,
-    "lon": 16.311865
+    "lon": 16.311865,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 1,
@@ -15,7 +17,9 @@
     "description": "St. Stephen's Cathedral is a Roman Catholic church in Vienna, Austria, and the mother church of the Archdiocese of Vienna. It is the seat of the Archbishop of Vienna, Josef Grünwidl.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/St._Stephen's_Cathedral%2C_Vienna",
     "lat": 48.2085,
-    "lon": 16.373
+    "lon": 16.373,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 2,
@@ -24,7 +28,9 @@
     "description": "The Hofburg is the former principal imperial palace of the Habsburg dynasty in Austria. Located in the center of Vienna, it was built in the 13th century by Ottokar II of Bohemia and expanded several times afterwards. It also served as the imperial winter residence, as Schönbrunn Palace was the summer residence. Since 1946, it has been the official residence and workplace of the president of Austria.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hofburg",
     "lat": 48.20638889,
-    "lon": 16.36527778
+    "lon": 16.36527778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 3,
@@ -33,7 +39,9 @@
     "description": "The Belvedere is a historic building complex in Vienna, Austria consisting of two Baroque palaces, the Orangery, and the Palace Stables. The buildings are set in a Baroque park landscape in the third district of the city, on the south-eastern edge of its centre. It currently houses the Belvedere museum known in German as the Österreichische Galerie Belvedere. The grounds are set on a gentle gradient and include decorative tiered fountains and cascades, Baroque sculptures, and majestic wrought iron gates. The Baroque palace complex was built as a summer residence for Prince Eugene of Savoy.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Belvedere%2C_Vienna",
     "lat": 48.19416667,
-    "lon": 16.38027778
+    "lon": 16.38027778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 4,
@@ -42,7 +50,9 @@
     "description": "The Kunsthistorisches Museum Wien is an art museum in Vienna, Austria. Housed in its festive palatial building on the Vienna Ring Road, it is crowned with an octagonal dome. The term Kunsthistorisches Museum applies to both the institution and the main building. It is the largest art museum in the country.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Kunsthistorisches_Museum",
     "lat": 48.20388056,
-    "lon": 16.3616
+    "lon": 16.3616,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 5,
@@ -51,7 +61,9 @@
     "description": "The Vienna State Opera is a historic opera house and opera company based in Vienna, Austria. The 1,709-seat Renaissance Revival venue was the first major building on the Vienna Ring Road. It was built from 1861 to 1869 following plans by August Sicard von Sicardsburg and Eduard van der Nüll, and designs by Josef Hlávka. The opera house was inaugurated as the \"Vienna Court Opera\" in the presence of Emperor Franz Joseph I and Empress Elisabeth of Austria. It became known by its current name after the establishment of the First Austrian Republic in 1921. The Vienna State Opera is the successor of the old Vienna Court Opera. The new site was chosen and the construction paid by Emperor Franz Joseph in 1861.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Vienna_State_Opera",
     "lat": 48.203333333333,
-    "lon": 16.369166666667
+    "lon": 16.369166666667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 6,
@@ -60,7 +72,9 @@
     "description": "The Hundertwasserhaus is an apartment house in the Landstraße district of Vienna, Austria, completed in 1985, after the idea and concept of Austrian artist Friedensreich Hundertwasser.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hundertwasserhaus",
     "lat": 48.20722222,
-    "lon": 16.39416667
+    "lon": 16.39416667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 7,
@@ -69,7 +83,9 @@
     "description": "The Prater is a 6 km² public park in Vienna's 2nd district, Leopoldstadt. The name \"Prater\" is often used to refer to the Wurstelprater, an amusement park within the area.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Prater",
     "lat": 48.21611111,
-    "lon": 16.39555556
+    "lon": 16.39555556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 8,
@@ -78,7 +94,9 @@
     "description": "The Vienna City Hall is the town hall of Vienna, Austria, located in the Innere Stadt on the Rathausplatz, off the Ringstrasse. The Gothic Revival building was designed by Friedrich von Schmidt and constructed between 1872 and 1883. It houses the offices of the Mayor of Vienna, as well as the city and state government.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Vienna_City_Hall",
     "lat": 48.21083333,
-    "lon": 16.35694444
+    "lon": 16.35694444,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 9,
@@ -87,7 +105,9 @@
     "description": "The Karlskirche is a Baroque church in the Karlsplatz in Vienna, Austria. The church is dedicated to Saint Charles Borromeo, a leading figure of the Counter-Reformation. The church is located on the border of Wieden and the Innere Stadt, the city centre.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Karlskirche",
     "lat": 48.19828056,
-    "lon": 16.3719
+    "lon": 16.3719,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 10,
@@ -96,7 +116,9 @@
     "description": "The Naschmarkt is a popular fruit and vegetable market in Vienna. Located at the Wienzeile over the Wien River, it is about 1.5 kilometres (0.93 mi) long. Originally known as Aschenmarkt, it started to be called the Naschmarket around 1820.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Naschmarkt",
     "lat": 48.19888889,
-    "lon": 16.36361111
+    "lon": 16.36361111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 11,
@@ -105,7 +127,9 @@
     "description": "The Votivkirche is a neo-Gothic style church located on the Ringstraße in Vienna, Austria. Following the attempted assassination of Emperor Franz Joseph in 1853, the Emperor's brother Archduke Ferdinand Maximilian inaugurated a campaign to create a church to thank God for saving the Emperor's life. Funds for construction were solicited from throughout the Empire. The church was dedicated in 1879 on the silver anniversary of Emperor Franz Joseph and his wife Empress Elisabeth.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Votivkirche%2C_Vienna",
     "lat": 48.215278,
-    "lon": 16.358611
+    "lon": 16.358611,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 12,
@@ -114,7 +138,9 @@
     "description": "The Peterskirche is a Baroque Roman Catholic parish church in Vienna, Austria. It was transferred in 1970 by the Archbishop of Vienna Franz Cardinal König to the priests of the Opus Dei.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Peterskirche%2C_Vienna",
     "lat": 48.2093,
-    "lon": 16.3695
+    "lon": 16.3695,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 13,
@@ -123,7 +149,9 @@
     "description": "The Burgtheater (German: [ˈbʊʁk.teˌaːtɐ]; literally: \"Castle Theater\" but alternatively translated as \" Court Theater\", originally known as K.K. Theater an der Burg, then until 1918 as the K.K. Hofburgtheater, is the national theater of Austria, located in Vienna. It is the most important German-language theater and one of the most important theatres in the world. The Burgtheater was opened in 1741 and has become known as die Burg by the Viennese population; its theater company has created a traditional style and speech typical of Burgtheater performances.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Burgtheater",
     "lat": 48.21027778,
-    "lon": 16.36138889
+    "lon": 16.36138889,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 14,
@@ -132,7 +160,9 @@
     "description": "The Natural History Museum Vienna is a large natural history museum located in Vienna, Austria.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Natural_History_Museum%2C_Vienna",
     "lat": 48.2052,
-    "lon": 16.3599
+    "lon": 16.3599,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 15,
@@ -141,7 +171,9 @@
     "description": "The Secession Building is a contemporary art exhibition hall in Vienna, Austria. It was completed in 1898 by Joseph Maria Olbrich as an architectural manifesto for the Vienna Secession, a group of rebel artists that seceded from the long-established fine art institution.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Secession_Building",
     "lat": 48.20051667,
-    "lon": 16.365675
+    "lon": 16.365675,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 16,
@@ -150,7 +182,9 @@
     "description": "The Spanish Riding School is an Austrian institution based in Vienna, dedicated to the preservation of classical dressage and the training of Lipizzaner horses, whose performances in the Hofburg are also a tourist attraction. The leading horses and riders of the school also periodically tour and perform worldwide. It is one of the \"Big Four\", the most prestigious classical riding academies in the world, alongside the Cadre Noir, the Portuguese School of Equestrian Art, and the Royal Andalusian School.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Spanish_Riding_School",
     "lat": 48.2075,
-    "lon": 16.36611111
+    "lon": 16.36611111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 17,
@@ -159,7 +193,9 @@
     "description": "The Stadtpark in Vienna, Austria is a large municipal park that extends from the Ringstraße in the Innere Stadt first district up to the Heumarkt in the Landstraße third district. The park is divided in two sections by the Wienfluss, and has a total surface area of 65,000 square metres. Scattered throughout the park are statues of famous Viennese artists, writers, and composers, including Hans Canon, Emil Jakob Schindler, Johann Strauss II, Franz Schubert, and Anton Bruckner. The opulent Kursalon building on Johannesgasse, with its broad terrace that reaches into the park, is the site of popular waltz concerts.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Stadtpark%2C_Vienna",
     "lat": 48.20472222,
-    "lon": 16.38055556
+    "lon": 16.38055556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 18,
@@ -168,7 +204,9 @@
     "description": "The Augustinian Church in Vienna is a parish church located on Josefsplatz, next to the Hofburg, the winter palace of the Habsburg dynasty in Vienna. Originally built in the 14th century as the parish church of the imperial court of the Habsburgs, the harmonious Gothic interior was added in the 18th century. The official name of church and parish is St. Augustin, but it is locally called Augustinerkirche.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Augustinian_Church%2C_Vienna",
     "lat": 48.205722,
-    "lon": 16.367222
+    "lon": 16.367222,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 19,
@@ -177,7 +215,9 @@
     "description": "The Ringstrasse or Ringstraße is a 5.3 km circular grand boulevard that serves as a ring road around the historic city centre, the Innere Stadt, of Vienna, Austria. The road is built where the city walls once stood. The Ring, as it is colloquially known, was built, along with grand buildings on either side of the road, in the second half of the 19th century. The road runs clockwise, from the Urania to the Schottenring, and is divided into nine parts.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Ringstrasse",
     "lat": 48.2046,
-    "lon": 16.3627
+    "lon": 16.3627,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 20,
@@ -186,7 +226,9 @@
     "description": "The Eiffel Tower is a lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower from 1887 to 1889.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
     "lat": 48.85822222,
-    "lon": 2.2945
+    "lon": 2.2945,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 21,
@@ -195,7 +237,9 @@
     "description": "The Louvre, or the Louvre Museum of Arts, is a national art museum in Paris, France. The Louvre, a former royal palace, is known for its collection of celebrated paintings collected by the French kings, including the Mona Lisa of Leonardo Da Vinci. The museum received 9 million visitors in 2025 and is regularly ranked as the most visited art museum in the world. Twenty-seven percent of the visitors in 2012 were French, while 73 percent were from other countries.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Louvre",
     "lat": 48.8611,
-    "lon": 2.3358
+    "lon": 2.3358,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 22,
@@ -204,7 +248,9 @@
     "description": "Notre-Dame de Paris, often referred to simply as Notre-Dame, is a medieval Catholic cathedral on the Île de la Cité, in the 4th arrondissement of Paris, France. It is the cathedral church of the Roman Catholic Archdiocese of Paris.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris",
     "lat": 48.85305556,
-    "lon": 2.35
+    "lon": 2.35,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 23,
@@ -213,7 +259,9 @@
     "description": "The Colosseum is an elliptical amphitheatre in the centre of the city of Rome, Italy, just east of the Roman Forum. It is the largest ancient amphitheatre ever built, and is the largest standing amphitheatre in the world. Construction began under the Emperor Vespasian in 72 and was completed in AD 80 under his successor and heir, Titus. Further modifications were made during the reign of Domitian. The three emperors who were patrons of the work are known as the Flavian dynasty, and the amphitheatre was named the Flavian Amphitheatre by later classicists and archaeologists for its association with their family name (Flavius). Gladiators fought wild animals and each other in spectacular public games held in this iconic Roman arena.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Colosseum",
     "lat": 41.8903,
-    "lon": 12.4922
+    "lon": 12.4922,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 24,
@@ -222,7 +270,9 @@
     "description": "The Trevi Fountain is an 18th-century fountain in the Trevi district in Rome, Italy, designed by Italian architect Nicola Salvi and completed by Giuseppe Pannini in 1762. Standing 26.3 metres (86 ft) high and 49.15 metres (161.3 ft) wide, it is the largest Baroque fountain in the city and one of the most famous fountains in the world.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Trevi_Fountain",
     "lat": 41.90083333,
-    "lon": 12.48305556
+    "lon": 12.48305556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 25,
@@ -231,7 +281,9 @@
     "description": "The Pantheon is an ancient 2nd century Roman temple and, since AD 609, a Catholic church called the Basilica of St. Mary and the Martyrs in Rome, Italy. It is perhaps the most famous, and architecturally most influential, rotunda.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pantheon%2C_Rome",
     "lat": 41.8986,
-    "lon": 12.4768
+    "lon": 12.4768,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 26,
@@ -240,7 +292,9 @@
     "description": "The Vatican Museums are the public museums of the Vatican City. They display works from the immense collection amassed by the Catholic Church and the papacy throughout the centuries, including several of the best-known Roman sculptures and most important masterpieces of Renaissance art in the world. The museums contain roughly 70,000 works, of which 20,000 are on display, and currently employ 640 people who work in 40 different administrative, scholarly, and restoration departments.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Vatican_Museums",
     "lat": 41.9064,
-    "lon": 12.4544
+    "lon": 12.4544,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 27,
@@ -249,7 +303,9 @@
     "description": "Basílica i Temple Expiatori de la Sagrada Família, or simply Sagrada Família, is a church under construction in the Eixample district of Barcelona, Catalonia, Spain. It is the largest unfinished Catholic church in the world and designed by the Catalan architect Antoni Gaudí. In 2005, Sagrada Família was added to an existing (1984) UNESCO World Heritage Site, \"Works of Antoni Gaudí\". On 7 November 2010, Pope Benedict XVI consecrated the church and proclaimed it a minor basilica.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia",
     "lat": 41.40369,
-    "lon": 2.17433
+    "lon": 2.17433,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 28,
@@ -258,7 +314,9 @@
     "description": "Park Güell is a complex of parks and gardens in Barcelona with architectural elements, located in the La Salut neighborhood of the Gràcia district in Barcelona, Catalonia, Spain. It is situated on the southern slope of the Turó del Carmel hill, part of the Collserola mountain range, overlooking the city. The separate Parc del Carmel lies on the northern side of the same hill.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Park_G%C3%BCell",
     "lat": 41.41361111,
-    "lon": 2.15277778
+    "lon": 2.15277778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 29,
@@ -267,7 +325,9 @@
     "description": "The Alhambra is a palace and fortress complex located in Granada, Spain. It is one of the most famous monuments of Islamic architecture and the only well-preserved palace from the medieval Islamic world. Additionally, the palace contains notable examples of Spanish Renaissance architecture.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Alhambra",
     "lat": 37.1775,
-    "lon": -3.59
+    "lon": -3.59,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 30,
@@ -276,7 +336,9 @@
     "description": "Big Ben is the nickname for the Great Bell of the Great Clock of Westminster, and, by extension, for the clock tower which stands at the north end of the Palace of Westminster in London, England. Originally named the Clock Tower, the structure was renamed the Elizabeth Tower in 2012 to mark the Diamond Jubilee of Queen Elizabeth II. The clock is a striking clock with five bells.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Big_Ben",
     "lat": 51.5007,
-    "lon": -0.1245
+    "lon": -0.1245,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 31,
@@ -285,7 +347,9 @@
     "description": "The Tower of London, officially His Majesty's Royal Palace and Fortress of the Tower of London, is a historic citadel and castle on the north bank of the River Thames in London, England. It lies within the London Borough of Tower Hamlets, which is separated from the eastern edge of the square mile of the City of London by the open space known as Tower Hill. It was founded toward the end of 1066 as part of the Norman Conquest. The White Tower, which gives the castle its name, was built by William the Conqueror in 1078 and was initially a resented symbol of oppression. A grand palace early in its history, it served as a royal residence. The Tower is a complex of several buildings set within two concentric rings of defensive walls and a moat. There were several phases of expansion, mainly under kings Richard I, Henry III, and Edward I in the 12th and 13th centuries.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Tower_of_London",
     "lat": 51.50805556,
-    "lon": -0.07611111
+    "lon": -0.07611111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 32,
@@ -294,7 +358,9 @@
     "description": "Buckingham Palace is the official residence and the administrative headquarters of the monarch of the United Kingdom in London. Located in the City of Westminster, the palace is often at the centre of state occasions and royal hospitality. It has been a focal point for the British people at times of national rejoicing and mourning.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Buckingham_Palace",
     "lat": 51.50083333,
-    "lon": -0.14194444
+    "lon": -0.14194444,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 33,
@@ -303,7 +369,9 @@
     "description": "The Acropolis of Athens is an ancient citadel located on a rocky outcrop above the city of Athens, Greece, and contains the remains of several ancient buildings of great architectural and historical significance, the most famous being the Parthenon. The word Acropolis is from Greek  ἄκρον (akron) 'highest point, extremity' and  πόλις (polis) 'city'. The term acropolis is generic and there are many other acropoleis in Greece. During ancient times the Acropolis of Athens was also more properly known as Cecropia (Κεκροπία), after the legendary serpent-man Cecrops, the supposed first Athenian king.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Acropolis_of_Athens",
     "lat": 37.97166667,
-    "lon": 23.72611111
+    "lon": 23.72611111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 34,
@@ -312,7 +380,9 @@
     "description": "The Parthenon is a former temple on the Athenian Acropolis, Greece, that was dedicated to the goddess Athena. Its decorative sculptures are considered some of the high points of classical Greek art, and the Parthenon is considered an enduring symbol of ancient Greece, Western civilisation, and democracy.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Parthenon",
     "lat": 37.9715,
-    "lon": 23.7266
+    "lon": 23.7266,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 35,
@@ -321,7 +391,9 @@
     "description": "Hagia Sophia, officially the Hagia Sophia Grand Mosque, is a mosque and a major cultural and historical site in Istanbul, Turkey. It was formerly a church (360–1453) and a museum (1935–2020). The last of three church buildings to be successively erected on the site by the Eastern Roman Empire, it was completed in AD 537, becoming the world's largest interior space and among the first to employ a fully pendentive dome. It is considered the epitome of Byzantine architecture and is said to have \"changed the history of architecture\". From its dedication in 360 until 1453, Hagia Sophia served as the cathedral of Constantinople in the Byzantine liturgical tradition, except for the period 1204–1261 when the Latin Crusaders installed their own hierarchy. After the fall of Constantinople in 1453, it served as a mosque, having its minarets added soon after. The site became a museum in 1935, and was redesignated as a mosque in 2020.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hagia_Sophia",
     "lat": 41.00833333,
-    "lon": 28.98
+    "lon": 28.98,
+    "sensitive": true,
+    "sensitivity_reason": "Active mosque since 2020 - dress code required; entry restricted during prayer times."
   },
   {
     "id": 36,
@@ -330,7 +402,9 @@
     "description": "The Topkapı Palace or the Seraglio, is a large museum and library in the east of the Fatih district of Istanbul in Turkey. From the 1460s to the completion of Dolmabahçe Palace in 1853, it served as the administrative center of the Ottoman Empire, and was the main residence of its sultans.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Topkap%C4%B1_Palace",
     "lat": 41.013,
-    "lon": 28.984
+    "lon": 28.984,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 37,
@@ -339,7 +413,9 @@
     "description": "Stonehenge is a prehistoric megalithic structure on Salisbury Plain in Wiltshire, England, two miles (3 km) west of Amesbury. It consists of an outer ring of vertical sarsen standing stones, each around 13 feet (4.0 m) high, seven feet (2.1 m) wide, and weighing around 25 tons, topped by connecting horizontal lintel stones which are held in place with mortise and tenon joints—a feature unique among contemporary monuments. Inside is a ring of smaller bluestones. Inside, these are free-standing trilithons, two bulkier vertical sarsens joined by a single lintel. The whole monument, now in ruins, is aligned towards the sunrise on the summer solstice and sunset on the winter solstice. The stones are set within earthworks in the middle of the densest complex of Neolithic and Bronze Age monuments in England, including several hundred tumuli.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Stonehenge",
     "lat": 51.17888889,
-    "lon": -1.82611111
+    "lon": -1.82611111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 38,
@@ -348,7 +424,9 @@
     "description": "Edinburgh Castle is a historic castle in Edinburgh, Scotland. It stands on Castle Rock, which has been occupied by humans since at least the Iron Age. There has been a royal castle on the rock since the reign of Malcolm III in the 11th century, and the castle continued to be a royal residence until 1633. From the 15th century, the castle's residential role declined, and by the 17th century it was principally used as a military garrison. Its importance as a part of Scotland's national heritage was recognised increasingly from the early 19th century onwards, and various restoration programmes have been carried out over the past century and a half.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Edinburgh_Castle",
     "lat": 55.94861111,
-    "lon": -3.20083333
+    "lon": -3.20083333,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 39,
@@ -357,7 +435,9 @@
     "description": "Casa Batlló is a building in the center of Barcelona, Spain. It was designed by Antoni Gaudí, and is considered one of his masterpieces. A remodel of a previously built house, it was redesigned in 1904 by Gaudí and has been refurbished several times since. Gaudí's assistants Domènec Sugrañes i Gras, Josep Canaleta and Joan Rubió also contributed to the renovation project.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Casa_Batll%C3%B3",
     "lat": 41.39158,
-    "lon": 2.16492
+    "lon": 2.16492,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 40,
@@ -366,7 +446,9 @@
     "description": "Neuschwanstein Castle is a 19th-century historicist palace on a rugged hill of the foothills of the Alps in the very south of Germany, near the border with Austria. It is located in the Swabia region of Bavaria, in the municipality of Schwangau, above the incorporated village of Hohenschwangau, which is also the location of Hohenschwangau Castle. The closest larger town is Füssen. The castle stands above the narrow gorge of the Pöllat stream, east of the Alpsee and Schwansee lakes, close to the mouth of the Lech into Lake Forggensee. Since 2025, the castle is part of the UNESCO World Heritage Site \"The Palaces of King Ludwig II of Bavaria: Neuschwanstein, Linderhof, Schachen and Herrenchiemsee\". According to Guinness World Records, at 65 metres, it is the tallest castle in the world.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Neuschwanstein_Castle",
     "lat": 47.5575,
-    "lon": 10.74944444
+    "lon": 10.74944444,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 41,
@@ -375,7 +457,9 @@
     "description": "The Brandenburg Gate is an 18th-century neoclassical monument in Berlin, Germany. One of the best-known landmarks of the country, it was erected on the site of a former city gate that marked the start of the road from Berlin to Brandenburg an der Havel, the former capital of the Margraviate of Brandenburg. The current structure was built from 1788 to 1791 by orders of King Frederick William II of Prussia, based on designs by the royal architect Carl Gotthard Langhans. The bronze sculpture of the quadriga crowning the gate is a work by the sculptor Johann Gottfried Schadow.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Brandenburg_Gate",
     "lat": 52.5163,
-    "lon": 13.3777
+    "lon": 13.3777,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 42,
@@ -384,7 +468,9 @@
     "description": "The Reichstag is a historic legislative government building on Platz der Republik in Berlin that is the seat of the German Bundestag. It is also the meeting place of the Federal Convention, which elects the president of Germany.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Reichstag_building",
     "lat": 52.51861111,
-    "lon": 13.37611111
+    "lon": 13.37611111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 43,
@@ -393,7 +479,9 @@
     "description": "Charles Bridge is a medieval stone arch bridge that crosses the Vltava river in Prague, Czech Republic. Its construction started in 1357 under the auspices of King Charles IV, and finished in the early 15th century. The bridge replaced the old Judith Bridge built 1158–1172 that had been severely damaged by a flood in 1342. This new bridge was originally called Stone Bridge or Prague Bridge, but has been referred to as \"Charles Bridge\" since 1870.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Charles_Bridge",
     "lat": 50.08638889,
-    "lon": 14.41194444
+    "lon": 14.41194444,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 44,
@@ -402,7 +490,9 @@
     "description": "Prague Castle is a castle complex in Prague, Czech Republic serving as the official residence and workplace of the president of the Czech Republic. Built in the 9th century, the castle has long served as the seat of power for kings of Bohemia, Holy Roman emperors, and presidents of Czechoslovakia. As such, the term \"Prague Castle\" or simply \"Hrad\" are often used as metonymy for the president and his staff and advisors. The Bohemian Crown Jewels are kept within a hidden room inside it.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Prague_Castle",
     "lat": 50.09,
-    "lon": 14.4
+    "lon": 14.4,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 45,
@@ -411,7 +501,9 @@
     "description": "The Anne Frank House is a writer's house and biographical museum dedicated to Jewish wartime diarist Anne Frank. The building is located on a canal called the Prinsengracht, close to the Westerkerk, in central Amsterdam in the Netherlands.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Anne_Frank_House",
     "lat": 52.37525,
-    "lon": 4.88432
+    "lon": 4.88432,
+    "sensitive": true,
+    "sensitivity_reason": "Holocaust memorial - treat with solemnity; photography inside is restricted."
   },
   {
     "id": 46,
@@ -420,7 +512,9 @@
     "description": "The Rijksmuseum is the national museum of the Netherlands dedicated to Dutch arts and history and is located in Amsterdam. The museum is located at the Museum Square in the borough of Amsterdam South, close to the Van Gogh Museum, the Stedelijk Museum Amsterdam, and the Royal Concertgebouw.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Rijksmuseum",
     "lat": 52.36,
-    "lon": 4.8853
+    "lon": 4.8853,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 47,
@@ -429,7 +523,9 @@
     "description": "The State Hermitage Museum is a museum of art and culture in Saint Petersburg, Russia, and holds the largest collection of paintings in the world. It was founded in 1764 when Empress Catherine the Great acquired a collection of paintings from the Berlin merchant Johann Ernst Gotzkowsky. The museum celebrates the anniversary of its founding each year on 7 December, Saint Catherine's Day. It has been open to the public since 1852. The Art Newspaper ranked the museum 10th in their list of the most visited art museums, with 2,812,913 visitors in 2022.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hermitage_Museum",
     "lat": 59.9406,
-    "lon": 30.3136
+    "lon": 30.3136,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 48,
@@ -438,7 +534,9 @@
     "description": "The Cathedral of Vasily the Blessed, commonly known as Saint Basil's Cathedral, is a Russian Orthodox church on Red Square in the historic centre of Moscow. It is one of the most popular cultural symbols of Russia. The building, now a museum, is officially known as the Cathedral of the Intercession of the Most Holy Theotokos on the Moat, or Pokrovsky Cathedral. It was built from 1555 to 1561 on orders from Ivan the Terrible and commemorates the capture of Kazan and Astrakhan. It was completed, with its colours, in 1683.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Saint_Basil's_Cathedral",
     "lat": 55.7525,
-    "lon": 37.62305556
+    "lon": 37.62305556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 49,
@@ -447,7 +545,9 @@
     "description": "The Moscow Kremlin, commonly known as the Kremlin, is a fortified complex, known by the same name, in Moscow, Russia. Located in the historic centre of the country's capital city, the Kremlin comprises five palaces, four cathedrals, and an enclosing wall along with numerous towers. Within the complex is the Grand Kremlin Palace, which was one of the royal residences of the Tsar of Russia, and is now the residence of the president of the Russian Federation. The Kremlin overlooks the Moskva River to the south, Red Square to the east, and Alexander Garden to the west.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Kremlin",
     "lat": 55.75166667,
-    "lon": 37.61777778
+    "lon": 37.61777778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 50,
@@ -456,7 +556,9 @@
     "description": "The Rialto Bridge is the oldest of the four bridges spanning the Grand Canal in Venice, Italy. Connecting the sestieri (districts) of San Marco and San Polo, it has been rebuilt several times since its first construction as a pontoon bridge in 1173, and is now a significant tourist attraction in the city.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Rialto_Bridge",
     "lat": 45.438,
-    "lon": 12.336
+    "lon": 12.336,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 51,
@@ -465,7 +567,9 @@
     "description": "Piazza San Marco, often known in English as St Mark's Square, is the principal public square of Venice, Italy, where it is generally known just as la Piazza. The Piazzetta is an extension of the Piazza towards San Marco basin in its southeast corner. The two spaces together form the social, religious and political centre of Venice and are referred to together. This article relates to both of them.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Piazza_San_Marco",
     "lat": 45.43388889,
-    "lon": 12.33805556
+    "lon": 12.33805556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 52,
@@ -474,7 +578,9 @@
     "description": "The Amalfi Coast is a stretch of coastline in southern Italy overlooking the Tyrrhenian Sea and the Gulf of Salerno, in Campania. It is located south of the Sorrentine Peninsula and north of the Cilentan Coast.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Amalfi_Coast",
     "lat": 40.65,
-    "lon": 14.6
+    "lon": 14.6,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 53,
@@ -483,7 +589,9 @@
     "description": "The Meteora is a rock formation in the regional unit of Trikala, in Thessaly, in northwestern Greece, hosting one of the most prominent complexes of Eastern Orthodox monasteries, viewed locally as second in importance only to Mount Athos. Their height is more than 20 metres (66 ft).",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Meteora",
     "lat": 39.71416667,
-    "lon": 21.63111111
+    "lon": 21.63111111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 54,
@@ -492,7 +600,9 @@
     "description": "Dubrovnik, historically also known as Ragusa, is a city in southern Dalmatia, Croatia, by the Adriatic Sea. It is one of the most prominent tourist destinations in the Mediterranean, a seaport and the centre of the Dubrovnik-Neretva County. In 2021, its total population was 41,562. Recognizing its outstanding medieval architecture and fortifications, UNESCO inscribed the Old City of Dubrovnik as a World Heritage Site in 1979.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Dubrovnik",
     "lat": 42.64027778,
-    "lon": 18.10833333
+    "lon": 18.10833333,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 55,
@@ -501,7 +611,9 @@
     "description": "Hallstatt is a small town in the Gmunden District of the Austrian state of Upper Austria. Situated between the southwestern shore of Hallstätter See and the steep slopes of the Dachstein massif, the town lies in the Salzkammergut region, on the national road linking Salzburg and Graz.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hallstatt",
     "lat": 47.562,
-    "lon": 13.649
+    "lon": 13.649,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 56,
@@ -510,7 +622,9 @@
     "description": "Mont-Saint-Michel is a tidal island and mainland commune in Normandy, France.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Mont-Saint-Michel",
     "lat": 48.636,
-    "lon": -1.511
+    "lon": -1.511,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 57,
@@ -519,7 +633,9 @@
     "description": "Pompeii was a city in what is now the municipality of Pompei, near Naples, in the Campania region of Italy. Along with Herculaneum, Stabiae, and many surrounding villas, it was buried under 4 to 6 m of volcanic ash and pumice in the eruption of Mount Vesuvius in 79 AD.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pompeii",
     "lat": 40.75,
-    "lon": 14.48611111
+    "lon": 14.48611111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 58,
@@ -528,7 +644,9 @@
     "description": "The Palace of Versailles is a former royal residence commissioned by King Louis XIV located in Versailles, about 18 kilometres (11 mi) west of the city centre of Paris, in the Yvelines department of Île-de-France region in France.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Palace_of_Versailles",
     "lat": 48.8047,
-    "lon": 2.1203
+    "lon": 2.1203,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 60,
@@ -537,7 +655,9 @@
     "description": "Machu Picchu is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru on a mountain ridge at 2,430 meters (7,970 ft). It is situated in the Machupicchu District of Urubamba Province about 80 kilometers northwest of Cusco, above the Sacred Valley and along the Urubamba River, which forms a deep canyon with a subtropical mountain climate.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Machu_Picchu",
     "lat": -13.16333333,
-    "lon": -72.54555556
+    "lon": -72.54555556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 61,
@@ -546,7 +666,9 @@
     "description": "Christ the Redeemer is an Art Deco statue of Jesus in Rio de Janeiro, Brazil, created by French-Polish sculptor Paul Landowski and built by Brazilian engineer Heitor da Silva Costa, in collaboration with French engineer Albert Caquot. Romanian sculptor Gheorghe Leonida sculpted the face. Constructed between 1922 and 1931, the statue is 30 metres (98 ft) high, excluding its 8-metre (26 ft) pedestal, and faces east. The arms stretch 28 metres (92 ft) wide. It is made of reinforced concrete and soapstone. Christ the Redeemer differs considerably from its original design, as the initial plan was a large Christ with a globe in one hand and a cross in the other. Although the project organizers originally accepted the design, it later changed to the statue of today, with the arms spread out wide.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
     "lat": -22.95194444,
-    "lon": -43.21055556
+    "lon": -43.21055556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 62,
@@ -555,7 +677,9 @@
     "description": "Iguazú Falls or Iguaçu Falls are waterfalls of the Iguazu River on the border of the Argentine province of Misiones and the Brazilian state of Paraná. Together, they make up the largest waterfall system in the world. The falls divide the river into the upper and lower Iguazu. The Iguazu River rises near the heart of the city of Curitiba. For most of its course, the river flows through Brazil; however, most of the falls are on the Argentine side. Below its confluence with the San Antonio River, the Iguazu River forms the border between Argentina and Brazil.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Iguazu_Falls",
     "lat": -25.68666667,
-    "lon": -54.44472222
+    "lon": -54.44472222,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 63,
@@ -564,7 +688,9 @@
     "description": "Chichen Itza was a large pre-Columbian city built by the Maya people of the Terminal Classic period. The archeological site is located in Tinúm Municipality, Yucatán, Mexico.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Chichen_Itza",
     "lat": 20.68305556,
-    "lon": -88.56861111
+    "lon": -88.56861111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 64,
@@ -573,7 +699,9 @@
     "description": "Teotihuacan is an ancient Mesoamerican city located in a sub-valley of the Valley of Mexico, which is located in the State of Mexico, 40 kilometers (25 mi) northeast of modern-day Mexico City.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Teotihuacan",
     "lat": 19.6925,
-    "lon": -98.84388889
+    "lon": -98.84388889,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 65,
@@ -582,7 +710,9 @@
     "description": "The Statue of Liberty is a colossal neoclassical sculpture of a robed and crowned woman on Liberty Island, part of New York City, in New York Harbor. The copper-clad statue, a gift to the United States from the people of France, was designed by French sculptor Frédéric Auguste Bartholdi, and its metal framework built by Gustave Eiffel. The statue was dedicated on October 28, 1886.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
     "lat": 40.68916667,
-    "lon": -74.04444444
+    "lon": -74.04444444,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 66,
@@ -591,7 +721,9 @@
     "description": "The Grand Canyon is a steep-sided canyon carved by the Colorado River in Arizona, United States. The Grand Canyon is 277 miles (446 km) long, up to 18 miles (29 km) wide and attains a depth of over a mile.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Grand_Canyon",
     "lat": 36.3,
-    "lon": -112.75
+    "lon": -112.75,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 67,
@@ -600,7 +732,9 @@
     "description": "Niagara Falls is a group of three waterfalls at the southern end of Niagara Gorge, spanning the border between the Canadian province of Ontario and the U.S. state of New York. The largest of the three is Horseshoe Falls, which straddles the international border of the two countries. It is also known as the Canadian Falls. The smaller American Falls and Bridal Veil Falls lie within the United States.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Niagara_Falls",
     "lat": 43.0799,
-    "lon": -79.0747
+    "lon": -79.0747,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 68,
@@ -609,7 +743,9 @@
     "description": "The Golden Gate Bridge is a suspension bridge spanning the Golden Gate, the one-mile-wide (1.6 km) strait connecting San Francisco Bay and the Pacific Ocean in California, United States. The structure links San Francisco—the northern tip of the San Francisco Peninsula—to Marin County, carrying both U.S. Route 101 and California State Route 1 across the strait. It also carries pedestrian and bicycle traffic, and is designated as part of U.S. Bicycle Route 95. Recognized by the American Society of Civil Engineers as one of the Wonders of the Modern World, the bridge is one of the most internationally recognized symbols of San Francisco and California.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
     "lat": 37.81972222,
-    "lon": -122.47861111
+    "lon": -122.47861111,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 69,
@@ -618,7 +754,9 @@
     "description": "Times Square is a major commercial intersection, tourist destination, entertainment hub, and neighborhood in the Midtown Manhattan section of New York City. It is formed by the junction of Broadway, Seventh Avenue, and 42nd Street. Together with adjacent Duffy Square, Times Square is a bowtie-shaped plaza five blocks long between 42nd and 47th Streets.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Times_Square",
     "lat": 40.7575,
-    "lon": -73.9858
+    "lon": -73.9858,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 70,
@@ -627,7 +765,9 @@
     "description": "Central Park is an urban park between the Upper West Side and Upper East Side neighborhoods of Manhattan in New York City, and the first landscaped park in the United States. It is the sixth-largest park in the city, containing 843 acres (341 ha), and the most visited urban park in the United States, with an estimated 42 million visitors annually as of 2016. Central Park is owned by the New York City Department of Parks and Recreation but has been managed by the Central Park Conservancy since 1998 under a contract with the government of New York City in a public–private partnership. The conservancy, a non-profit organization, sets Central Park's annual operating budget and is responsible for care of the park.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Central_Park",
     "lat": 40.78222222,
-    "lon": -73.96527778
+    "lon": -73.96527778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 71,
@@ -636,7 +776,9 @@
     "description": "The White House is the official residence and workplace of the president of the United States. Located at 1600 Pennsylvania Avenue NW in Washington, D.C., it has served as the residence of every U.S. president since John Adams in 1800 when the national capital was moved from Philadelphia. The White House is also a metonym for the Executive Office of the President.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/White_House",
     "lat": 38.89777778,
-    "lon": -77.03638889
+    "lon": -77.03638889,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 72,
@@ -645,7 +787,9 @@
     "description": "The Lincoln Memorial is a U.S. national memorial honoring Abraham Lincoln, the 16th president of the United States, located on the western end of the National Mall of Washington, D.C. The memorial is built in a neoclassical style in the form of a classical temple. The memorial's architect was Henry Bacon. In 1920, Daniel Chester French designed the large interior Abraham Lincoln statue, which was carved in marble by the Piccirilli brothers. Jules Guérin painted the interior murals, and the epitaph above the statue was written by Royal Cortissoz. Dedicated on May 30, 1922, it is one of several memorials built to honor an American president. It has been a major tourist attraction since its opening, and over the years, has occasionally been used as a symbolic center focused on race relations and civil rights.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Lincoln_Memorial",
     "lat": 38.88927778,
-    "lon": -77.05013889
+    "lon": -77.05013889,
+    "sensitive": true,
+    "sensitivity_reason": "National memorial - a site of significant civil rights history; treat with respect."
   },
   {
     "id": 73,
@@ -654,7 +798,9 @@
     "description": "Yellowstone National Park is a national park of the United States located in the northwest corner of the state of Wyoming, with small portions extending into Montana and Idaho. It was established by the 42nd U.S. Congress through the Yellowstone National Park Protection Act and signed into law by President Ulysses S. Grant on March 1, 1872. Yellowstone was the first national park in the US, and is also widely understood to be the first national park in the world. The park is known for its wildlife and its many geothermal features, especially the Old Faithful geyser, one of its most popular. While it represents many types of biomes, subalpine forest is the most abundant. It is part of the South Central Rockies forests ecoregion.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Yellowstone_National_Park",
     "lat": 44.6,
-    "lon": -110.5
+    "lon": -110.5,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 74,
@@ -663,7 +809,9 @@
     "description": "Havana Cathedral is one of eleven Catholic cathedrals on the island. It is located in the Plaza de la Catedral on Calle Empedrado, between San Ignacio y Mercaderes, Old Havana, Havana, Cuba. The thirty by forty-nine meters rectangular church serves as the seat of the Archdiocese of San Cristóbal de la Habana. Christopher Columbus’s remains were kept in the cathedral between 1796 and 1898 before they were taken to Seville Cathedral.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Havana_Cathedral",
     "lat": 23.14138056,
-    "lon": -82.35191667
+    "lon": -82.35191667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 75,
@@ -672,7 +820,9 @@
     "description": "Easter Island is an island and special territory of Chile in the southeastern Pacific Ocean, at the southeasternmost point of the Polynesian Triangle in Oceania. The island is renowned for its nearly 1,000 extant monumental statues, called moai, which were created by the early Rapa Nui people. In 1995, UNESCO named Easter Island a World Heritage Site, with much of the island protected within Rapa Nui National Park. Easter Island is also the only territory in Polynesia where Spanish is an official language.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Easter_Island",
     "lat": -27.12,
-    "lon": -109.35
+    "lon": -109.35,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 76,
@@ -681,7 +831,9 @@
     "description": "The Cordillera Paine is a group of mountains in Torres del Paine National Park in Chilean Patagonia. It is 280 km (170 mi) north of Punta Arenas, and about 1,960 km (1,220 mi) south of the Chilean capital Santiago. The cordillera is part of the Commune of Torres del Paine in Última Esperanza Province of Magallanes and Antártica Chilena Region. No accurate surveys have been published, and published elevations have been claimed to be seriously inflated, so most of the elevations given on this page are approximate. Paine means \"blue\" in the native Tehuelche (Aonikenk) language and is pronounced PIE-nay.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cordillera_Paine",
     "lat": -51,
-    "lon": -73
+    "lon": -73,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 77,
@@ -690,7 +842,9 @@
     "description": "The CN Tower is a 553.3-metre-high (1,815.3 ft) communications and observation tower in Toronto, Ontario, Canada. Completed in 1976, it is located in downtown Toronto, built on the former Railway Lands. Its name \"CN\" refers to Canadian National, the railway company that built the tower. Following the railway's decision to divest non-core freight railway assets prior to the company's privatization in 1995, it transferred the tower to the Canada Lands Company, a federal Crown corporation responsible for the government's real estate portfolio.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/CN_Tower",
     "lat": 43.64255556,
-    "lon": -79.38708333
+    "lon": -79.38708333,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 78,
@@ -699,7 +853,9 @@
     "description": "Banff National Park is Canada's first national park, established in 1885 as Rocky Mountains Park. Located in Alberta's Rocky Mountains, 110–180 kilometres (68–112 mi) west of Calgary, Banff encompasses 6,641 square kilometres (2,564 sq mi) of mountainous terrain, with many glaciers and ice fields, dense coniferous forest, and alpine landscapes. Provincial forests and Yoho National Park are neighbours to the west, while Kootenay National Park is located to the south and Kananaskis Country to the southeast. The main commercial centre of the park is the town of Banff, in the Bow River valley.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Banff_National_Park",
     "lat": 51.5,
-    "lon": -116
+    "lon": -116,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 79,
@@ -708,7 +864,9 @@
     "description": "The Brooklyn Bridge is a cable-stayed suspension bridge in New York City, spanning the East River between the boroughs of Manhattan and Brooklyn. Opened on May 24, 1883, the Brooklyn Bridge was the first fixed crossing of the East River. It was also the longest suspension bridge in the world when opened, with a main span of 1,595.5 feet (486.3 m) and a deck 127 ft (38.7 m) above mean high water. The span was originally called the New York and Brooklyn Bridge or the East River Bridge but was officially renamed the Brooklyn Bridge in 1915.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Brooklyn_Bridge",
     "lat": 40.7057,
-    "lon": -73.9964
+    "lon": -73.9964,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 80,
@@ -717,7 +875,9 @@
     "description": "The Hollywood Sign is an American landmark and cultural icon overlooking Hollywood, Los Angeles. Originally the Hollywoodland Sign, it is situated on Mount Lee, above Beachwood Canyon in the Santa Monica Mountains. Spelling out the word \"HOLLYWOODLAND\" in 50-foot-tall (15.2 m) white uppercase letters and 450 feet long, it was originally erected in 1923 as a temporary advertisement for a local real estate development. Due to increasing recognition, the sign was left up, with the last four letters \"LAND\" removed in 1949. The sign was entirely replaced in 1978 with a more durable all-steel 45-foot-tall (13.7 m) structure and concrete footings.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hollywood_Sign",
     "lat": 34.13406111,
-    "lon": -118.32159167
+    "lon": -118.32159167,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 81,
@@ -726,7 +886,9 @@
     "description": "Alcatraz Island is a small island about 1.25 miles offshore from San Francisco in San Francisco Bay, California, near the Golden Gate Strait. The island was developed in the mid-19th century with facilities for a lighthouse, a military fortification, and a military prison. In 1934, the island was converted into a federal prison, Alcatraz Federal Penitentiary. The strong tidal currents around the island and cold water temperatures made escape nearly impossible, giving the prison one of the most notorious reputations of its kind in American history. The prison closed on March 21, 1963, leaving the island a major tourist attraction today with nearly 1.4 million people visiting the island annually.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Alcatraz_Island",
     "lat": 37.82666667,
-    "lon": -122.42277778
+    "lon": -122.42277778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 82,
@@ -735,7 +897,9 @@
     "description": "Cartagena, known since the colonial era as Cartagena de Indias, is a city and one of the major ports on the northern coast of Colombia in the Caribbean Coast Region, along the Caribbean Sea. Cartagena's past role as a link in the route to the West Indies provides it with important historical value for world exploration and preservation of heritage from the great commercial maritime routes. As a former Spanish colony, it was a key port for the export of Bolivian silver to Spain and for the import of enslaved Africans under the asiento system. It was defensible against pirate attacks in the Caribbean. The city's strategic location between the Magdalena and Sinú rivers also gave it easy access to the interior of New Granada and made it a main port for trade between Spain and its overseas empire, establishing its importance by the early 1540s.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cartagena%2C_Colombia",
     "lat": 10.4,
-    "lon": -75.5
+    "lon": -75.5,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 83,
@@ -744,7 +908,9 @@
     "description": "The Galápagos Islands are an archipelago of volcanic islands in the Eastern Pacific, located around the equator, 485 nautical miles west of the mainland of South America. They form the Galápagos Province of the Republic of Ecuador, with a population of slightly over 33,000 in 2020. The province is divided into the cantons of San Cristóbal, Santa Cruz, and Isabela, the three most populated islands in the chain. The Galápagos are famous for their large number of endemic species, which were studied by Charles Darwin in the 1830s and inspired his theory of evolution by means of natural selection. All of these islands are protected as part of Ecuador's Galápagos National Park and Marine Reserve.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands",
     "lat": -0.5,
-    "lon": -90.5
+    "lon": -90.5,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 84,
@@ -753,7 +919,9 @@
     "description": "The Pentagon is the headquarters of the United States Department of Defense, in Arlington County, Virginia, across the Potomac River from Washington, D.C. The building was constructed on an accelerated schedule during World War II. As a symbol of the U.S. military, the phrase The Pentagon is often used as a metonym for the Department of Defense and its leadership.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/The_Pentagon",
     "lat": 38.87083333,
-    "lon": -77.055
+    "lon": -77.055,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 85,
@@ -762,7 +930,9 @@
     "description": "The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, Uttar Pradesh, India. It was commissioned in 1631 by the fifth Mughal emperor, Shah Jahan, to house the tomb of his beloved wife, Mumtaz Mahal; it also houses the tomb of Shah Jahan himself. The tomb is the centrepiece of a 17-hectare (42-acre) complex, which includes a mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Taj_Mahal",
     "lat": 27.175,
-    "lon": 78.0419
+    "lon": 78.0419,
+    "sensitive": true,
+    "sensitivity_reason": "Active religious site - photography restricted inside the main mausoleum."
   },
   {
     "id": 86,
@@ -771,7 +941,9 @@
     "description": "The Red Fort is a historic Mughal fort located in the Old Delhi area of Delhi, India. Serving as the main residence of the Mughal emperors, it was commissioned by Emperor Shah Jahan on the 12th of May 1639; the fort was constructed following his decision to shift the Mughal capital from Agra to Delhi. Originally adorned in red and white, the fort's design is attributed to Ustad Ahmad Lahori, the architect of the Taj Mahal. The Red Fort is a prominent example of Mughal architecture from Shah Jahan's reign, combining Persian and Indian architectural styles.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Red_Fort",
     "lat": 28.65583333,
-    "lon": 77.24083333
+    "lon": 77.24083333,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 87,
@@ -780,7 +952,9 @@
     "description": "The Qutb Minar, also spelled Qutub Minar and Qutab Minar, is a minaret and victory tower, built during the Delhi sultanate, and comprising the Qutb complex, a UNESCO World Heritage Site in Mehrauli, South Delhi, India. It was mostly built between 1199 and 1220, contains 399 steps, and is one of the most-frequented heritage spots in the city. After defeating Prithviraj Chauhan, the last Hindu ruler of Delhi before the Ghurid conquest of the region, Qutab-ud-din Aibak initiated the construction of the victory tower, but only managed to finish the first level. It was to mark the beginning of Islamic rule in the region. Successive dynasties of the Delhi Sultanate continued the construction, and, in 1368, Firuz Shah Tughlaq rebuilt the top parts and added a cupola.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Qutb_Minar",
     "lat": 28.524355,
-    "lon": 77.185248
+    "lon": 77.185248,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 88,
@@ -789,7 +963,9 @@
     "description": "Amer Fort or Amber Fort is a fort located in Amer, Rajasthan, India. Amer is a town with an area of 4 square kilometres (1.5 sq mi) located 11 kilometres (6.8 mi) from Jaipur, the capital of Rajasthan. Located high on a hill, it is the principal tourist attraction in Jaipur. Amer Fort is known for its artistic style elements. With its large ramparts and series of gates and cobbled paths, the fort overlooks Maota Lake, which is the main source of water for the Amer Palace.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Amber%2C_India",
     "lat": 26.98333333,
-    "lon": 75.86666667
+    "lon": 75.86666667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 89,
@@ -798,7 +974,9 @@
     "description": "The Gateway of India is an arch-monument, completed in 1924, on the waterfront of Mumbai, Maharashtra, India. It was erected to commemorate the landing of King George V of the United Kingdom for his coronation as the Emperor of India in December 1911 at Strand Road near Wellington Fountain. He was the first British monarch to visit India.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Gateway_of_India",
     "lat": 18.92198263,
-    "lon": 72.83465811
+    "lon": 72.83465811,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 90,
@@ -807,7 +985,9 @@
     "description": "The Great Wall of China is a series of fortifications in China. They were built across the historical northern borders of ancient Chinese states and Imperial China as protection against various nomadic groups from the Eurasian Steppe. The first walls date to the 7th century BC; these were joined together in the Qin dynasty. Successive dynasties expanded the wall system; the best-known sections were built by the Ming dynasty (1368–1644).",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
     "lat": 40.68,
-    "lon": 117.23
+    "lon": 117.23,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 91,
@@ -816,7 +996,9 @@
     "description": "The Forbidden City is the imperial palace complex in the center of the Imperial City in Beijing, China. It was the residence of 24 Ming and Qing dynasty Emperors, and the center of political power in China for over 500 years from 1420 to 1924. The palace is now administered by the Palace Museum and has been a UNESCO World Heritage Site since 1987. The Forbidden City is arguably the most famous palace in all of Chinese history, and is the largest preserved royal palace complex still standing in the world.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Forbidden_City",
     "lat": 39.91583333,
-    "lon": 116.39083333
+    "lon": 116.39083333,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 92,
@@ -825,7 +1007,9 @@
     "description": "The Temple of Heaven is a complex of imperial religious Confucian buildings situated in the southeastern part of central Beijing. The complex was visited by the Emperors of the Ming and then later restored by the Qing dynasties for annual ceremonies of prayer to Heaven for a good harvest and other seasonal rites. The Temple of Heaven was inscribed as a World Heritage site in 1998 and was described as \"a masterpiece of architecture and landscape design which simply and graphically illustrates a cosmogony of great importance for the evolution of one of the world's great civilizations...\" as the \"symbolic layout and design of the Temple of Heaven had a profound influence on architecture and planning in the Far East over many centuries.\"",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Temple_of_Heaven",
     "lat": 39.8822,
-    "lon": 116.4066
+    "lon": 116.4066,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 93,
@@ -834,7 +1018,9 @@
     "description": "The Li River or Li Jiang is the name for the upper reaches of the Gui River in northeastern Guangxi, China. It is part of the Xijiang River system in the Pearl River basin, flowing 164 kilometres (102 mi) from Xing'an County to Pingle County.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Li_River",
     "lat": 24.6301,
-    "lon": 110.64
+    "lon": 110.64,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 94,
@@ -843,7 +1029,9 @@
     "description": "Mount Fuji  is an active stratovolcano located on the Japanese island of Honshu, with a summit elevation of 3,776.24 m. It is the highest mountain in Japan, the second-highest volcano on any Asian island, and the seventh-highest peak of an island on Earth. Mount Fuji last erupted from 1707 to 1708.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Mount_Fuji",
     "lat": 35.36083333,
-    "lon": 138.7275
+    "lon": 138.7275,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 95,
@@ -852,7 +1040,9 @@
     "description": "Fushimi Inari-taisha  is the head shrine of the kami Inari, located in Fushimi-ku, Kyoto, Kyoto Prefecture, Japan. The shrine sits at the base of a mountain, also named Inari, which is 233 metres (764 ft) above sea level, and includes trails up the mountain to many smaller shrines which span 4 kilometres (2.5 mi) and take approximately 2 hours to walk up. It is unclear whether the mountain's name, Inariyama, or the shrine's name came first.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Fushimi_Inari-taisha",
     "lat": 34.96722222,
-    "lon": 135.77277778
+    "lon": 135.77277778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 96,
@@ -861,7 +1051,9 @@
     "description": "Kinkaku-ji , officially named Rokuon-ji , is a Zen Buddhist temple in Kyoto, Japan and a tourist attraction. It is designated as a World Heritage Site, a National Special Historic Site, a National Special Landscape, and one of the 17 Historic Monuments of Ancient Kyoto. The temple is nicknamed after its reliquary (shariden), the Golden Pavilion , whose top two floors are coated in 0.5 μm gold leaf. The current pavilion was rebuilt in 1955 after being destroyed in an arson attack.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Kinkaku-ji",
     "lat": 35.0395,
-    "lon": 135.7285
+    "lon": 135.7285,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 97,
@@ -870,7 +1062,9 @@
     "description": "Sensō-ji , is an ancient Buddhist temple in Asakusa, Tokyo, Japan. It is Tokyo's oldest-established temple, and one of its most significant. It is dedicated to Kannon, the bodhisattva of compassion. Structures in the temple complex include the main hall, a five-story pagoda and large gates. It is the most widely visited religious site in the world with over 30 million visitors annually. The temple is the 13th stop on the Bandō Sanjūsankasho pilgrimage route.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sens%C5%8D-ji",
     "lat": 35.71472222,
-    "lon": 139.79675
+    "lon": 139.79675,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 98,
@@ -879,7 +1073,9 @@
     "description": "The Hiroshima Peace Memorial , originally the Hiroshima Prefectural Industrial Promotion Hall, and now commonly called the Genbaku Dome, Atomic Bomb Dome or A-Bomb Dome , is part of Hiroshima Peace Memorial Park in Hiroshima, Japan, and was designated a UNESCO World Heritage Site in 1996.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial",
     "lat": 34.39555556,
-    "lon": 132.45361111
+    "lon": 132.45361111,
+    "sensitive": true,
+    "sensitivity_reason": "Atomic bomb memorial - deeply solemn site; respectful behaviour required."
   },
   {
     "id": 99,
@@ -888,7 +1084,9 @@
     "description": "Angkor Wat is a Vaishnava Hindu and Theravada Buddhist temple complex in Siem Reap, Cambodia, and the largest religious complex in the world. Located on a site measuring 162.6 hectares within the ancient capital of Angkor, it was constructed between 1113 and 1150 CE during the reign of the Khmer king Suryavarman II as a Hindu temple dedicated to Vishnu. From the late 13th century onward, the complex was gradually transformed into a Buddhist temple and has remained an active center of Buddhist worship for centuries. Angkor Wat is noted for its monumental scale, extensive bas-reliefs, and architectural unity characteristics of Khmer architecture. Unlike most Angkorian temples, it is oriented toward the west. It is a symbol of Cambodia and appears on the Cambodian national flag.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Angkor_Wat",
     "lat": 13.4125,
-    "lon": 103.86666667
+    "lon": 103.86666667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 100,
@@ -897,7 +1095,9 @@
     "description": "Borobudur, also transcribed Barabudur, is a 9th-century Mahayana Buddhist temple in Magelang Regency, near the town of Muntilan, northwest of the city of Yogyakarta, in Central Java, Indonesia.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Borobudur",
     "lat": -7.608,
-    "lon": 110.204
+    "lon": 110.204,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 101,
@@ -906,7 +1106,9 @@
     "description": "Tanah Lot is a rock formation off the Indonesian island of Bali. It is home to the ancient Hindu pilgrimage temple Pura Tanah Lot, a popular tourist and cultural icon for photography.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Tanah_Lot",
     "lat": -8.62107,
-    "lon": 115.08716
+    "lon": 115.08716,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 102,
@@ -915,7 +1117,9 @@
     "description": "The Petronas Towers, also known as the Petronas Twin Towers and colloquially the KLCC Twin Towers, are an interlinked pair of 88-storey supertall skyscrapers in Kuala Lumpur, Malaysia, standing at 451.9 m (1,483 ft). From 1996 to 2004, they were the tallest buildings in the world until they were surpassed by the Taipei 101 building. The Petronas Towers remain the world's tallest twin skyscrapers, surpassing the original World Trade Center towers in New York City, and were the tallest buildings in Malaysia until 2021, when they were surpassed by Merdeka 118. The Petronas Towers are a major landmark of Kuala Lumpur, along with the nearby Kuala Lumpur Tower and Merdeka 118, and are visible in many places across the city. The Petronas Twin Towers, Kuala Lumpur City Centre, and the Federal Territory of Kuala Lumpur officially had a grand opening that resulted in the inauguration of these locations nationally and internationally by the 4th Prime Minister of Malaysia, Mahathir bin Mohamad in conjunction with when Petroliam Nasional Berhad (Petronas) celebrated its twenty-fifth year of establishment and when Malaysia's celebrated its forty-second Independence Day on 31 August 1999.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Petronas_Towers",
     "lat": 3.1578,
-    "lon": 101.7117
+    "lon": 101.7117,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 103,
@@ -924,7 +1128,9 @@
     "description": "Marina Bay Sands is an integrated resort fronting Marina Bay in Singapore and a landmark of the city. At its opening in 2010, it was deemed the world's most expensive standalone casino property at S$8 billion (US$6.88 billion). The resort includes a 1,850-room hotel, a 120,000-square-metre (1,300,000 sq ft) meetings and conventions facility at Sands Expo & Convention Centre, a 74,000-square-metre luxury shopping mall, The Shoppes at Marina Bay Sands, an ArtScience museum, a 2,183-capacity theatre, the world's first floating Apple store, the world's first Louis Vuitton Island Maison, celebrity chef and signature restaurants, and a casino with 500 tables and 3,000 electronic gaming machines. The complex includes three towers topped by the Sands Skypark, a 340-metre-long (1,120 ft) skyway connecting the towers with a capacity of 3,902 people and a 150 m (490 ft) infinity swimming pool, set on top of the world's largest public cantilevered platform, which overhangs the north tower by 66.5 m (218 ft). The 20-hectare resort was designed by Moshe Safdie. The main contractor was Ssangyong Engineering and Construction.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Marina_Bay_Sands",
     "lat": 1.2825,
-    "lon": 103.86
+    "lon": 103.86,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 104,
@@ -933,7 +1139,9 @@
     "description": "The Burj Khalifa is a megatall skyscraper in Dubai, United Arab Emirates. Designed by Skidmore, Owings & Merrill, it is the world's tallest structure, with a total height of 829.8 m and a roof height of 828 m (2,717 ft). It has also been the tallest building in the world since its topping out in 2009, surpassing Taipei 101, which had held the record since 2004.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Burj_Khalifa",
     "lat": 25.1972,
-    "lon": 55.2742
+    "lon": 55.2742,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 105,
@@ -942,7 +1150,9 @@
     "description": "Petra, originally known to its inhabitants as Raqmu, is an ancient city and archaeological site in southern Jordan. Famous for its rock-cut architecture and water conduit systems, Petra is also called the \"Rose City\" because of the colour of the sandstone from which it is carved. The city is one of the New 7 Wonders of the World and a UNESCO World Heritage Site.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Petra",
     "lat": 30.328888888889,
-    "lon": 35.440277777778
+    "lon": 35.440277777778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 106,
@@ -951,7 +1161,9 @@
     "description": "The Dome of the Rock is an octagonal Islamic shrine at the center of the Al-Aqsa mosque compound on the Temple Mount in the Old City of Jerusalem. It is the world's oldest surviving work of Islamic architecture, the earliest archaeologically-attested religious structure to be built by a Muslim ruler and contains the earliest inscriptions proclaiming Islam and the prophet Muhammad.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Dome_of_the_Rock",
     "lat": 31.778,
-    "lon": 35.2354
+    "lon": 35.2354,
+    "sensitive": true,
+    "sensitivity_reason": "Active Islamic holy site in a politically sensitive area; non-Muslims may not enter the interior."
   },
   {
     "id": 107,
@@ -960,7 +1172,9 @@
     "description": "The Sheikh Zayed Grand Mosque is a mosque located in Abu Dhabi, the capital city of the United Arab Emirates. It is the country's largest mosque, and is the key place of worship for daily Islamic prayers. There is a smaller replica of this mosque in Surakarta, a city in Indonesia.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sheikh_Zayed_Grand_Mosque",
     "lat": 24.412,
-    "lon": 54.474
+    "lon": 54.474,
+    "sensitive": true,
+    "sensitivity_reason": "Active mosque - strict dress code required; guided visits only for non-Muslims."
   },
   {
     "id": 108,
@@ -969,7 +1183,9 @@
     "description": "Persepolis was the ceremonial capital of the Achaemenid Empire. It is situated in the plains of Marvdasht, encircled by the southern Zagros Mountains, Fars province of Iran. It is one of the key Iranian cultural heritage sites and a UNESCO World Heritage Site.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Persepolis",
     "lat": 29.935,
-    "lon": 52.89
+    "lon": 52.89,
+    "sensitive": true,
+    "sensitivity_reason": "Located in a region with restricted visitor access for some nationalities."
   },
   {
     "id": 109,
@@ -978,7 +1194,9 @@
     "description": "The Shwedagon Pagoda, officially named Shwedagon Zedi Daw, and also known as the Great Dagon Pagoda and the Golden Pagoda, is a gilded stupa located in Yangon, Myanmar.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Shwedagon_Pagoda",
     "lat": 16.798354,
-    "lon": 96.149705
+    "lon": 96.149705,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 110,
@@ -987,7 +1205,9 @@
     "description": "Hạ Long Bay or Halong Bay is a bay located in Northeastern Vietnam, administered by Quảng Ninh province. The name Hạ Long means \"descending dragon\". It features thousands of limestone karsts and islets in various shapes and sizes, for which it is listed as a UNESCO World Heritage Site and a popular travel destination. The bay is also part of a larger area that includes Bai Tu Long Bay to the northeast and Cát Bà Island to the southwest, with these zones sharing similar geological, geographical, geomorphological, climate, and cultural characteristics.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/H%E1%BA%A1_Long_Bay",
     "lat": 20.9,
-    "lon": 107.2
+    "lon": 107.2,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 111,
@@ -996,7 +1216,9 @@
     "description": "Bagan is an ancient city and a UNESCO World Heritage Site in the Mandalay Region of Myanmar. From the 9th to 13th centuries, the city was the capital of the Pagan Kingdom, the first kingdom that unified the regions that would later constitute Myanmar. During the kingdom's height between the 11th and 13th centuries, more than 10,000 Buddhist temples, pagodas and monasteries were constructed in the Bagan plains alone, of which the remains of over 2,200 temples and pagodas survive.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Bagan",
     "lat": 21.1725,
-    "lon": 94.86
+    "lon": 94.86,
+    "sensitive": true,
+    "sensitivity_reason": "Politically sensitive region under military rule; some sites have restricted access."
   },
   {
     "id": 112,
@@ -1005,7 +1227,9 @@
     "description": "Sigiriya or Sinhagiri is an ancient rock fortress located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka. It is a site of historical and archaeological significance that is dominated by a massive column of granite approximately 180 m (590 ft) high.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sigiriya",
     "lat": 7.95694444,
-    "lon": 80.75972222
+    "lon": 80.75972222,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 113,
@@ -1014,7 +1238,9 @@
     "description": "Potala Palace is a museum complex in Lhasa, the capital of the Tibet Autonomous Region of China. It was formerly the winter palace of the Dalai Lamas, built in the dzong style on Marpo Ri. From 1649 until 1959 it served as the Dalai Lamas' residence, after which it became chiefly a museum following the annexation of Tibet by the People's Republic of China.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Potala_Palace",
     "lat": 29.65777778,
-    "lon": 91.11694444
+    "lon": 91.11694444,
+    "sensitive": true,
+    "sensitivity_reason": "Politically sensitive region (Tibet); visitor access is subject to government permits."
   },
   {
     "id": 114,
@@ -1023,7 +1249,9 @@
     "description": "West Lake, also known as Xihu and by other names, is a freshwater lake in Hangzhou, China. Situated to the west of Hangzhou's former walled city, the lake has a surface area of 6.39 km2 (2.47 sq mi), stretching 3.2 km (2.0 mi) from north to south and 2.8 km (1.7 mi) from east to west. In the lake are four causeways, three artificial islands, and Gushan, the only natural island. Gentle hills surround the lake on its north, west, and south sides, with the Leifeng and Baochu pagodas standing in pair on the south and north banks. Several famous temples are nestled in the mountains west of the lake, including Lingyin and Jingci Temples.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/West_Lake",
     "lat": 30.24694444,
-    "lon": 120.14416667
+    "lon": 120.14416667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 115,
@@ -1032,7 +1260,9 @@
     "description": "The Giza pyramid complex is an archaeological site on the Giza Plateau, on the outskirts of the city of Giza, Egypt. It is home to the Great Pyramid, the pyramid of Khafre, and the pyramid of Menkaure, along with their associated pyramid complexes and the Great Sphinx. All were built during the Fourth Dynasty of the Old Kingdom of ancient Egypt, between c. 2600 – c. 2500 BC. The site also includes several temples, cemeteries, and the remains of a workers' village.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Giza_pyramid_complex",
     "lat": 29.97611111,
-    "lon": 31.13277778
+    "lon": 31.13277778,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 116,
@@ -1041,7 +1271,9 @@
     "description": "The Great Sphinx of Giza is a limestone statue of a reclining sphinx, a mythical creature with the head of a human and the body of a lion. The monument was sculpted from the limestone bedrock of the Eocene-aged Mokattam Formation and faces east on the Giza Plateau, on the west bank of the Nile in Giza, Egypt. The oldest known monumental sculpture in Egypt, the Sphinx is part of the Memphite Necropolis and is a UNESCO World Heritage Site.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Great_Sphinx_of_Giza",
     "lat": 29.97526,
-    "lon": 31.13758
+    "lon": 31.13758,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 117,
@@ -1050,7 +1282,9 @@
     "description": "The Luxor Temple is a large Ancient Egyptian temple complex located on the east bank of the Nile River in the city today known as Luxor and was constructed approximately 1400 BCE. In the Egyptian language it was known as ipet resyt, \"the southern sanctuary\". It was one of the two primary temples on the east bank, the other being Karnak. Unlike the other temples in Thebes, Luxor temple is not dedicated to a cult god or a deified version of the pharaoh in death. Instead, Luxor temple is dedicated to the rejuvenation of kingship; it may have been where many of the pharaohs of Egypt were crowned in reality or conceptually.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Luxor_Temple",
     "lat": 25.7,
-    "lon": 32.63916667
+    "lon": 32.63916667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 118,
@@ -1059,7 +1293,9 @@
     "description": "Abu Simbel is a historic site comprising two massive rock-cut temples in the village of Abu Simbel, Aswan Governorate, Upper Egypt, near the border with Sudan. It is located on the western bank of Lake Nasser, about 230 km (140 mi) southwest of Aswan. Its latitude of 22° 20′ 13″ N is 1.0978°, which are 122 km, south of the tropic of Cancer.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Abu_Simbel",
     "lat": 22.33694444,
-    "lon": 31.62555556
+    "lon": 31.62555556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 119,
@@ -1068,7 +1304,9 @@
     "description": "The Valley of the Kings, also known as the Valley of the Gates of the Kings, is an area in Egypt where, for a period of nearly 500 years from the Eighteenth Dynasty to the Twentieth Dynasty, rock-cut tombs were excavated for pharaohs and powerful nobles under the New Kingdom of ancient Egypt.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Valley_of_the_Kings",
     "lat": 25.74083333,
-    "lon": 32.60222222
+    "lon": 32.60222222,
+    "sensitive": true,
+    "sensitivity_reason": "Photography is prohibited inside the royal tombs."
   },
   {
     "id": 120,
@@ -1077,7 +1315,9 @@
     "description": "Fes el Bali is the oldest part of Fez, Morocco. It is one of the three main districts of Fez, along with Fes Jdid and the French-created Ville Nouvelle. Together with Fes Jdid, it forms the medina of Fez, significant for the preservation of its pre-modern urban layout and numerous historic monuments, which have earned it UNESCO World Heritage Site status.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Fes_el_Bali",
     "lat": 34.0625,
-    "lon": -4.9725
+    "lon": -4.9725,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 121,
@@ -1086,7 +1326,9 @@
     "description": "Tower of the Koutoubia Mosque is an oil on canvas painting by Winston Churchill, from 1943. It depicts a view of the Kutubiyya Mosque, in Marrakesh. The painting, the only one Churchill undertook during the Second World War, was completed on 25/26 January 1943, during a visit to the city by Churchill and President Franklin D. Roosevelt, following the Casablanca Conference. Churchill subsequently presented the picture to Roosevelt. It was later owned by Angelina Jolie. At its sale in 2021 the picture was described by Christie's as \"Churchill's most important work\" and achieved the highest ever auction price for a painting by Churchill.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Tower_of_the_Koutoubia_Mosque",
     "lat": 31.6238,
-    "lon": -7.993
+    "lon": -7.993,
+    "sensitive": true,
+    "sensitivity_reason": "Active mosque - non-Muslims are not permitted to enter."
   },
   {
     "id": 122,
@@ -1095,7 +1337,9 @@
     "description": "The Hassan II Mosque is a mosque in Casablanca, Morocco. It is the second largest mosque in Africa and one of the largest mosques in the world. Its minaret is the world's second tallest minaret at 210 metres (689 ft). Completed in 1993, it was designed by Michel Pinseau under the guidance of King Hassan II and built by Moroccan artisans from all over the kingdom. The minaret is 60 stories high, topped by a laser, the light from which is directed towards Mecca. The mosque stands on a promontory looking out to the Atlantic Ocean; worshippers can pray over the sea but there is no glass floor looking into the sea. The walls are made of handcrafted marble, and the roof is retractable. A maximum of 105,000 worshippers can gather together for prayer: 25,000 inside the mosque hall and another 80,000 on the mosque's outside ground.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hassan_II_Mosque",
     "lat": 33.6085,
-    "lon": -7.6327
+    "lon": -7.6327,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 123,
@@ -1104,7 +1348,9 @@
     "description": "Jemaa el-Fnaa, also Jemaa el-Fna, Djema el-Fna or Djemaa el-Fnaa, is a square and market place in the medina quarter of Marrakesh, Morocco. It remains the main square of Marrakesh, used by locals and tourists.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Jemaa_el-Fnaa",
     "lat": 31.62583333,
-    "lon": -7.98944444
+    "lon": -7.98944444,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 124,
@@ -1113,7 +1359,9 @@
     "description": "The eleven Rock-hewn Churches of Lalibela are monolithic churches located in the western Ethiopian Highlands near the town of Lalibela, named after the late-12th and early-13th century King Gebre Meskel Lalibela of the Zagwe dynasty, who commissioned the massive building project of 11 rock-hewn churches to recreate the holy city of Jerusalem in his own kingdom. The site remains in use by the Ethiopian Orthodox Christian Church to this day, and it remains an important place of pilgrimage for Ethiopian Orthodox worshipers. It took 24 years to build all the 11 rock hewn churches.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches%2C_Lalibela",
     "lat": 12.0325,
-    "lon": 39.04333333
+    "lon": 39.04333333,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 125,
@@ -1122,7 +1370,9 @@
     "description": "The Obelisk of Axum is a 4th-century CE, 24-metre (79 ft) tall phonolite stele, weighing 160 tonnes, in the city of Axum in Ethiopia. It is ornamented with two false doors at the base and features decorations resembling windows on all sides. The obelisk ends in a semi-circular top, which used to be enclosed by metal frames.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Obelisk_of_Axum",
     "lat": 14.13222222,
-    "lon": 38.71972222
+    "lon": 38.71972222,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 126,
@@ -1131,7 +1381,9 @@
     "description": "Table Mountain is a flat-topped mountain forming a prominent landmark overlooking the city of Cape Town in South Africa.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Table_Mountain",
     "lat": -33.96218,
-    "lon": 18.409883
+    "lon": 18.409883,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 127,
@@ -1140,7 +1392,9 @@
     "description": "Robben Island is an island in Table Bay, 6.9 kilometres (4.3 mi) west of the coast of Bloubergstrand, north of Cape Town, South Africa. It takes its name from the archaic Dutch word for seals (robben), hence the Dutch/Afrikaans name Robbeneiland, which translates to Seal(s) Island.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Robben_Island",
     "lat": -33.805,
-    "lon": 18.37
+    "lon": 18.37,
+    "sensitive": true,
+    "sensitivity_reason": "Apartheid political prison where Nelson Mandela was held - memorial site."
   },
   {
     "id": 128,
@@ -1149,7 +1403,9 @@
     "description": "Victoria Falls is a waterfall on the Zambezi River, located on the border between Zambia and Zimbabwe. It is one of the world's largest waterfalls, with a width of 1,708 m (5,604 ft). The region around it has a high degree of biodiversity in both plants and animals.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Victoria_Falls",
     "lat": -17.92444444,
-    "lon": 25.85666667
+    "lon": 25.85666667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 129,
@@ -1158,7 +1414,9 @@
     "description": "The Serengeti National Park is a large national park in northern Tanzania that stretches over 14,763 km2 (5,700 sq mi). It is located in eastern Mara Region and northeastern Simiyu Region and contains over 15,000 km2 (5,800 sq mi) of virgin savanna. The park was established in 1940.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Serengeti_National_Park",
     "lat": -2.33333333,
-    "lon": 34.56666667
+    "lon": 34.56666667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 130,
@@ -1167,7 +1425,9 @@
     "description": "Mount Kilimanjaro is a large dormant volcano in Tanzania. It is the highest mountain in Africa and the highest free-standing mountain above sea level in the world, at 5,895 m (19,341 ft) above sea level and 4,900 m (16,100 ft) above its plateau base. It is also the highest volcano in the Eastern Hemisphere and the fourth most prominent peak on Earth.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
     "lat": -3.0666666666667,
-    "lon": 37.359166666667
+    "lon": 37.359166666667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 131,
@@ -1176,7 +1436,9 @@
     "description": "The Great Mosque of Djenné in the Sudano-Sahelian architectural style is the largest adobe brick building in the world. The mosque is located in the city of Djenné, Mali, on the flood plain of the Bani River. The first mosque on the site was built around the 13th century, but the current structure dates from 1907. As well as being the centre of the community of Djenné, it is one of the most famous landmarks in Africa. Along with the \"Old Towns of Djenné\", it was designated a World Heritage Site by UNESCO in 1988.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Great_Mosque_of_Djenn%C3%A9",
     "lat": 13.90527778,
-    "lon": -4.55555556
+    "lon": -4.55555556,
+    "sensitive": true,
+    "sensitivity_reason": "Active mosque and UNESCO site - access for non-Muslims is restricted."
   },
   {
     "id": 132,
@@ -1185,7 +1447,9 @@
     "description": "Lamu or Lamu Town is a small town on Lamu Island, which in turn is a part of the Lamu Archipelago in Kenya. Situated 341 kilometres (212 mi) by road northeast of Mombasa that ends at Mokowe Jetty, from where the sea channel has to be crossed to reach Lamu Island, it is the headquarter of Lamu County and a UNESCO World Heritage Site.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Lamu",
     "lat": -2.26944444,
-    "lon": 40.90222222
+    "lon": 40.90222222,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 133,
@@ -1194,7 +1458,9 @@
     "description": "The Church of Saint George is one of eleven rock-hewn monolithic churches in Lalibela, a town in the Amhara Region of Ethiopia. Originally named Roha (Warwar), the historical and religious site was named Lalibela after the King Gebre Mesqel Lalibela of the Zagwe dynasty, who commissioned its construction. He is regarded as a saint by the Ethiopian Orthodox Tewahedo Church.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Church_of_Saint_George%2C_Lalibela",
     "lat": 12.03174,
-    "lon": 39.04113
+    "lon": 39.04113,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 134,
@@ -1203,7 +1469,9 @@
     "description": "The Rhodes Memorial is a large monument in the style of an ancient Greek temple on Devil's Peak in Cape Town, South Africa, situated close to Table Mountain. It is a memorial to the English-born South African politician Cecil John Rhodes. Designed by architect Herbert Baker, it was finished in 1912.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Rhodes_Memorial",
     "lat": -33.95236111,
-    "lon": 18.45908333
+    "lon": 18.45908333,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 135,
@@ -1212,7 +1480,9 @@
     "description": "The Sydney Opera House is a multi-venue performing arts centre in Sydney, New South Wales, Australia. Located on the foreshore of Sydney Harbour, it is widely regarded as one of the world's most famous and distinctive buildings, and a masterpiece of 20th-century architecture.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sydney_Opera_House",
     "lat": -33.85681,
-    "lon": 151.21514
+    "lon": 151.21514,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 136,
@@ -1221,7 +1491,9 @@
     "description": "The Sydney Harbour Bridge is a steel through arch bridge in Sydney, New South Wales, Australia, spanning Sydney Harbour from the central business district (CBD) to the North Shore. The view of the bridge, the harbour, and the nearby Sydney Opera House is widely regarded as an iconic image of Sydney, and of Australia itself. Nicknamed \"the Coathanger\" because of its arch-based design, the bridge carries rail, vehicular, bicycle and pedestrian traffic.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sydney_Harbour_Bridge",
     "lat": -33.85222222,
-    "lon": 151.21055556
+    "lon": 151.21055556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 137,
@@ -1230,7 +1502,9 @@
     "description": "Uluru, also known as Ayers Rock and officially gazetted as Uluru / Ayers Rock, is a large sandstone monolith. It crops out near the centre of Australia in the southern part of the Northern Territory, 335 km (208 mi) south-west of Alice Springs.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Uluru",
     "lat": -25.345,
-    "lon": 131.03611111
+    "lon": 131.03611111,
+    "sensitive": true,
+    "sensitivity_reason": "Aboriginal sacred site - photography of certain areas is prohibited out of respect for Anangu law."
   },
   {
     "id": 138,
@@ -1239,7 +1513,9 @@
     "description": "The Great Barrier Reef is the world's largest coral reef system, composed of over 2,900 individual reefs and 900 islands stretching for over 2,300 kilometres (1,400 mi) over an area of approximately 344,400 square kilometres (133,000 mi2). The reef is located in the Coral Sea, off the coast of Queensland, Australia, separated from the coast by a channel 160 kilometres (100 mi) wide in places and over 61 metres (200 ft) deep. The Great Barrier Reef can be seen from outer space and is the world's biggest single structure made by living organisms. This reef structure is composed of and built by billions of tiny organisms, known as coral polyps. It supports a wide diversity of life and was selected as a World Heritage Site in 1981. CNN labelled it one of the Seven Natural Wonders of the World in 1997. Australian World Heritage places included it in its list in 2007. The Queensland National Trust named it a state icon of Queensland in 2006.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Great_Barrier_Reef",
     "lat": -16.4,
-    "lon": 145.8
+    "lon": 145.8,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 139,
@@ -1248,7 +1524,9 @@
     "description": "The Royal Exhibition Building is a UNESCO World Heritage-listed building in Melbourne, Victoria, Australia, built in 1879–1880 as part of the international exhibition movement, which presented over 50 exhibitions between 1851 and 1915 around the globe. The building sits on approximately 26 hectares, is 150 metres (490 ft) long and is surrounded by four city streets. It is situated at 9 Nicholson Street in the Carlton Gardens, flanked by Victoria, Carlton and Rathdowne Streets, at the north-eastern edge of the central business district. It was built to host the Melbourne International Exhibition in 1880–81, and then hosted the even larger Centennial International Exhibition in 1888. It was then chosen as the site for the Federation of the Commonwealth of Australia in 1901. The building is representative of the financial wealth and pride that the city of Melbourne and state of Victoria had in the 1870s. Throughout the 20th century smaller sections and wings of the building were subject to demolition and fire; however, the main building, known as the Great Hall, survived.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Royal_Exhibition_Building",
     "lat": -37.80472222,
-    "lon": 144.97138889
+    "lon": 144.97138889,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 140,
@@ -1257,7 +1535,9 @@
     "description": "The Sky Tower is a telecommunications and observation tower in Auckland, New Zealand. Located at the corner of Victoria and Federal Streets within the city's CBD, it is 328 metres (1,076 ft) tall, as measured from ground level to the top of the mast, making it the second tallest freestanding structure in the Southern Hemisphere, surpassed only by the Autograph Tower in Jakarta, Indonesia, and the 28th tallest tower in the world. Since its completion in 1997, the Sky Tower has become an iconic landmark in Auckland's skyline, due to its height and design. It was the tallest freestanding structure in the Southern Hemisphere from 1996 to 2022.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sky_Tower_(Auckland)",
     "lat": -36.84847,
-    "lon": 174.76231
+    "lon": 174.76231,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 141,
@@ -1266,7 +1546,9 @@
     "description": "Milford Sound is a fiord in the south west of New Zealand's South Island within Fiordland National Park, Piopiotahi Marine Reserve, and the Te Wahipounamu World Heritage site. It has been judged the world's top travel destination in an international survey and is acclaimed as New Zealand's most famous tourist destination. Rudyard Kipling called it the eighth Wonder of the World. The fiord is most commonly accessed via road by tour coach, with the road terminating at a small village also called Milford Sound.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Milford_Sound",
     "lat": -44.64805556,
-    "lon": 167.90555556
+    "lon": 167.90555556,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 142,
@@ -1275,7 +1557,9 @@
     "description": "The Hobbiton Movie Set is a significant location used for The Lord of the Rings film trilogy and The Hobbit film trilogy, serving as a stand-in for the town of Hobbiton in the Shire in both trilogies. It is situated on a family-run farm about 8 kilometres (5.0 mi) west of Hinuera and 10 kilometres (6.2 mi) southwest of Matamata, in Waikato, New Zealand, and is now a Tolkien tourism destination, offering a guided tour of the set.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hobbiton_Movie_Set",
     "lat": -37.8575,
-    "lon": 175.67972222
+    "lon": 175.67972222,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 143,
@@ -1284,7 +1568,9 @@
     "description": "Parliament House is the meeting place of the Parliament of Australia, the legislative branch of Australia's federal tier of government. The building also houses the core of the executive, containing the Cabinet room and offices of the Prime Minister and other federal ministers.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Parliament_House%2C_Canberra",
     "lat": -35.30805556,
-    "lon": 149.12444444
+    "lon": 149.12444444,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 144,
@@ -1293,7 +1579,9 @@
     "description": "Bondi Beach is a beach and the surrounding suburb in Sydney, Australia. Bondi Beach is located 7 kilometres east of the Sydney central business district, in the local government area of Waverley Council, in the Eastern Suburbs. In the 2021 Australian census it had a population of 11,513 residents. Its postcode is 2026. Bondi, North Bondi and Bondi Junction are neighbouring suburbs. Bondi Beach is one of the most visited tourist sites in Australia, and the location of two television series, Bondi Rescue and Bondi Vet.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Bondi_Beach",
     "lat": -33.89111111,
-    "lon": 151.27416667
+    "lon": 151.27416667,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 145,
@@ -1302,7 +1590,9 @@
     "description": "The Amazon rainforest, also called the Amazon jungle or Amazonia, is a moist broadleaf tropical rainforest in the Amazon biome that covers most of the Amazon basin of South America. This basin encompasses 7 million km2 (2.7 million sq mi), of which 6 million km2 (2.3 million sq mi) are covered by the rainforest. This region includes territory belonging to nine nations and 3,344 indigenous territories.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Amazon_rainforest",
     "lat": -3.16,
-    "lon": -60.03
+    "lon": -60.03,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 146,
@@ -1311,7 +1601,9 @@
     "description": "The Sahara is a desert spanning North Africa. With an area of 9,200,000 square kilometres (3,600,000 sq mi), it is the largest hot desert in the world and the third-largest desert overall, smaller only than the deserts of Antarctica and the northern Arctic.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Sahara",
     "lat": 23,
-    "lon": 13
+    "lon": 13,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 147,
@@ -1320,7 +1612,9 @@
     "description": "An aurora is a natural light display in Earth’s upper atmosphere caused by charged particles from the Sun colliding with atoms in the atmosphere. These collisions excite oxygen and nitrogen, which then emit light of different colors such as green, red, and purple. When observed in high-latitude regions they are called polar lights and aurora polaris. In the Arctic they are called northern lights ; in the Antarctic, the terms southern lights are used. Auroras display dynamic patterns of radiant light that appear as curtains, rays, spirals or dynamic flickers covering the entire sky.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Perlan",
     "lat": 64.1292,
-    "lon": -21.9189
+    "lon": -21.9189,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 148,
@@ -1329,7 +1623,9 @@
     "description": "Navajo Upper Antelope Canyon is a slot canyon in the American Southwest, on Navajo land east of Lechee, Arizona. It includes six separate, scenic slot canyon sections on the Navajo Reservation, referred to as Upper Antelope Canyon, Rattle Snake Canyon, Owl Canyon, Mountain Sheep Canyon, Canyon X and Lower Antelope Canyon. It is the primary attraction of Lake Powell Navajo Tribal Park, along with a hiking trail to Rainbow Bridge National Monument.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Antelope_Canyon",
     "lat": 36.861964,
-    "lon": -111.374342
+    "lon": -111.374342,
+    "sensitive": false,
+    "sensitivity_reason": ""
   },
   {
     "id": 149,
@@ -1338,6 +1634,8 @@
     "description": "Pamukkale, meaning \"cotton castle\" in Turkish, is a natural site in Denizli Province in southwestern Turkey. The area is famous for a carbonate mineral left by the flowing of thermal spring water. It is located in Turkey's Inner Aegean region, in the River Menderes valley, which has a temperate climate for most of the year.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pamukkale",
     "lat": 37.92388889,
-    "lon": 29.12333333
+    "lon": 29.12333333,
+    "sensitive": false,
+    "sensitivity_reason": ""
   }
 ]

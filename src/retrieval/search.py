@@ -45,6 +45,8 @@ class SearchResult:
     lon: float | None
     score: float  # cosine similarity in [0, 1]
     low_confidence: bool  # True when score is below the calibrated threshold
+    sensitive: bool = False  # True for sites with access/photography restrictions
+    sensitivity_reason: str = ""  # human-readable explanation shown in the UI
 
 
 def _load_metadata(path: Path) -> list[dict]:
@@ -112,6 +114,8 @@ class LandmarkSearcher:
                     lon=lm.get("lon"),
                     score=float(score),
                     low_confidence=float(score) < confidence_threshold,
+                    sensitive=lm.get("sensitive", False),
+                    sensitivity_reason=lm.get("sensitivity_reason", ""),
                 )
             )
 

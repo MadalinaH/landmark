@@ -19,6 +19,7 @@ from config import (
     TOP_K,
 )
 from src.explainability.attention import get_attention_html
+from src.generation.image_gen import generate_image, load_pipeline
 from src.generation.travel_story import generate_story
 from src.retrieval.hybrid_search import HybridSearcher
 from src.retrieval.search import LandmarkSearcher
@@ -178,6 +179,19 @@ st.markdown(
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+.sensitive-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: rgba(234,179,8,0.08);
+    border: 1px solid rgba(234,179,8,0.3);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    margin-top: 0.75rem;
+    font-size: 0.82rem;
+    color: #fde047;
+    line-height: 1.45;
+}
 
 /* Section headings */
 .section-label {
@@ -293,6 +307,11 @@ def get_hybrid_searcher() -> HybridSearcher:
     return HybridSearcher()
 
 
+@st.cache_resource(show_spinner="Loading Stable Diffusion…")
+def get_image_pipeline(model: str = "turbo", device: str = "cuda"):
+    return load_pipeline(model=model, device=device)
+
+
 def get_thumbnail(landmark_name: str) -> Path | None:
     folder = IMAGES_DIR / sanitize_folder_name(landmark_name)
     if not folder.exists():
@@ -325,6 +344,11 @@ def render_result(result, rank: int) -> None:
     region_html = (
         f'<div class="card-region">📍 {result.region}</div>' if result.region else ""
     )
+    sensitive_html = (
+        f'<div class="sensitive-warning">⚠️ <span>{result.sensitivity_reason}</span></div>'
+        if getattr(result, "sensitive", False) and result.sensitivity_reason
+        else ""
+    )
 
     st.markdown(
         f"""
@@ -342,6 +366,7 @@ def render_result(result, rank: int) -> None:
         </div>
       </div>
       <div class="card-desc">{result.description}</div>
+      {sensitive_html}
     </div>
     """,
         unsafe_allow_html=True,
@@ -380,6 +405,27 @@ with st.sidebar:
         format="%.2f",
         help="Cross-modal text scores: correct matches ~0.28–0.35",
     )
+
+    st.divider()
+    st.markdown("**Image generation**")
+    enable_image_gen = st.toggle(
+        "Generate image from query",
+        value=False,
+        help="Generates an image from your text query using Stable Diffusion.",
+    )
+    if enable_image_gen:
+        sd_model = st.selectbox(
+            "Model",
+            ["sdxl", "sd21"],
+            index=0,
+            help="sdxl: best quality (GPU, ~10s) · sd21: lighter fallback",
+        )
+        sd_device = st.selectbox("Device", ["cuda", "cpu"], index=0)
+        sd_steps = st.slider(
+            "Inference steps",
+            min_value=10, max_value=50,
+            value=30, step=5,
+        )
 
     st.divider()
     searcher = get_searcher()
@@ -561,12 +607,32 @@ with tab_text:
                             "⚠️ Low confidence across all results — "
                             "try a more specific description."
                         )
-                    st.markdown(
-                        '<div class="section-label">Top matches</div>',
-                        unsafe_allow_html=True,
-                    )
-                    for i, result in enumerate(results, start=1):
-                        render_result(result, i)
+                    if enable_image_gen:
+                        st.markdown(
+                            '<div class="section-label">AI visualisation vs retrieval</div>',
+                            unsafe_allow_html=True,
+                        )
+                        col_gen, col_res = st.columns([1, 1])
+                        with col_gen:
+                            st.caption("🎨 What Stable Diffusion imagines")
+                            with st.spinner("Generating image…"):
+                                try:
+                                    pipe = get_image_pipeline(model=sd_model, device=sd_device)
+                                    img = generate_image(query.strip(), pipe, model=sd_model, steps=sd_steps)
+                                    st.image(img, use_container_width=True)
+                                except Exception as e:
+                                    st.error(f"Image generation failed: {e}")
+                        with col_res:
+                            st.caption("🔍 What the index retrieves")
+                            for i, result in enumerate(results, start=1):
+                                render_result(result, i)
+                    else:
+                        st.markdown(
+                            '<div class="section-label">Top matches</div>',
+                            unsafe_allow_html=True,
+                        )
+                        for i, result in enumerate(results, start=1):
+                            render_result(result, i)
 
             except FileNotFoundError as e:
                 st.error(str(e))
