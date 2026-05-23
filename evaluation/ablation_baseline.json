@@ -1,0 +1,2417 @@
+{
+  "label": "baseline",
+  "clip_weights_path": null,
+  "image_summary": {
+    "n": 148,
+    "hits1": 141,
+    "hits3": 147,
+    "hits1_pct": 0.9527027027027027,
+    "hits3_pct": 0.9932432432432432,
+    "mrr": 0.972972972972973,
+    "mean_correct_score": 0.9264372832386206,
+    "ci_95_lo": 0.9121621621621622,
+    "ci_95_hi": 0.9864864864864865
+  },
+  "image_per_landmark": [
+    {
+      "name": "Schönbrunn Palace",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8807539939880371,
+      "top1_name": "Schönbrunn Palace"
+    },
+    {
+      "name": "Stephansdom",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9041186571121216,
+      "top1_name": "Stephansdom"
+    },
+    {
+      "name": "Hofburg Palace",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.942755937576294,
+      "top1_name": "Hofburg Palace"
+    },
+    {
+      "name": "Belvedere Palace Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9464011192321777,
+      "top1_name": "Belvedere Palace Vienna"
+    },
+    {
+      "name": "Kunsthistorisches Museum Vienna",
+      "region": "Vienna",
+      "hit1": 0,
+      "hit3": 1,
+      "rr": 0.5,
+      "score": 0.8751771450042725,
+      "top1_name": "Vienna State Opera"
+    },
+    {
+      "name": "Vienna State Opera",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8967640399932861,
+      "top1_name": "Vienna State Opera"
+    },
+    {
+      "name": "Hundertwasserhaus",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8949419856071472,
+      "top1_name": "Hundertwasserhaus"
+    },
+    {
+      "name": "Prater Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8891619443893433,
+      "top1_name": "Prater Vienna"
+    },
+    {
+      "name": "Vienna City Hall",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9314841032028198,
+      "top1_name": "Vienna City Hall"
+    },
+    {
+      "name": "Karlskirche Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9716262817382812,
+      "top1_name": "Karlskirche Vienna"
+    },
+    {
+      "name": "Naschmarkt Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8993728756904602,
+      "top1_name": "Naschmarkt Vienna"
+    },
+    {
+      "name": "Votivkirche Vienna",
+      "region": "Vienna",
+      "hit1": 0,
+      "hit3": 1,
+      "rr": 0.5,
+      "score": 0.9337819814682007,
+      "top1_name": "Notre Dame Cathedral Paris"
+    },
+    {
+      "name": "Peterskirche Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9304717779159546,
+      "top1_name": "Peterskirche Vienna"
+    },
+    {
+      "name": "Burgtheater Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9313092827796936,
+      "top1_name": "Burgtheater Vienna"
+    },
+    {
+      "name": "Museum of Natural History Vienna",
+      "region": "Vienna",
+      "hit1": 0,
+      "hit3": 1,
+      "rr": 0.5,
+      "score": 0.8324474692344666,
+      "top1_name": "Kunsthistorisches Museum Vienna"
+    },
+    {
+      "name": "Secession Building Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.864007294178009,
+      "top1_name": "Secession Building Vienna"
+    },
+    {
+      "name": "Spanish Riding School Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8335877656936646,
+      "top1_name": "Spanish Riding School Vienna"
+    },
+    {
+      "name": "Stadtpark Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9212349653244019,
+      "top1_name": "Stadtpark Vienna"
+    },
+    {
+      "name": "Augustinerkirche Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9239277243614197,
+      "top1_name": "Augustinerkirche Vienna"
+    },
+    {
+      "name": "Ringstrasse Vienna",
+      "region": "Vienna",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8911715745925903,
+      "top1_name": "Ringstrasse Vienna"
+    },
+    {
+      "name": "Eiffel Tower",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9770148992538452,
+      "top1_name": "Eiffel Tower"
+    },
+    {
+      "name": "Louvre Museum",
+      "region": "Europe",
+      "hit1": 0,
+      "hit3": 0,
+      "rr": 0.0,
+      "score": 0.8334723711013794,
+      "top1_name": "Abu Simbel"
+    },
+    {
+      "name": "Notre Dame Cathedral Paris",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9410329461097717,
+      "top1_name": "Notre Dame Cathedral Paris"
+    },
+    {
+      "name": "Trevi Fountain",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9579543471336365,
+      "top1_name": "Trevi Fountain"
+    },
+    {
+      "name": "Pantheon Rome",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9485599398612976,
+      "top1_name": "Pantheon Rome"
+    },
+    {
+      "name": "Vatican Museums",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9133976697921753,
+      "top1_name": "Vatican Museums"
+    },
+    {
+      "name": "Sagrada Familia",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9098517894744873,
+      "top1_name": "Sagrada Familia"
+    },
+    {
+      "name": "Park Güell",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.95192551612854,
+      "top1_name": "Park Güell"
+    },
+    {
+      "name": "Alhambra Granada",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.908094048500061,
+      "top1_name": "Alhambra Granada"
+    },
+    {
+      "name": "Big Ben",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9765901565551758,
+      "top1_name": "Big Ben"
+    },
+    {
+      "name": "Tower of London",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9376843571662903,
+      "top1_name": "Tower of London"
+    },
+    {
+      "name": "Buckingham Palace",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9468441009521484,
+      "top1_name": "Buckingham Palace"
+    },
+    {
+      "name": "Acropolis of Athens",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.906292200088501,
+      "top1_name": "Acropolis of Athens"
+    },
+    {
+      "name": "Parthenon",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9691171646118164,
+      "top1_name": "Parthenon"
+    },
+    {
+      "name": "Hagia Sophia",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.951884388923645,
+      "top1_name": "Hagia Sophia"
+    },
+    {
+      "name": "Topkapi Palace",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9344432353973389,
+      "top1_name": "Topkapi Palace"
+    },
+    {
+      "name": "Stonehenge",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9042854309082031,
+      "top1_name": "Stonehenge"
+    },
+    {
+      "name": "Edinburgh Castle",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.942732572555542,
+      "top1_name": "Edinburgh Castle"
+    },
+    {
+      "name": "Casa Batlló",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8738689422607422,
+      "top1_name": "Casa Batlló"
+    },
+    {
+      "name": "Neuschwanstein Castle",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9475811123847961,
+      "top1_name": "Neuschwanstein Castle"
+    },
+    {
+      "name": "Brandenburg Gate",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9057118892669678,
+      "top1_name": "Brandenburg Gate"
+    },
+    {
+      "name": "Reichstag Building Berlin",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9382488131523132,
+      "top1_name": "Reichstag Building Berlin"
+    },
+    {
+      "name": "Charles Bridge Prague",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9213478565216064,
+      "top1_name": "Charles Bridge Prague"
+    },
+    {
+      "name": "Prague Castle",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9429661631584167,
+      "top1_name": "Prague Castle"
+    },
+    {
+      "name": "Anne Frank House Amsterdam",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9360658526420593,
+      "top1_name": "Anne Frank House Amsterdam"
+    },
+    {
+      "name": "Rijksmuseum Amsterdam",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9440327882766724,
+      "top1_name": "Rijksmuseum Amsterdam"
+    },
+    {
+      "name": "Hermitage Museum Saint Petersburg",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9441062211990356,
+      "top1_name": "Hermitage Museum Saint Petersburg"
+    },
+    {
+      "name": "Saint Basil's Cathedral",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8757845163345337,
+      "top1_name": "Saint Basil's Cathedral"
+    },
+    {
+      "name": "Kremlin Moscow",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.96311354637146,
+      "top1_name": "Kremlin Moscow"
+    },
+    {
+      "name": "Rialto Bridge Venice",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.933571457862854,
+      "top1_name": "Rialto Bridge Venice"
+    },
+    {
+      "name": "Piazza San Marco",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9449657201766968,
+      "top1_name": "Piazza San Marco"
+    },
+    {
+      "name": "Amalfi Coast",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9441295266151428,
+      "top1_name": "Amalfi Coast"
+    },
+    {
+      "name": "Meteora Greece",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9378011226654053,
+      "top1_name": "Meteora Greece"
+    },
+    {
+      "name": "Dubrovnik Old Town",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9258471131324768,
+      "top1_name": "Dubrovnik Old Town"
+    },
+    {
+      "name": "Hallstatt Austria",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9211395382881165,
+      "top1_name": "Hallstatt Austria"
+    },
+    {
+      "name": "Mont Saint Michel",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9542080760002136,
+      "top1_name": "Mont Saint Michel"
+    },
+    {
+      "name": "Pompeii",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9129607677459717,
+      "top1_name": "Pompeii"
+    },
+    {
+      "name": "Palace of Versailles",
+      "region": "Europe",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9116951823234558,
+      "top1_name": "Palace of Versailles"
+    },
+    {
+      "name": "Machu Picchu",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.969752311706543,
+      "top1_name": "Machu Picchu"
+    },
+    {
+      "name": "Christ the Redeemer Rio",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9199361801147461,
+      "top1_name": "Christ the Redeemer Rio"
+    },
+    {
+      "name": "Iguazu Falls",
+      "region": "Americas",
+      "hit1": 0,
+      "hit3": 1,
+      "rr": 0.5,
+      "score": 0.7955953478813171,
+      "top1_name": "Sigiriya Sri Lanka"
+    },
+    {
+      "name": "Chichen Itza",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9330002069473267,
+      "top1_name": "Chichen Itza"
+    },
+    {
+      "name": "Teotihuacan",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9409641027450562,
+      "top1_name": "Teotihuacan"
+    },
+    {
+      "name": "Statue of Liberty",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9520093202590942,
+      "top1_name": "Statue of Liberty"
+    },
+    {
+      "name": "Grand Canyon",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9078213572502136,
+      "top1_name": "Grand Canyon"
+    },
+    {
+      "name": "Niagara Falls",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.966654896736145,
+      "top1_name": "Niagara Falls"
+    },
+    {
+      "name": "Golden Gate Bridge",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9539676308631897,
+      "top1_name": "Golden Gate Bridge"
+    },
+    {
+      "name": "Times Square",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.7911807894706726,
+      "top1_name": "Times Square"
+    },
+    {
+      "name": "Central Park New York",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9038645625114441,
+      "top1_name": "Central Park New York"
+    },
+    {
+      "name": "White House Washington",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8562008142471313,
+      "top1_name": "White House Washington"
+    },
+    {
+      "name": "Lincoln Memorial",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9357514381408691,
+      "top1_name": "Lincoln Memorial"
+    },
+    {
+      "name": "Yellowstone National Park",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9353321194648743,
+      "top1_name": "Yellowstone National Park"
+    },
+    {
+      "name": "Havana Cathedral",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9368582367897034,
+      "top1_name": "Havana Cathedral"
+    },
+    {
+      "name": "Easter Island",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9289239645004272,
+      "top1_name": "Easter Island"
+    },
+    {
+      "name": "Torres del Paine",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9547481536865234,
+      "top1_name": "Torres del Paine"
+    },
+    {
+      "name": "CN Tower Toronto",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9119778275489807,
+      "top1_name": "CN Tower Toronto"
+    },
+    {
+      "name": "Banff National Park",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9637919664382935,
+      "top1_name": "Banff National Park"
+    },
+    {
+      "name": "Brooklyn Bridge",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9786580801010132,
+      "top1_name": "Brooklyn Bridge"
+    },
+    {
+      "name": "Hollywood Sign",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9392060041427612,
+      "top1_name": "Hollywood Sign"
+    },
+    {
+      "name": "Alcatraz Island",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8912250399589539,
+      "top1_name": "Alcatraz Island"
+    },
+    {
+      "name": "Cartagena Old City",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8853473663330078,
+      "top1_name": "Cartagena Old City"
+    },
+    {
+      "name": "Galapagos Islands",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9133337736129761,
+      "top1_name": "Galapagos Islands"
+    },
+    {
+      "name": "Pentagon Building",
+      "region": "Americas",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.7916677594184875,
+      "top1_name": "Pentagon Building"
+    },
+    {
+      "name": "Taj Mahal",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9770960807800293,
+      "top1_name": "Taj Mahal"
+    },
+    {
+      "name": "Red Fort Delhi",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8698831796646118,
+      "top1_name": "Red Fort Delhi"
+    },
+    {
+      "name": "Qutb Minar",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9399632811546326,
+      "top1_name": "Qutb Minar"
+    },
+    {
+      "name": "Amber Fort Jaipur",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9492226839065552,
+      "top1_name": "Amber Fort Jaipur"
+    },
+    {
+      "name": "Gateway of India Mumbai",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8633196353912354,
+      "top1_name": "Gateway of India Mumbai"
+    },
+    {
+      "name": "Great Wall of China",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9612816572189331,
+      "top1_name": "Great Wall of China"
+    },
+    {
+      "name": "Forbidden City Beijing",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9582787156105042,
+      "top1_name": "Forbidden City Beijing"
+    },
+    {
+      "name": "Temple of Heaven Beijing",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9241889119148254,
+      "top1_name": "Temple of Heaven Beijing"
+    },
+    {
+      "name": "Li River Guilin",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9740457534790039,
+      "top1_name": "Li River Guilin"
+    },
+    {
+      "name": "Mount Fuji",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9463295936584473,
+      "top1_name": "Mount Fuji"
+    },
+    {
+      "name": "Fushimi Inari Shrine",
+      "region": "Asia",
+      "hit1": 0,
+      "hit3": 1,
+      "rr": 0.5,
+      "score": 0.9507846832275391,
+      "top1_name": "Senso-ji Temple Tokyo"
+    },
+    {
+      "name": "Kinkaku-ji Temple",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9237771034240723,
+      "top1_name": "Kinkaku-ji Temple"
+    },
+    {
+      "name": "Senso-ji Temple Tokyo",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9653544425964355,
+      "top1_name": "Senso-ji Temple Tokyo"
+    },
+    {
+      "name": "Hiroshima Peace Memorial",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8326524496078491,
+      "top1_name": "Hiroshima Peace Memorial"
+    },
+    {
+      "name": "Angkor Wat",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9535857439041138,
+      "top1_name": "Angkor Wat"
+    },
+    {
+      "name": "Borobudur",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9099531769752502,
+      "top1_name": "Borobudur"
+    },
+    {
+      "name": "Tanah Lot Temple Bali",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.950676441192627,
+      "top1_name": "Tanah Lot Temple Bali"
+    },
+    {
+      "name": "Petronas Towers",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9648644924163818,
+      "top1_name": "Petronas Towers"
+    },
+    {
+      "name": "Marina Bay Sands Singapore",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9319825172424316,
+      "top1_name": "Marina Bay Sands Singapore"
+    },
+    {
+      "name": "Burj Khalifa",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9315932989120483,
+      "top1_name": "Burj Khalifa"
+    },
+    {
+      "name": "Petra Jordan",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9418414831161499,
+      "top1_name": "Petra Jordan"
+    },
+    {
+      "name": "Dome of the Rock Jerusalem",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9723043441772461,
+      "top1_name": "Dome of the Rock Jerusalem"
+    },
+    {
+      "name": "Sheikh Zayed Grand Mosque",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9036983251571655,
+      "top1_name": "Sheikh Zayed Grand Mosque"
+    },
+    {
+      "name": "Persepolis Iran",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8995698690414429,
+      "top1_name": "Persepolis Iran"
+    },
+    {
+      "name": "Shwedagon Pagoda",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9668707847595215,
+      "top1_name": "Shwedagon Pagoda"
+    },
+    {
+      "name": "Ha Long Bay",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9539711475372314,
+      "top1_name": "Ha Long Bay"
+    },
+    {
+      "name": "Bagan Myanmar",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9556082487106323,
+      "top1_name": "Bagan Myanmar"
+    },
+    {
+      "name": "Sigiriya Sri Lanka",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8295236825942993,
+      "top1_name": "Sigiriya Sri Lanka"
+    },
+    {
+      "name": "Potala Palace Tibet",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9415132403373718,
+      "top1_name": "Potala Palace Tibet"
+    },
+    {
+      "name": "West Lake Hangzhou",
+      "region": "Asia",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9414888620376587,
+      "top1_name": "West Lake Hangzhou"
+    },
+    {
+      "name": "Pyramids of Giza",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9736232757568359,
+      "top1_name": "Pyramids of Giza"
+    },
+    {
+      "name": "Great Sphinx of Giza",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9652706384658813,
+      "top1_name": "Great Sphinx of Giza"
+    },
+    {
+      "name": "Karnak Temple Luxor",
+      "region": "Africa",
+      "hit1": 0,
+      "hit3": 1,
+      "rr": 0.5,
+      "score": 0.9029693603515625,
+      "top1_name": "Persepolis Iran"
+    },
+    {
+      "name": "Abu Simbel",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9401420950889587,
+      "top1_name": "Abu Simbel"
+    },
+    {
+      "name": "Valley of the Kings",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.967871904373169,
+      "top1_name": "Valley of the Kings"
+    },
+    {
+      "name": "Medina of Fez",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9196417331695557,
+      "top1_name": "Medina of Fez"
+    },
+    {
+      "name": "Koutoubia Mosque Marrakech",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9593737125396729,
+      "top1_name": "Koutoubia Mosque Marrakech"
+    },
+    {
+      "name": "Hassan II Mosque Casablanca",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8923688530921936,
+      "top1_name": "Hassan II Mosque Casablanca"
+    },
+    {
+      "name": "Djemaa el Fna Marrakech",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9341225624084473,
+      "top1_name": "Djemaa el Fna Marrakech"
+    },
+    {
+      "name": "Rock-Hewn Churches Lalibela",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9399253129959106,
+      "top1_name": "Rock-Hewn Churches Lalibela"
+    },
+    {
+      "name": "Aksum Obelisk Ethiopia",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8409534096717834,
+      "top1_name": "Aksum Obelisk Ethiopia"
+    },
+    {
+      "name": "Table Mountain Cape Town",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9602370262145996,
+      "top1_name": "Table Mountain Cape Town"
+    },
+    {
+      "name": "Robben Island South Africa",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8977424502372742,
+      "top1_name": "Robben Island South Africa"
+    },
+    {
+      "name": "Victoria Falls",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.828507661819458,
+      "top1_name": "Victoria Falls"
+    },
+    {
+      "name": "Serengeti National Park",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8507221937179565,
+      "top1_name": "Serengeti National Park"
+    },
+    {
+      "name": "Mount Kilimanjaro",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9343135356903076,
+      "top1_name": "Mount Kilimanjaro"
+    },
+    {
+      "name": "Great Mosque of Djenné",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9637471437454224,
+      "top1_name": "Great Mosque of Djenné"
+    },
+    {
+      "name": "Lamu Old Town Kenya",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.894906222820282,
+      "top1_name": "Lamu Old Town Kenya"
+    },
+    {
+      "name": "Bete Giyorgis Church Ethiopia",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9352952837944031,
+      "top1_name": "Bete Giyorgis Church Ethiopia"
+    },
+    {
+      "name": "Rhodes Memorial Cape Town",
+      "region": "Africa",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8716450929641724,
+      "top1_name": "Rhodes Memorial Cape Town"
+    },
+    {
+      "name": "Sydney Opera House",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9642418622970581,
+      "top1_name": "Sydney Opera House"
+    },
+    {
+      "name": "Sydney Harbour Bridge",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9452018141746521,
+      "top1_name": "Sydney Harbour Bridge"
+    },
+    {
+      "name": "Uluru",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9474210739135742,
+      "top1_name": "Uluru"
+    },
+    {
+      "name": "Great Barrier Reef",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9635014533996582,
+      "top1_name": "Great Barrier Reef"
+    },
+    {
+      "name": "Royal Exhibition Building Melbourne",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9189222455024719,
+      "top1_name": "Royal Exhibition Building Melbourne"
+    },
+    {
+      "name": "Sky Tower Auckland",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9144211411476135,
+      "top1_name": "Sky Tower Auckland"
+    },
+    {
+      "name": "Milford Sound New Zealand",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9722402691841125,
+      "top1_name": "Milford Sound New Zealand"
+    },
+    {
+      "name": "Hobbiton New Zealand",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9516955614089966,
+      "top1_name": "Hobbiton New Zealand"
+    },
+    {
+      "name": "Parliament House Canberra",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9125444293022156,
+      "top1_name": "Parliament House Canberra"
+    },
+    {
+      "name": "Bondi Beach Sydney",
+      "region": "Oceania",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8978028297424316,
+      "top1_name": "Bondi Beach Sydney"
+    },
+    {
+      "name": "Amazon Rainforest",
+      "region": "Natural",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9202686548233032,
+      "top1_name": "Amazon Rainforest"
+    },
+    {
+      "name": "Sahara Desert",
+      "region": "Natural",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.8924261331558228,
+      "top1_name": "Sahara Desert"
+    },
+    {
+      "name": "Northern Lights Iceland",
+      "region": "Natural",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9411691427230835,
+      "top1_name": "Northern Lights Iceland"
+    },
+    {
+      "name": "Antelope Canyon",
+      "region": "Natural",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9646083116531372,
+      "top1_name": "Antelope Canyon"
+    },
+    {
+      "name": "Pamukkale Turkey",
+      "region": "Natural",
+      "hit1": 1,
+      "hit3": 1,
+      "rr": 1.0,
+      "score": 0.9442265629768372,
+      "top1_name": "Pamukkale Turkey"
+    }
+  ],
+  "text_ablation": {
+    "note": "Queries are landmark names against the pre-built text index. Compares retrieval strategy only (CLIP-only vs Hybrid BM25); does not reflect fine-tuned model weights.",
+    "clip_only": {
+      "n": 149,
+      "hits1": 148,
+      "hits3": 149,
+      "hits1_pct": 0.9932885906040269,
+      "hits3_pct": 1.0,
+      "mrr": 0.9966442953020134,
+      "ci_95_lo": 0.9798657718120806,
+      "ci_95_hi": 1.0
+    },
+    "hybrid": {
+      "n": 149,
+      "hits1": 147,
+      "hits3": 149,
+      "hits1_pct": 0.9865771812080537,
+      "hits3_pct": 1.0,
+      "mrr": 0.9921700223713648,
+      "ci_95_lo": 0.9664429530201343,
+      "ci_95_hi": 1.0
+    },
+    "per_landmark": [
+      {
+        "name": "Schönbrunn Palace",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Stephansdom",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hofburg Palace",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Belvedere Palace Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Kunsthistorisches Museum Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Vienna State Opera",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hundertwasserhaus",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Prater Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Vienna City Hall",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Karlskirche Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Naschmarkt Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Votivkirche Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Peterskirche Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Burgtheater Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Museum of Natural History Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Secession Building Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Spanish Riding School Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Stadtpark Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Augustinerkirche Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 0,
+        "clip_rr": 1.0,
+        "hybrid_rr": 0.3333333333333333
+      },
+      {
+        "name": "Ringstrasse Vienna",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Eiffel Tower",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Louvre Museum",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Notre Dame Cathedral Paris",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Colosseum",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Trevi Fountain",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Pantheon Rome",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Vatican Museums",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Sagrada Familia",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Park Güell",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Alhambra Granada",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Big Ben",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Tower of London",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Buckingham Palace",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Acropolis of Athens",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Parthenon",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hagia Sophia",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Topkapi Palace",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Stonehenge",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Edinburgh Castle",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Casa Batlló",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Neuschwanstein Castle",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Brandenburg Gate",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Reichstag Building Berlin",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Charles Bridge Prague",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Prague Castle",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Anne Frank House Amsterdam",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Rijksmuseum Amsterdam",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hermitage Museum Saint Petersburg",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Saint Basil's Cathedral",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Kremlin Moscow",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Rialto Bridge Venice",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Piazza San Marco",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Amalfi Coast",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Meteora Greece",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Dubrovnik Old Town",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hallstatt Austria",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Mont Saint Michel",
+        "clip_hit1": 1,
+        "hybrid_hit1": 0,
+        "clip_rr": 1.0,
+        "hybrid_rr": 0.5
+      },
+      {
+        "name": "Pompeii",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Palace of Versailles",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Machu Picchu",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Christ the Redeemer Rio",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Iguazu Falls",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Chichen Itza",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Teotihuacan",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Statue of Liberty",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Grand Canyon",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Niagara Falls",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Golden Gate Bridge",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Times Square",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Central Park New York",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "White House Washington",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Lincoln Memorial",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Yellowstone National Park",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Havana Cathedral",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Easter Island",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Torres del Paine",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "CN Tower Toronto",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Banff National Park",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Brooklyn Bridge",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hollywood Sign",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Alcatraz Island",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Cartagena Old City",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Galapagos Islands",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Pentagon Building",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Taj Mahal",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Red Fort Delhi",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Qutb Minar",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Amber Fort Jaipur",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Gateway of India Mumbai",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Great Wall of China",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Forbidden City Beijing",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Temple of Heaven Beijing",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Li River Guilin",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Mount Fuji",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Fushimi Inari Shrine",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Kinkaku-ji Temple",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Senso-ji Temple Tokyo",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hiroshima Peace Memorial",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Angkor Wat",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Borobudur",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Tanah Lot Temple Bali",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Petronas Towers",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Marina Bay Sands Singapore",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Burj Khalifa",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Petra Jordan",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Dome of the Rock Jerusalem",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Sheikh Zayed Grand Mosque",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Persepolis Iran",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Shwedagon Pagoda",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Ha Long Bay",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Bagan Myanmar",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Sigiriya Sri Lanka",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Potala Palace Tibet",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "West Lake Hangzhou",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Pyramids of Giza",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Great Sphinx of Giza",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Karnak Temple Luxor",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Abu Simbel",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Valley of the Kings",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Medina of Fez",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Koutoubia Mosque Marrakech",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hassan II Mosque Casablanca",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Djemaa el Fna Marrakech",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Rock-Hewn Churches Lalibela",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Aksum Obelisk Ethiopia",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Table Mountain Cape Town",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Robben Island South Africa",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Victoria Falls",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Serengeti National Park",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Mount Kilimanjaro",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Great Mosque of Djenné",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Lamu Old Town Kenya",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Bete Giyorgis Church Ethiopia",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Rhodes Memorial Cape Town",
+        "clip_hit1": 0,
+        "hybrid_hit1": 1,
+        "clip_rr": 0.5,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Sydney Opera House",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Sydney Harbour Bridge",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Uluru",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Great Barrier Reef",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Royal Exhibition Building Melbourne",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Sky Tower Auckland",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Milford Sound New Zealand",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Hobbiton New Zealand",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Parliament House Canberra",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Bondi Beach Sydney",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Amazon Rainforest",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Sahara Desert",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Northern Lights Iceland",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Antelope Canyon",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      },
+      {
+        "name": "Pamukkale Turkey",
+        "clip_hit1": 1,
+        "hybrid_hit1": 1,
+        "clip_rr": 1.0,
+        "hybrid_rr": 1.0
+      }
+    ]
+  }
+}
