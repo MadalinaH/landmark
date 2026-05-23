@@ -11,3 +11,12 @@ wheels/
 
 .ruff_cache/
 .env
+data/images/
+data/embeddings.npy
+data/text_embeddings.npy
+data/faiss_index.bin
+data/faiss_text_index.bin
+data/metadata.json
+data/checkpoints/
+data/eval/
+data/images/.DS_Store
