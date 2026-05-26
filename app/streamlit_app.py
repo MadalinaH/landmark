@@ -13,8 +13,10 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 
 from config import (
     ANTHROPIC_API_KEY,
+    CLIP_WEIGHTS_PATH,
     CONFIDENCE_THRESHOLD_IMAGE,
     CONFIDENCE_THRESHOLD_TEXT,
+    EVAL_DIR,
     IMAGES_DIR,
     TOP_K,
 )
@@ -460,8 +462,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-tab_image, tab_text, tab_story = st.tabs(
-    ["📷 Image search", "💬 Text search", "📸 Instagram post"]
+tab_image, tab_text, tab_story, tab_report = st.tabs(
+    ["📷 Image search", "💬 Text search", "📸 Instagram post", "📊 Model report"]
 )
 
 
@@ -779,3 +781,179 @@ with tab_story:
         """,
             unsafe_allow_html=True,
         )
+
+
+# Tab 4: Model Report
+with tab_report:
+    import json as _json
+
+    st.markdown(
+        '<div class="section-label">System performance and responsible AI audit</div>',
+        unsafe_allow_html=True,
+    )
+
+    # Model info
+    st.markdown("### Model")
+    col_m1, col_m2, col_m3 = st.columns(3)
+    col_m1.metric("Architecture", "CLIP ViT-B-16")
+    col_m2.metric("Weights", "Fine-tuned" if CLIP_WEIGHTS_PATH else "Baseline (OpenAI)")
+    col_m3.metric("Index size", f"{searcher._index.ntotal} landmarks")
+
+    st.caption(
+        "Fine-tuned on 1,184 landmark image-text pairs · "
+        "last 2 transformer blocks + projection heads unfrozen (~14% of params) · "
+        "InfoNCE loss · AdamW lr=5e-6 · 20 epochs · NVIDIA L40S"
+        if CLIP_WEIGHTS_PATH
+        else "OpenAI pretrained weights · zero-shot landmark retrieval"
+    )
+
+    st.divider()
+
+    # Ablation table
+    st.markdown("### Retrieval performance")
+
+    baseline_path = EVAL_DIR / "ablation_baseline.json"
+    finetuned_path = EVAL_DIR / "ablation_finetuned.json"
+
+    if not baseline_path.exists() and not finetuned_path.exists():
+        st.info(
+            "No ablation results found. Run `python scripts/ablation.py` "
+            "to generate them."
+        )
+    else:
+        # Image retrieval table
+        st.markdown("**Image retrieval - leave-one-out (148 landmarks)**")
+        rows = []
+        for path, label in [(baseline_path, "Baseline CLIP"), (finetuned_path, "Fine-tuned CLIP")]:
+            if path.exists():
+                d = _json.loads(path.read_text())
+                s = d["image_summary"]
+                rows.append({
+                    "Condition": label,
+                    "Hits@1": f"{s['hits1']}/{s['n']} ({s['hits1_pct']:.0%})",
+                    "Hits@3": f"{s['hits3']}/{s['n']} ({s['hits3_pct']:.0%})",
+                    "MRR": f"{s['mrr']:.3f}",
+                    "Mean score": f"{s['mean_correct_score']:.3f}",
+                    "95% CI": f"[{s['ci_95_lo']:.2f}, {s['ci_95_hi']:.2f}]",
+                })
+        if rows:
+            import pandas as _pd
+            st.dataframe(_pd.DataFrame(rows).set_index("Condition"), use_container_width=True)
+
+        # Delta callout
+        if baseline_path.exists() and finetuned_path.exists():
+            b = _json.loads(baseline_path.read_text())["image_summary"]
+            f = _json.loads(finetuned_path.read_text())["image_summary"]
+            delta_h1 = f["hits1_pct"] - b["hits1_pct"]
+            delta_mrr = f["mrr"] - b["mrr"]
+            st.success(
+                f"Fine-tuning improved Hits@1 by **{delta_h1:+.1%}** "
+                f"and MRR by **{delta_mrr:+.3f}** over the baseline OpenAI weights."
+            )
+
+        # Text retrieval table
+        st.markdown("**Text retrieval - strategy comparison (149 landmark name queries)**")
+        text_data = None
+        for path in [baseline_path, finetuned_path]:
+            if path.exists():
+                d = _json.loads(path.read_text())
+                if d.get("text_ablation"):
+                    text_data = d["text_ablation"]
+                    break
+        if text_data:
+            clip = text_data["clip_only"]
+            hybrid = text_data["hybrid"]
+            text_rows = [
+                {
+                    "Strategy": "CLIP-only",
+                    "Hits@1": f"{clip['hits1']}/{clip['n']} ({clip['hits1_pct']:.0%})",
+                    "Hits@3": f"{clip['hits3']}/{clip['n']} ({clip['hits3_pct']:.0%})",
+                    "MRR": f"{clip['mrr']:.3f}",
+                    "95% CI": f"[{clip['ci_95_lo']:.2f}, {clip['ci_95_hi']:.2f}]",
+                },
+                {
+                    "Strategy": "Hybrid (CLIP + BM25)",
+                    "Hits@1": f"{hybrid['hits1']}/{hybrid['n']} ({hybrid['hits1_pct']:.0%})",
+                    "Hits@3": f"{hybrid['hits3']}/{hybrid['n']} ({hybrid['hits3_pct']:.0%})",
+                    "MRR": f"{hybrid['mrr']:.3f}",
+                    "95% CI": f"[{hybrid['ci_95_lo']:.2f}, {hybrid['ci_95_hi']:.2f}]",
+                },
+            ]
+            st.dataframe(_pd.DataFrame(text_rows).set_index("Strategy"), use_container_width=True)
+            st.caption(
+                "BM25 is neutral on proper-noun queries (landmark names). "
+                "Its contribution appears on descriptive queries - "
+                "e.g. 'ancient Roman arena' - which is its intended use case."
+            )
+
+    st.divider()
+
+    # Geographic bias
+    st.markdown("### Geographic bias audit")
+    st.caption(
+        "Hits@1 per region from leave-one-out evaluation. "
+        "Bars below 70% are red, below 85% amber, 85%+ green."
+    )
+    bias_chart = EVAL_DIR / "bias_chart.png"
+    if bias_chart.exists():
+        st.image(str(bias_chart), use_container_width=True)
+    else:
+        st.info("Run `python scripts/run_audit.py` to generate the bias chart.")
+
+    with st.expander("What does this mean?"):
+        st.markdown(
+            """
+            The dataset skews towards **European landmarks** (Vienna + Europe = 39%).
+            Regions with fewer landmarks have less training signal and fewer
+            semantically distinct neighbours in the embedding space, making
+            misclassification more likely.
+
+            **Natural landmarks** (5 total) and **Oceania** (10 total) are the most
+            underrepresented. A more balanced dataset - or region-specific
+            fine-tuning - would reduce this gap.
+
+            This audit is re-run whenever `scripts/run_audit.py` is executed.
+            The chart above reflects the most recent run.
+            """
+        )
+
+    st.divider()
+
+    # Confidence calibration
+    st.markdown("### Confidence calibration")
+    st.caption(
+        "Score distributions for correct vs incorrect matches. "
+        "The vertical line shows the configured confidence threshold (0.82)."
+    )
+    cal_chart = EVAL_DIR / "calibration_chart.png"
+    if cal_chart.exists():
+        st.image(str(cal_chart), use_container_width=True)
+    else:
+        st.info("Run `python scripts/run_audit.py` to generate the calibration chart.")
+
+    col_t1, col_t2 = st.columns(2)
+    col_t1.metric(
+        "Image threshold", f"{CONFIDENCE_THRESHOLD_IMAGE:.2f}",
+        help="Scores below this show a ⚠️ Low confidence warning",
+    )
+    col_t2.metric(
+        "Text threshold", f"{CONFIDENCE_THRESHOLD_TEXT:.2f}",
+        help="Cross-modal scores are lower due to the image-text modality gap",
+    )
+
+    st.divider()
+
+    # Responsible AI notes
+    st.markdown("### Responsible AI")
+    st.markdown(
+        """
+        | Feature | Implementation |
+        |---------|---------------|
+        | **Confidence warnings** | Scores below empirical thresholds surface a ⚠️ warning instead of presenting results as certain |
+        | **EXIF privacy** | Uploaded photos are checked for embedded GPS; users are warned before their location is shared |
+        | **Geographic bias** | Leave-one-out audit quantifies Hits@1 per region; results shown above |
+        | **Sensitive sites** | 15 landmarks flagged with access and photography restrictions; shown as yellow warnings in results |
+        | **Grounded generation** | Instagram posts are grounded in retrieved Wikipedia descriptions; Claude is instructed not to invent facts |
+        | **Disclaimer** | Every generated post carries a disclaimer advising fact-checking before publishing |
+        """
+    )
