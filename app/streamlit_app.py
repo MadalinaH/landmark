@@ -16,6 +16,7 @@ from config import (
     CLIP_WEIGHTS_PATH,
     CONFIDENCE_THRESHOLD_IMAGE,
     CONFIDENCE_THRESHOLD_TEXT,
+    DATA_DIR,
     EVAL_DIR,
     IMAGES_DIR,
     TOP_K,
@@ -916,6 +917,94 @@ with tab_report:
             The chart above reflects the most recent run.
             """
         )
+
+    # World map
+    st.markdown("### Dataset coverage map")
+    st.caption("All 149 landmarks plotted by location, coloured by region. Hover for details.")
+
+    try:
+        import pydeck as pdk
+
+        _REGION_COLORS = {
+            "Vienna":   [99,  102, 241, 220],
+            "Europe":   [59,  130, 246, 220],
+            "Americas": [34,  197,  94, 220],
+            "Asia":     [249, 115,  22, 220],
+            "Africa":   [239,  68,  68, 220],
+            "Oceania":  [6,   182, 212, 220],
+            "Natural":  [20,  184, 166, 220],
+        }
+        _DEFAULT_COLOR = [148, 163, 184, 220]
+
+        _landmarks_all = _json.loads((DATA_DIR / "landmarks.json").read_text())
+        _map_data = [
+            {
+                "name": lm["name"],
+                "region": lm.get("region", "Unknown"),
+                "lat": lm["lat"],
+                "lon": lm["lon"],
+                "description": lm.get("description", "")[:120] + "…",
+                "color": _REGION_COLORS.get(lm.get("region", ""), _DEFAULT_COLOR),
+            }
+            for lm in _landmarks_all
+            if lm.get("lat") and lm.get("lon")
+        ]
+
+        _layer = pdk.Layer(
+            "ScatterplotLayer",
+            data=_map_data,
+            get_position=["lon", "lat"],
+            get_fill_color="color",
+            get_radius=80000,
+            pickable=True,
+            auto_highlight=True,
+        )
+
+        _view = pdk.ViewState(latitude=20, longitude=10, zoom=1.2, pitch=0)
+
+        _tooltip = {
+            "html": (
+                "<b>{name}</b><br/>"
+                "<span style='color:#94a3b8'>{region}</span><br/>"
+                "<span style='font-size:0.85em'>{description}</span>"
+            ),
+            "style": {
+                "backgroundColor": "#1e293b",
+                "color": "#e2e8f0",
+                "padding": "8px 12px",
+                "borderRadius": "8px",
+                "maxWidth": "280px",
+                "fontSize": "0.82rem",
+            },
+        }
+
+        st.pydeck_chart(
+            pdk.Deck(
+                layers=[_layer],
+                initial_view_state=_view,
+                tooltip=_tooltip,
+                map_style="mapbox://styles/mapbox/dark-v10",
+            ),
+            use_container_width=True,
+            height=420,
+        )
+
+        # Region legend
+        _legend_html = "".join(
+            f'<span style="display:inline-flex;align-items:center;gap:5px;'
+            f'margin:3px 8px 3px 0;font-size:0.78rem;color:#cbd5e1;">'
+            f'<span style="width:10px;height:10px;border-radius:50%;'
+            f'background:rgb({c[0]},{c[1]},{c[2]});flex-shrink:0"></span>'
+            f'{region}</span>'
+            for region, c in _REGION_COLORS.items()
+        )
+        st.markdown(
+            f'<div style="margin-top:0.5rem">{_legend_html}</div>',
+            unsafe_allow_html=True,
+        )
+
+    except Exception as _e:
+        st.info(f"Map unavailable: {_e}")
 
     st.divider()
 
