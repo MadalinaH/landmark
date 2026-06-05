@@ -22,7 +22,7 @@ import torch
 
 sys.path.insert(0, str(Path(__file__).parents[2]))
 
-from config import CLIP_MODEL, CLIP_PRETRAINED, CONFIDENCE_THRESHOLD, DATA_DIR, TOP_K
+from config import CLIP_MODEL, CLIP_PRETRAINED, CONFIDENCE_THRESHOLD, DATA_DIR, FAISS_TEXT_INDEX_PATH, TOP_K
 from src.retrieval.index import load_index
 from src.retrieval.search import SearchResult, _load_metadata
 
@@ -51,7 +51,7 @@ class TextSearcher:
     """
 
     def __init__(self, device: str = "cpu"):
-        self._index = load_index(DATA_DIR / "faiss_text_index.bin")
+        self._index = load_index(FAISS_TEXT_INDEX_PATH)
         self._metadata = _load_metadata(DATA_DIR / "landmarks.json")
         # Load CLIP model for encoding text queries at search time
         model, _, _ = open_clip.create_model_and_transforms(

@@ -29,7 +29,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parents[2]))
-from config import CONFIDENCE_THRESHOLD, DATA_DIR, TOP_K
+from config import CONFIDENCE_THRESHOLD, DATA_DIR, FAISS_INDEX_PATH, FAISS_TEXT_INDEX_PATH, TOP_K
 from src.embeddings.image_encoder import _load_model, embed_single_image
 from src.retrieval.index import load_index
 
@@ -66,11 +66,11 @@ class LandmarkSearcher:
 
     def __init__(self, mode: str = "text", device: str = "cpu"):
         if mode == "text":
-            index_path = DATA_DIR / "faiss_text_index.bin"
+            index_path = FAISS_TEXT_INDEX_PATH
             # Text index covers every landmark in landmarks.json - no separate metadata needed
             meta_path = DATA_DIR / "landmarks.json"
         elif mode == "image":
-            index_path = DATA_DIR / "faiss_index.bin"
+            index_path = FAISS_INDEX_PATH
             # Image index may skip landmarks with missing folders, so it has its own metadata
             meta_path = DATA_DIR / "metadata.json"
         else:

@@ -18,9 +18,9 @@ import faiss
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parents[2]))
-from config import DATA_DIR, EMBEDDING_DIM
+from config import EMBEDDING_DIM, FAISS_INDEX_PATH
 
-_INDEX_PATH = DATA_DIR / "faiss_index.bin"
+_INDEX_PATH = FAISS_INDEX_PATH
 
 
 def build_index(embeddings: np.ndarray) -> faiss.IndexFlatIP:

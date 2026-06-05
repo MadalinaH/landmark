@@ -38,11 +38,15 @@ from torch.utils.data import DataLoader, random_split
 from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
-from config import CLIP_MODEL, CLIP_PRETRAINED, DATA_DIR
+from config import BACKBONE, CLIP_MODEL, CLIP_PRETRAINED, DATA_DIR
 from src.data.dataset import LandmarkDataset
 
 SAVE_EVERY = 5  # save checkpoint every N epochs
 CHECKPOINT_DIR = DATA_DIR / "checkpoints"
+
+# Checkpoint names are backbone-prefixed so CLIP and SigLIP runs never collide.
+_CKPT_BEST = CHECKPOINT_DIR / f"{BACKBONE}_finetuned_best.pt"
+_CKPT_FINAL = CHECKPOINT_DIR / f"{BACKBONE}_finetuned.pt"
 
 
 # ---------------------------------------------------------------------------
@@ -186,17 +190,17 @@ def train(args: argparse.Namespace) -> None:
 
         if mean_val < best_val_loss:
             best_val_loss = mean_val
-            _save(model, CHECKPOINT_DIR / "clip_finetuned_best.pt")
-            print(f"  ↳ new best val loss - saved clip_finetuned_best.pt")
+            _save(model, _CKPT_BEST)
+            print(f"  ↳ new best val loss - saved {_CKPT_BEST.name}")
 
         if epoch % SAVE_EVERY == 0:
-            _save(model, CHECKPOINT_DIR / f"clip_finetuned_epoch{epoch:03d}.pt")
+            _save(model, CHECKPOINT_DIR / f"{BACKBONE}_finetuned_epoch{epoch:03d}.pt")
 
-    _save(model, CHECKPOINT_DIR / "clip_finetuned.pt")
-    print(f"\nTraining complete. Final checkpoint: {CHECKPOINT_DIR / 'clip_finetuned.pt'}")
+    _save(model, _CKPT_FINAL)
+    print(f"\nTraining complete. Final checkpoint: {_CKPT_FINAL}")
     print(f"Best val loss: {best_val_loss:.4f}")
-    print(f"\nTo use in the pipeline, set in config.py:")
-    print(f"  CLIP_WEIGHTS_PATH = DATA_DIR / 'checkpoints' / 'clip_finetuned_best.pt'")
+    print(f"\nTo use in the pipeline:")
+    print(f"  BACKBONE={BACKBONE} CLIP_WEIGHTS_PATH={_CKPT_BEST} python3 scripts/ablation.py")
 
 
 def _save(model, path: Path) -> None:

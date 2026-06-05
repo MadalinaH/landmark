@@ -3,39 +3,38 @@ Answers two questions:
   1. Does fine-tuning help?   → IMAGE ablation (leave-one-out, re-embedded on-the-fly)
   2. Does BM25 help?          → TEXT ablation (CLIP-only vs Hybrid on landmark-name queries)
 
-──────────────────────────────────────────────────────────────────────────
-IMAGE ABLATION
-  Re-embeds every landmark from scratch with the currently loaded CLIP model,
-  builds an in-memory FAISS index, and runs leave-one-out evaluation: the last
-  image in each landmark folder is used as the query.  Because both the query
-  and the index are encoded with the same model, this gives a fair comparison
-  between baseline and fine-tuned weights.
-
-TEXT ABLATION
-  Uses each landmark's name as a text query against the pre-built text FAISS
-  index, comparing CLIP-only retrieval vs Hybrid (CLIP + BM25).  The index was
-  built with the baseline model, so this measures the BM25 contribution
-  independently of model weights.
+Supports two backbones: CLIP ViT-B-16 (default) and SigLIP ViT-B-16.
+Select via the BACKBONE env var.  Results are stored in backbone-prefixed files
+so CLIP and SigLIP runs never overwrite each other.
 
 ──────────────────────────────────────────────────────────────────────────
-Run twice, then compare:
-  # Step 1: baseline (no fine-tuned weights)
-  python scripts/ablation.py
+CLIP (2-condition):
+  python3 scripts/ablation.py                                                    # baseline
+  CLIP_WEIGHTS_PATH=data/checkpoints/clip_finetuned_best.pt \\
+      python3 scripts/ablation.py                                                 # fine-tuned
 
-  # Step 2: fine-tuned weights
-  CLIP_WEIGHTS_PATH=data/checkpoints/clip_finetuned_best.pt python scripts/ablation.py
+SigLIP (2-condition):
+  BACKBONE=siglip python3 scripts/ablation.py                                    # baseline
+  BACKBONE=siglip CLIP_WEIGHTS_PATH=data/checkpoints/siglip_finetuned_best.pt \\
+      python3 scripts/ablation.py                                                 # fine-tuned
 
-  # Comparison table is printed automatically when both result files exist.
-  # To print it without re-running the evaluation:
-  python scripts/ablation.py --compare-only
+Cross-backbone 4-way table (after all 4 runs):
+  python3 scripts/ablation.py --compare-all
 
-  # GPU (much faster for re-embedding):
-  python scripts/ablation.py --device cuda
+Per-backbone comparison without re-running:
+  python3 scripts/ablation.py --compare-only               # current BACKBONE
+  BACKBONE=siglip python3 scripts/ablation.py --compare-only
 
-Outputs:
-  evaluation/ablation_baseline.json    - baseline evaluation results
-  evaluation/ablation_finetuned.json   - fine-tuned evaluation results
-  evaluation/ablation_table.md         - markdown comparison table (when both exist)
+GPU (much faster for re-embedding):
+  python3 scripts/ablation.py --device cuda
+
+──────────────────────────────────────────────────────────────────────────
+Outputs (backbone-prefixed):
+  evaluation/ablation_clip_baseline.json      - CLIP baseline results
+  evaluation/ablation_clip_finetuned.json     - CLIP fine-tuned results
+  evaluation/ablation_siglip_baseline.json    - SigLIP baseline results
+  evaluation/ablation_siglip_finetuned.json   - SigLIP fine-tuned results
+  evaluation/ablation_table.md                - latest comparison table
 """
 
 from __future__ import annotations
@@ -53,7 +52,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
 
-from config import CLIP_WEIGHTS_PATH, DATA_DIR, IMAGES_DIR
+from config import BACKBONE, CLIP_WEIGHTS_PATH, DATA_DIR, IMAGES_DIR
 from src.embeddings.image_encoder import _load_model, embed_landmark_folder
 from src.utils import sanitize_folder_name
 
@@ -318,42 +317,50 @@ def _fmt_pct(hits: int, n: int, pct: float) -> str:
     return f"{hits}/{n} ({pct:.0%})"
 
 
-def print_image_table(baseline: dict | None, finetuned: dict | None) -> None:
-    print("\n" + "═" * 78)
+def print_image_table(conditions: list[tuple[str, dict]]) -> None:
+    """
+    Print image retrieval comparison table.
+    conditions: list of (label, summary_dict) - accepts 2-row (one backbone) or
+    4-row (cross-backbone) layout automatically.
+    """
+    print("\n" + "═" * 82)
     print("  IMAGE RETRIEVAL - leave-one-out with on-the-fly re-embedding")
-    print("═" * 78)
+    print("═" * 82)
     print(
-        f"  {'Condition':<22} {'N':>4}  {'Hits@1':>14}  {'Hits@3':>14}  "
+        f"  {'Condition':<26} {'N':>4}  {'Hits@1':>14}  {'Hits@3':>14}  "
         f"{'MRR':>6}  {'Mean score':>10}  {'95% CI (H@1)':>14}"
     )
-    print("  " + "─" * 74)
+    print("  " + "─" * 78)
 
     def row(label, s):
         ci = f"[{s['ci_95_lo']:.2f}, {s['ci_95_hi']:.2f}]"
         return (
-            f"  {label:<22} {s['n']:>4}  "
+            f"  {label:<26} {s['n']:>4}  "
             f"{_fmt_pct(s['hits1'], s['n'], s['hits1_pct']):>14}  "
             f"{_fmt_pct(s['hits3'], s['n'], s['hits3_pct']):>14}  "
             f"{s['mrr']:.3f}  {s['mean_correct_score']:>10.3f}  {ci:>14}"
         )
 
-    if baseline:
-        print(row("Baseline CLIP", baseline))
-    if finetuned:
-        print(row("Fine-tuned CLIP", finetuned))
+    for label, s in conditions:
+        print(row(label, s))
 
-    if baseline and finetuned:
-        delta_h1 = finetuned["hits1_pct"] - baseline["hits1_pct"]
-        delta_h3 = finetuned["hits3_pct"] - baseline["hits3_pct"]
-        delta_mrr = finetuned["mrr"] - baseline["mrr"]
-        delta_score = finetuned["mean_correct_score"] - baseline["mean_correct_score"]
-        print(
-            f"\n  Fine-tuning Δ: "
-            f"Hits@1 {delta_h1:+.1%},  "
-            f"Hits@3 {delta_h3:+.1%},  "
-            f"MRR {delta_mrr:+.3f},  "
-            f"Mean score {delta_score:+.3f}"
-        )
+    # Print Δ for the fine-tuned vs baseline within each backbone
+    baselines = {lbl: s for lbl, s in conditions if "baseline" in lbl.lower()}
+    finetuned = {lbl: s for lbl, s in conditions if "fine-tuned" in lbl.lower()}
+    for ft_lbl, ft_s in finetuned.items():
+        backbone = ft_lbl.split()[0]  # e.g. "CLIP" or "SigLIP"
+        bl_lbl = next((l for l in baselines if backbone in l), None)
+        if bl_lbl:
+            bl_s = baselines[bl_lbl]
+            d_h1 = ft_s["hits1_pct"] - bl_s["hits1_pct"]
+            d_h3 = ft_s["hits3_pct"] - bl_s["hits3_pct"]
+            d_mrr = ft_s["mrr"] - bl_s["mrr"]
+            d_score = ft_s["mean_correct_score"] - bl_s["mean_correct_score"]
+            print(
+                f"\n  {backbone} fine-tuning Δ: "
+                f"Hits@1 {d_h1:+.1%},  Hits@3 {d_h3:+.1%},  "
+                f"MRR {d_mrr:+.3f},  Mean score {d_score:+.3f}"
+            )
 
 
 def print_text_table(text_results: dict) -> None:
@@ -398,11 +405,13 @@ def print_text_table(text_results: dict) -> None:
 
 
 def save_markdown_table(
-    baseline_img: dict | None,
-    finetuned_img: dict | None,
+    conditions: list[tuple[str, dict]],
     text_results: dict | None,
     path: Path,
 ) -> None:
+    """Write ablation comparison table to a markdown file.
+    conditions: list of (label, image_summary_dict) - 2 or 4 rows.
+    """
     lines = [
         "# Ablation Study Results\n",
         "## Image Retrieval (leave-one-out, on-the-fly re-embedding)\n",
@@ -419,14 +428,18 @@ def save_markdown_table(
             f"| {s['mrr']:.3f} | {s['mean_correct_score']:.3f} | {ci} |"
         )
 
-    if baseline_img:
-        lines.append(img_row("Baseline CLIP", baseline_img))
-    if finetuned_img:
-        lines.append(img_row("Fine-tuned CLIP", finetuned_img))
+    for label, s in conditions:
+        lines.append(img_row(label, s))
 
-    if baseline_img and finetuned_img:
-        d = finetuned_img["hits1_pct"] - baseline_img["hits1_pct"]
-        lines.append(f"\n**Fine-tuning Δ Hits@1: {d:+.1%}**\n")
+    # Per-backbone Δ rows
+    baselines = {lbl: s for lbl, s in conditions if "baseline" in lbl.lower()}
+    finetuned_conds = {lbl: s for lbl, s in conditions if "fine-tuned" in lbl.lower()}
+    for ft_lbl, ft_s in finetuned_conds.items():
+        backbone = ft_lbl.split()[0]
+        bl_lbl = next((l for l in baselines if backbone in l), None)
+        if bl_lbl:
+            d = ft_s["hits1_pct"] - baselines[bl_lbl]["hits1_pct"]
+            lines.append(f"\n**{backbone} fine-tuning Δ Hits@1: {d:+.1%}**\n")
 
     if text_results:
         clip = text_results["clip_only"]
@@ -468,7 +481,12 @@ def main() -> None:
     parser.add_argument(
         "--compare-only",
         action="store_true",
-        help="Print comparison table from saved JSON files without re-running evaluation.",
+        help="Print comparison table for the current backbone (BACKBONE env var) without re-running.",
+    )
+    parser.add_argument(
+        "--compare-all",
+        action="store_true",
+        help="Print the 4-way cross-backbone table (CLIP vs SigLIP × baseline vs fine-tuned).",
     )
     parser.add_argument(
         "--skip-text",
@@ -479,31 +497,23 @@ def main() -> None:
 
     OUTPUT_DIR.mkdir(exist_ok=True)
 
+    # File naming is backbone-prefixed so CLIP and SigLIP results never collide.
+    # e.g. ablation_clip_baseline.json, ablation_siglip_finetuned.json
     label = "finetuned" if CLIP_WEIGHTS_PATH else "baseline"
-    result_path = OUTPUT_DIR / f"ablation_{label}.json"
+    result_path = OUTPUT_DIR / f"ablation_{BACKBONE}_{label}.json"
 
     # Compare-only mode
     if args.compare_only:
-        baseline_path = OUTPUT_DIR / "ablation_baseline.json"
-        finetuned_path = OUTPUT_DIR / "ablation_finetuned.json"
-        if not baseline_path.exists() and not finetuned_path.exists():
-            print("No result files found. Run the ablation first.")
-            return
-        baseline = json.loads(baseline_path.read_text()) if baseline_path.exists() else None
-        finetuned = json.loads(finetuned_path.read_text()) if finetuned_path.exists() else None
+        _print_comparison(backbone=BACKBONE)
+        return
 
-        b_img = baseline["image_summary"] if baseline else None
-        f_img = finetuned["image_summary"] if finetuned else None
-        text = (baseline or finetuned).get("text_ablation")
-
-        print_image_table(b_img, f_img)
-        if text:
-            print_text_table(text)
-        save_markdown_table(b_img, f_img, text, OUTPUT_DIR / "ablation_table.md")
+    # Compare-all mode: cross-backbone 4-way table
+    if args.compare_all:
+        _print_comparison(backbone=None)
         return
 
     # Image ablation
-    print(f"\n[1/2] Image retrieval ablation ({label} weights, device={args.device})")
+    print(f"\n[1/2] Image retrieval ablation (backbone={BACKBONE}, {label}, device={args.device})")
     image_results = run_image_ablation(device=args.device)
     image_summary = _image_summary(image_results)
 
@@ -523,9 +533,10 @@ def main() -> None:
     else:
         print("\n[2/2] Text ablation skipped (--skip-text).")
 
-    # Save results
+    # Save
     output = {
         "label": label,
+        "backbone": BACKBONE,
         "clip_weights_path": str(CLIP_WEIGHTS_PATH) if CLIP_WEIGHTS_PATH else None,
         "image_summary": image_summary,
         "image_per_landmark": image_results,
@@ -534,32 +545,59 @@ def main() -> None:
     result_path.write_text(json.dumps(output, indent=2, ensure_ascii=False))
     print(f"\nSaved results → {result_path}")
 
-    # Print comparison table if both conditions have been run
-    baseline_path = OUTPUT_DIR / "ablation_baseline.json"
-    finetuned_path = OUTPUT_DIR / "ablation_finetuned.json"
+    # Auto-print comparison for current backbone
+    _print_comparison(backbone=BACKBONE)
 
-    if baseline_path.exists() and finetuned_path.exists():
-        baseline = json.loads(baseline_path.read_text())
-        finetuned = json.loads(finetuned_path.read_text())
+    # If all 4 files exist, also print the cross-backbone table
+    all_four = [
+        OUTPUT_DIR / f"ablation_clip_baseline.json",
+        OUTPUT_DIR / f"ablation_clip_finetuned.json",
+        OUTPUT_DIR / f"ablation_siglip_baseline.json",
+        OUTPUT_DIR / f"ablation_siglip_finetuned.json",
+    ]
+    if all(p.exists() for p in all_four):
+        print("\n" + "═" * 82)
+        print("  ALL 4 CONDITIONS COMPLETE — cross-backbone comparison:")
+        _print_comparison(backbone=None)
 
-        print_image_table(baseline["image_summary"], finetuned["image_summary"])
 
-        if text_results:
-            print_text_table(text_results)
+def _condition_label(backbone: str, label: str) -> str:
+    """Human-readable condition label for tables."""
+    bb = "SigLIP" if backbone == "siglip" else "CLIP"
+    ft = "Fine-tuned" if label == "finetuned" else "Baseline"
+    return f"{ft} {bb}"
 
-        save_markdown_table(
-            baseline["image_summary"],
-            finetuned["image_summary"],
-            text_results or baseline.get("text_ablation"),
-            OUTPUT_DIR / "ablation_table.md",
-        )
-    else:
-        missing = "baseline" if not baseline_path.exists() else "finetuned"
+
+def _print_comparison(backbone: str | None) -> None:
+    """
+    Load saved JSON files and print the comparison table.
+    backbone=None  → all 4 conditions (cross-backbone)
+    backbone='clip'/'siglip' → the 2 conditions for that backbone only
+    """
+    backbones = ["clip", "siglip"] if backbone is None else [backbone]
+    conditions: list[tuple[str, dict]] = []
+    text_results = None
+
+    for bb in backbones:
+        for lbl in ["baseline", "finetuned"]:
+            path = OUTPUT_DIR / f"ablation_{bb}_{lbl}.json"
+            if path.exists():
+                data = json.loads(path.read_text())
+                conditions.append((_condition_label(bb, lbl), data["image_summary"]))
+                if text_results is None and data.get("text_ablation"):
+                    text_results = data["text_ablation"]
+
+    if not conditions:
         print(
-            f"\nComparison table: waiting for {missing} results. "
-            f"Run again with {'no' if missing == 'baseline' else 'CLIP_WEIGHTS_PATH set'} "
-            f"fine-tuned weights."
+            f"\nNo result files found for backbone={backbone or 'any'}. "
+            "Run the ablation script first."
         )
+        return
+
+    print_image_table(conditions)
+    if text_results:
+        print_text_table(text_results)
+    save_markdown_table(conditions, text_results, OUTPUT_DIR / "ablation_table.md")
 
 
 if __name__ == "__main__":
