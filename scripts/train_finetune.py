@@ -57,23 +57,43 @@ def _freeze_except_last_n_blocks(model, n: int = 2) -> None:
     """
     Freeze all parameters, then unfreeze the last n transformer blocks of
     both the image and text encoders, plus their projection heads.
+
+    CLIP and SigLIP have different internal structures in open_clip:
+      CLIP:    visual.transformer.resblocks / transformer.resblocks
+      SigLIP:  visual.trunk.blocks (TimmModel) / text.transformer.resblocks
     """
     for param in model.parameters():
         param.requires_grad = False
 
-    # Image encoder: model.visual.transformer.resblocks is a list of blocks
-    for block in model.visual.transformer.resblocks[-n:]:
-        for param in block.parameters():
+    if BACKBONE == "siglip":
+        # SigLIP visual encoder (TimmModel)
+        for block in model.visual.trunk.blocks[-n:]:
+            for param in block.parameters():
+                param.requires_grad = True
+        # Attention-pool head serves as the image projection
+        for param in model.visual.trunk.attn_pool.parameters():
             param.requires_grad = True
-    if hasattr(model.visual, "proj") and model.visual.proj is not None:
-        model.visual.proj.requires_grad = True
 
-    # Text encoder: model.transformer.resblocks
-    for block in model.transformer.resblocks[-n:]:
-        for param in block.parameters():
-            param.requires_grad = True
-    if hasattr(model, "text_projection") and model.text_projection is not None:
-        model.text_projection.requires_grad = True
+        # SigLIP text encoder
+        for block in model.text.transformer.resblocks[-n:]:
+            for param in block.parameters():
+                param.requires_grad = True
+        if hasattr(model.text, "text_projection") and model.text.text_projection is not None:
+            model.text.text_projection.requires_grad = True
+    else:
+        # CLIP visual encoder
+        for block in model.visual.transformer.resblocks[-n:]:
+            for param in block.parameters():
+                param.requires_grad = True
+        if hasattr(model.visual, "proj") and model.visual.proj is not None:
+            model.visual.proj.requires_grad = True
+
+        # CLIP text encoder
+        for block in model.transformer.resblocks[-n:]:
+            for param in block.parameters():
+                param.requires_grad = True
+        if hasattr(model, "text_projection") and model.text_projection is not None:
+            model.text_projection.requires_grad = True
 
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     total = sum(p.numel() for p in model.parameters())
