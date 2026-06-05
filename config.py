@@ -31,12 +31,13 @@ BACKBONE: str = os.getenv("BACKBONE", "clip").lower()
 
 if BACKBONE == "siglip":
     # SigLIP ViT-B-16 - sigmoid loss, trained on WebLI (larger + multilingual).
-    # Same 512-d embedding space as CLIP ViT-B-16; drop-in for FAISS IndexFlatIP.
+    # Outputs 768-d embeddings (NOT 512-d like CLIP ViT-B-16).
     CLIP_MODEL = "ViT-B-16-SigLIP"
     CLIP_PRETRAINED = "webli"
     FAISS_INDEX_PATH = DATA_DIR / "faiss_index_siglip.bin"
     FAISS_TEXT_INDEX_PATH = DATA_DIR / "faiss_text_index_siglip.bin"
     _DEFAULT_CHECKPOINT = "siglip_finetuned_best.pt"
+    EMBEDDING_DIM = 768
 else:
     # CLIP ViT-B-16 - original OpenAI weights; default.
     CLIP_MODEL = "ViT-B-16"
@@ -44,8 +45,7 @@ else:
     FAISS_INDEX_PATH = DATA_DIR / "faiss_index.bin"
     FAISS_TEXT_INDEX_PATH = DATA_DIR / "faiss_text_index.bin"
     _DEFAULT_CHECKPOINT = "clip_finetuned_best.pt"
-
-EMBEDDING_DIM = 512
+    EMBEDDING_DIM = 512
 
 # Fine-tuned weights - set CLIP_WEIGHTS_PATH to a checkpoint path to use fine-tuned
 # weights instead of the pretrained defaults.  None means use pretrained only.
