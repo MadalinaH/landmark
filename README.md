@@ -21,19 +21,25 @@ bias - all explained through attention visualisation and confidence calibration.
 
 ### Core concept: shared embedding space
 
-CLIP (Contrastive Language–Image Pretraining) maps both images and text into the same
-512-dimensional vector space:
-- A photo of the Eiffel Tower and *"iron lattice tower on the Champ de Mars in Paris"*
-  map to nearby vectors - without any explicit landmark training.
-- Similarity is measured by cosine similarity (inner product of L2-normalised vectors).
+The system supports two backbone models, selected via the `BACKBONE` environment variable:
+
+| Backbone | Model | Pretrained on | Embedding dim |
+|----------|-------|--------------|---------------|
+| `clip` (default) | CLIP ViT-B-16 | OpenAI - 400M image-text pairs | 512-d |
+| `siglip` | SigLIP ViT-B-16 | Google WebLI - 10B multilingual pairs | 768-d |
+
+Both map images and text into the same L2-normalised vector space. A photo of the
+Eiffel Tower and *"iron lattice tower on the Champ de Mars in Paris"* map to nearby
+vectors - without any explicit landmark training. Similarity is cosine similarity
+(inner product of L2-normalised vectors).
 
 ### Retrieval pipeline
 
 ```
 Query image / text
     │
-    ▼ CLIP ViT-B-16 encoder (fine-tuned)
-512-d L2-normalised vector
+    ▼ CLIP or SigLIP ViT-B-16 encoder (optionally fine-tuned)
+d-dimensional L2-normalised vector  (512-d for CLIP, 768-d for SigLIP)
     │
     ▼ FAISS IndexFlatIP (exhaustive inner product search)
 Top-K nearest landmark vectors
@@ -45,6 +51,7 @@ Top-K nearest landmark vectors
 **Why two indexes?** Image-to-image retrieval scores 0.85–0.94 for correct matches;
 cross-modal text-to-image scores 0.28–0.35. Using the image index for photo queries
 and the text index for text queries keeps each modality in its optimal range.
+Each backbone has its own set of FAISS index files so they never overwrite each other.
 
 ### BM25 hybrid retrieval
 
@@ -59,31 +66,35 @@ combined = 0.7 × clip_score + 0.3 × bm25_normalised
 Queries are stopword-filtered before BM25 scoring. If the filtered query produces
 near-zero BM25 scores (no keyword signal), the system falls back to CLIP-only.
 
-### CLIP fine-tuning
+### Backbone fine-tuning
 
-The base model was pretrained on 400M general image-text pairs. Fine-tuning adapts
-the final layers to the landmark domain using 1,184 image-text pairs.
+Both CLIP and SigLIP can be fine-tuned on the landmark domain using 1,184 image-text
+pairs (149 landmarks × ~8 images each).
 
-**Strategy:** 86% of parameters are frozen. Only the last two transformer blocks of
-both encoders and the projection heads are fine-tuned (~14% of parameters). This
-preserves general representations while reducing overfitting on the small dataset.
+**Strategy:** ~83–86% of parameters are frozen. Only the last two transformer blocks
+of both encoders and the projection heads are fine-tuned. The freeze logic is
+backbone-aware: CLIP uses `visual.transformer.resblocks` / `transformer.resblocks`;
+SigLIP uses `visual.trunk.blocks` (TimmModel) / `text.transformer.resblocks`.
+InfoNCE loss is used for both.
 
-**Result:** Hits@1 improves from 95% → 97%, MRR from 0.973 → 0.983. The 95%
-bootstrap CI lower bound rises from 0.91 → 0.95, indicating more consistent
-performance across landmarks. See `evaluation/FINDINGS.md` for full analysis.
+**Result (leave-one-out, 148 landmarks, 10,000-resample bootstrap CIs):**
 
 ### Ablation study
 
-Four conditions evaluated via leave-one-out on all 148 indexed landmarks:
+| Condition | Hits@1 | Hits@3 | MRR | Mean score | 95% CI |
+|-----------|--------|--------|-----|------------|--------|
+| Baseline CLIP | 141/148 (95%) | 147/148 (99%) | 0.973 | 0.926 | [0.91, 0.99] |
+| Fine-tuned CLIP | 144/148 (97%) | 147/148 (99%) | 0.983 | 0.922 | [0.95, 0.99] |
+| Baseline SigLIP | 144/148 (97%) | 147/148 (99%) | 0.982 | 0.901 | [0.95, 0.99] |
+| Fine-tuned SigLIP | 145/148 (98%) | 147/148 (99%) | 0.985 | 0.913 | [0.95, 1.00] |
 
-| Condition | Hits@1 | Hits@3 | MRR | 95% CI |
-|-----------|--------|--------|-----|--------|
-| Baseline CLIP | 141/148 (95%) | 147/148 (99%) | 0.973 | [0.91, 0.99] |
-| Fine-tuned CLIP | 144/148 (97%) | 147/148 (99%) | 0.983 | [0.95, 0.99] |
+Key findings: fine-tuning consistently helps both backbones (+2pp CLIP, +1pp SigLIP);
+SigLIP baseline already matches fine-tuned CLIP due to WebLI pretraining scale;
+confidence intervals overlap, so differences are not statistically significant at
+this sample size.
 
-Text retrieval (149 landmark name queries): both models achieve 99% Hits@1,
-confirming CLIP generalises well to landmark text queries without text-encoder
-fine-tuning.
+Text retrieval (149 landmark name queries): 99% Hits@1 for CLIP, confirming the
+text encoder generalises well to landmark queries without fine-tuning.
 
 ### Confidence calibration
 
@@ -163,7 +174,7 @@ what the retrieval index actually contains.
 
 | Library | Role |
 |---------|------|
-| **open_clip** | CLIP ViT-B-16 (OpenAI weights + fine-tuned checkpoint). Encodes images and text into 512-d vectors. |
+| **open_clip** | CLIP ViT-B-16 (OpenAI weights) and SigLIP ViT-B-16 (Google WebLI weights). Selected via `BACKBONE` env var. Encodes images and text into 512-d (CLIP) or 768-d (SigLIP) vectors. |
 | **FAISS** (`faiss-cpu`) | IndexFlatIP for exact cosine similarity search. Two indexes: image embeddings and text embeddings. |
 | **rank_bm25** | BM25Okapi over landmark descriptions. Combined with CLIP scores in HybridSearcher. |
 | **transformers** | HuggingFace `CLIPTextModel` - used only for attention extraction (open_clip doesn't expose per-layer tensors). |
@@ -192,29 +203,35 @@ what the retrieval index actually contains.
 │   ├── DATASET_CARD.md           # Dataset documentation: composition, biases, licence
 │   ├── landmarks.json            # 149 landmarks with descriptions, coordinates, sensitivity flags
 │   ├── images/                   # One folder per landmark, 8 images each (gitignored)
-│   ├── faiss_index.bin           # Image-embedding FAISS index (gitignored)
-│   ├── faiss_text_index.bin      # Text-embedding FAISS index (gitignored)
-│   ├── embeddings.npy            # Raw image embeddings N×512 (gitignored)
-│   ├── text_embeddings.npy       # Raw text embeddings N×512 (gitignored)
+│   ├── faiss_index.bin           # CLIP image-embedding FAISS index (gitignored)
+│   ├── faiss_text_index.bin      # CLIP text-embedding FAISS index (gitignored)
+│   ├── faiss_index_siglip.bin    # SigLIP image-embedding FAISS index (gitignored)
+│   ├── faiss_text_index_siglip.bin # SigLIP text-embedding FAISS index (gitignored)
+│   ├── embeddings.npy            # Raw image embeddings (gitignored)
+│   ├── text_embeddings.npy       # Raw text embeddings (gitignored)
 │   ├── metadata.json             # Metadata for image index (gitignored)
-│   └── checkpoints/              # Fine-tuned CLIP weights (gitignored)
+│   └── checkpoints/              # Fine-tuned weights: clip_finetuned_best.pt, siglip_finetuned_best.pt (gitignored)
 ├── evaluation/
 │   ├── FINDINGS.md               # Written analysis of ablation and bias results
-│   ├── ablation_baseline.json    # Baseline evaluation results
-│   ├── ablation_finetuned.json   # Fine-tuned evaluation results
-│   ├── ablation_table.md         # Comparison table (generated automatically)
+│   ├── ablation_clip_baseline.json     # CLIP baseline results
+│   ├── ablation_clip_finetuned.json    # CLIP fine-tuned results
+│   ├── ablation_siglip_baseline.json   # SigLIP baseline results
+│   ├── ablation_siglip_finetuned.json  # SigLIP fine-tuned results
+│   ├── ablation_table.md               # 4-way comparison table (auto-generated)
+│   ├── descriptive_query_results.json  # CLIP vs Hybrid on 20 descriptive queries
 │   ├── audit_results.json        # Per-landmark leave-one-out results
 │   ├── bias_chart.png            # Geographic bias bar chart
 │   └── calibration_chart.png    # Score distribution histogram
 ├── scripts/
-│   ├── ablation.py               # Ablation study: baseline vs fine-tuned, CLIP vs Hybrid
-│   ├── build_index.py            # Embed images → faiss_index.bin
-│   ├── build_text_index.py       # Embed descriptions → faiss_text_index.bin
+│   ├── ablation.py               # 4-way ablation: baseline/finetuned × CLIP/SigLIP
+│   ├── build_index.py            # Embed images → faiss_index[_siglip].bin
+│   ├── build_text_index.py       # Embed descriptions → faiss_text_index[_siglip].bin
+│   ├── eval_descriptive_queries.py  # CLIP vs Hybrid on 20 descriptive queries
 │   ├── evaluate.py               # Hits@1, Hits@3, MRR on golden set
 │   ├── fetch_descriptions.py     # Enrich landmarks.json with Wikipedia + Wikidata
 │   ├── fetch_eval_images.py      # Download golden-set test images
 │   ├── run_audit.py              # Geographic bias audit + calibration curves
-│   └── train_finetune.py         # Fine-tune CLIP on landmark image-text pairs
+│   └── train_finetune.py         # Fine-tune CLIP or SigLIP on landmark image-text pairs
 └── src/
     ├── data/
     │   └── dataset.py            # PyTorch Dataset yielding (image, text) pairs
@@ -259,22 +276,30 @@ uv run streamlit run app/streamlit_app.py
 
 ---
 
-## Fine-tuning CLIP
+## Fine-tuning
+
+Supports both CLIP and SigLIP. Select backbone via the `BACKBONE` env var.
 
 ```bash
-# 1. Create a virtual environment (required on managed servers)
-python3 -m venv .venv && source .venv/bin/activate
-pip install torch torchvision open-clip-torch numpy tqdm pillow python-dotenv
-
-# 2. Train (tested on NVIDIA L40S, ~5 minutes)
+# CLIP (default)
 python3 scripts/train_finetune.py --epochs 20 --batch-size 128 --device cuda
+# Saves: data/checkpoints/clip_finetuned_best.pt
 
-# 3. Point the pipeline at the best checkpoint
-echo "CLIP_WEIGHTS_PATH=/path/to/data/checkpoints/clip_finetuned_best.pt" >> .env
+# SigLIP
+BACKBONE=siglip CLIP_WEIGHTS_PATH= python3 scripts/train_finetune.py --epochs 20 --batch-size 128 --device cuda
+# Saves: data/checkpoints/siglip_finetuned_best.pt
+```
 
-# 4. Rebuild indexes with fine-tuned model
-python3 scripts/build_text_index.py
-python3 scripts/build_index.py
+After training, rebuild the indexes for the backbone you fine-tuned:
+
+```bash
+# CLIP
+CLIP_WEIGHTS_PATH=data/checkpoints/clip_finetuned_best.pt python3 scripts/build_index.py
+CLIP_WEIGHTS_PATH=data/checkpoints/clip_finetuned_best.pt python3 scripts/build_text_index.py
+
+# SigLIP
+BACKBONE=siglip CLIP_WEIGHTS_PATH=data/checkpoints/siglip_finetuned_best.pt python3 scripts/build_index.py
+BACKBONE=siglip CLIP_WEIGHTS_PATH=data/checkpoints/siglip_finetuned_best.pt python3 scripts/build_text_index.py
 ```
 
 | Flag | Default | Description |
@@ -290,15 +315,20 @@ python3 scripts/build_index.py
 ## Evaluation
 
 ```bash
-# Full ablation study - run twice, saves comparison table automatically
-python3 scripts/ablation.py                                                   # baseline
-CLIP_WEIGHTS_PATH=data/checkpoints/clip_finetuned_best.pt python3 scripts/ablation.py  # fine-tuned
+# 4-way ablation (CLIP baseline, CLIP fine-tuned, SigLIP baseline, SigLIP fine-tuned)
+python3 scripts/ablation.py                                                         # CLIP baseline
+CLIP_WEIGHTS_PATH=data/checkpoints/clip_finetuned_best.pt python3 scripts/ablation.py  # CLIP fine-tuned
+BACKBONE=siglip CLIP_WEIGHTS_PATH= python3 scripts/ablation.py                     # SigLIP baseline
+BACKBONE=siglip CLIP_WEIGHTS_PATH=data/checkpoints/siglip_finetuned_best.pt python3 scripts/ablation.py  # SigLIP fine-tuned
+
+# Print the 4-way comparison table from saved JSON files (no re-embedding)
+python3 scripts/ablation.py --compare-all
+
+# Descriptive query evaluation (CLIP-only vs Hybrid BM25, 20 queries)
+python3 scripts/eval_descriptive_queries.py --device cuda
 
 # Geographic bias audit + calibration chart
 python3 scripts/run_audit.py
-
-# With fine-tuned weights
-CLIP_WEIGHTS_PATH=data/checkpoints/clip_finetuned_best.pt python3 scripts/run_audit.py
 ```
 
 Results are written to `evaluation/` and displayed live in the **Model Report** tab.

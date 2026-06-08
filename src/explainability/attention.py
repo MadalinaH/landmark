@@ -10,7 +10,7 @@ names, architectural terms) attract disproportionate attention weight.
 Implementation notes:
   - Uses the HuggingFace transformers CLIPTextModel to extract attention weights.
     This is a *different* model object from the open_clip model used for retrieval
-    — same weights, different API - because open_clip does not expose per-layer
+    - same weights, different API - because open_clip does not expose per-layer
     attention tensors.
   - BertViz's head_view returns an HTML+JS+SVG blob that is rendered in Streamlit
     via st.components.v1.html.
@@ -27,7 +27,7 @@ from transformers import CLIPTextModel, CLIPTokenizerFast
 
 sys.path.insert(0, str(Path(__file__).parents[2]))
 
-# HuggingFace model ID — same weights as open_clip's "ViT-B-16"/"openai"
+# HuggingFace model ID - same weights as open_clip's "ViT-B-16"/"openai"
 HF_MODEL = "openai/clip-vit-base-patch16"
 _model = None
 _tokenizer = None

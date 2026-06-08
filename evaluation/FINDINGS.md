@@ -151,7 +151,7 @@ Tower" maps to a vector close to the Eiffel Tower description without any
 keyword overlap being needed.
 
 BM25 was designed for a different query type: descriptive natural-language
-queries where the user does not know the landmark name — for example, *"ancient
+queries where the user does not know the landmark name - for example, *"ancient
 Roman arena where gladiators fought"* or *"baroque palace with large gardens
 and fountains."* In these cases, content words (arena, gladiators, baroque,
 palace) trigger BM25 signal that CLIP alone might distribute across semantically
