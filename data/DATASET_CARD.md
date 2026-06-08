@@ -81,7 +81,7 @@ pretraining but have not been evaluated.
 **Image uniformity:** All landmarks have exactly 8 images regardless of
 how visually diverse those images are. Landmarks with highly similar
 training images (e.g. Museum of Natural History Vienna and Kunsthistorisches
-Museum Vienna — architecturally identical twin buildings) are harder to
+Museum Vienna - architecturally identical twin buildings) are harder to
 distinguish regardless of model capacity.
 
 **Wikipedia coverage bias:** Landmark selection was constrained to sites
@@ -109,7 +109,7 @@ appearance at collection time.
 | Political sensitivity | 1 | Potala Palace Tibet |
 
 These flags are surfaced in the UI as a yellow warning box beneath the
-result card. The flagging list was compiled manually and is not exhaustive —
+result card. The flagging list was compiled manually and is not exhaustive -
 new additions require manual review.
 
 **By region:** Asia (7), Africa (4), Europe (2), Americas (1), Oceania (1).

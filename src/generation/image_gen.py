@@ -72,7 +72,7 @@ def generate_image(query: str, pipe, model: str = "sdxl", steps: int | None = No
 
     query:    the user's raw search text - used directly as the prompt
     pipe:     loaded pipeline from load_pipeline()
-    model:    preset name — used to pick default steps
+    model:    preset name - used to pick default steps
     steps:    denoising steps (defaults to DEFAULT_STEPS[model] if None)
     guidance: classifier-free guidance scale
     """

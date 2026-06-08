@@ -33,7 +33,7 @@ class LandmarkDataset(Dataset):
     Returns (image_tensor, text_tokens) pairs for all landmark images.
 
     image_tensor: float32 tensor of shape (3, H, W) after open_clip's
-                  preprocessing transform — ready for model.encode_image().
+                  preprocessing transform - ready for model.encode_image().
     text_tokens:  int32 tensor of shape (77,) from open_clip's tokenizer
                   - ready for model.encode_text().
     """

@@ -47,7 +47,7 @@ def main() -> None:
 
         url = fetch_thumbnail(title)
         if not url:
-            print(f"  FAIL  {filename} — no thumbnail found for '{title}'")
+            print(f"  FAIL  {filename} - no thumbnail found for '{title}'")
             continue
 
         img_data = requests.get(url, headers=HEADERS, timeout=15).content

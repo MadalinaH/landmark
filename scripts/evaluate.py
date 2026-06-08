@@ -74,7 +74,7 @@ def main() -> None:
         results = searcher.search(img_path, top_k=3, confidence_threshold=0.0)
 
         top1 = results[0] if results else None
-        top1_name = top1.name if top1 else "—"
+        top1_name = top1.name if top1 else "-"
         top1_score = top1.score if top1 else 0.0
 
         rr = reciprocal_rank(results, expected)

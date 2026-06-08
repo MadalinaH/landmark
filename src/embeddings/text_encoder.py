@@ -29,7 +29,7 @@ from tqdm import tqdm
 sys.path.insert(0, str(Path(__file__).parents[2]))
 from config import CLIP_MODEL, CLIP_PRETRAINED, CLIP_WEIGHTS_PATH, DATA_DIR
 
-_MAX_TOKENS = 77  # CLIP hard limit — longer sequences are silently truncated
+_MAX_TOKENS = 77  # CLIP hard limit - longer sequences are silently truncated
 
 
 def _load_model(device: str = "cpu"):

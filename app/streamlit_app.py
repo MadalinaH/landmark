@@ -517,7 +517,7 @@ with tab_image:
                     else:
                         if all(r.low_confidence for r in results):
                             st.warning(
-                                "⚠️ All matches have low confidence — "
+                                "⚠️ All matches have low confidence - "
                                 "this landmark may not be in the database."
                             )
                         for i, result in enumerate(results, start=1):
@@ -607,7 +607,7 @@ with tab_text:
                 else:
                     if all(r.low_confidence for r in results):
                         st.warning(
-                            "⚠️ Low confidence across all results — "
+                            "⚠️ Low confidence across all results - "
                             "try a more specific description."
                         )
                     if enable_image_gen:
@@ -749,7 +749,7 @@ with tab_story:
 
                 if any(lm["low_confidence"] for lm in identified):
                     st.warning(
-                        "One or more landmarks have low confidence — "
+                        "One or more landmarks have low confidence - "
                         "the post may not accurately reflect your photos."
                     )
 

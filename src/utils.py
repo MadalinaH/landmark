@@ -13,7 +13,7 @@ def extract_gps(image_path: str) -> tuple[float, float] | None:
     Return (lat, lon) in decimal degrees from a JPEG/PNG's EXIF GPS tags,
     or None if the image contains no location metadata.
 
-    Uses only Pillow — no extra dependencies.  Degrees/minutes/seconds
+    Uses only Pillow - no extra dependencies.  Degrees/minutes/seconds
     rationals (IFDRational objects) are converted to a single float.
     This is relevant for the responsible-AI discussion: most smartphone
     photos embed precise GPS coordinates that users may not realise they

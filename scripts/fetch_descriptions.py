@@ -24,7 +24,7 @@ WIKI_SUMMARY_API = "https://en.wikipedia.org/api/rest_v1/page/summary/{title}"
 WIKI_SEARCH_API = "https://en.wikipedia.org/w/api.php"
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 HEADERS = {"User-Agent": "WhereIsThis/1.0 (academic project; hariimadalina@gmail.com)"}
-DELAY = 0.5  # seconds between requests — Wikipedia rate limit courtesy
+DELAY = 0.5  # seconds between requests - Wikipedia rate limit courtesy
 
 
 def _title_from_url(url: str) -> str | None:
@@ -133,7 +133,7 @@ def enrich_landmark(lm: dict) -> tuple[dict, str]:
         lm["description"] = wiki_extract
         changed.append("description")
 
-    # Fill missing coordinates — Wikipedia summary first, Wikidata fallback
+    # Fill missing coordinates - Wikipedia summary first, Wikidata fallback
     coords = data.get("coordinates")
     if coords and lm.get("lat") is None:
         lm["lat"] = coords.get("lat")

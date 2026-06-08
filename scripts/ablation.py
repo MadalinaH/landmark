@@ -557,7 +557,7 @@ def main() -> None:
     ]
     if all(p.exists() for p in all_four):
         print("\n" + "═" * 82)
-        print("  ALL 4 CONDITIONS COMPLETE — cross-backbone comparison:")
+        print("  ALL 4 CONDITIONS COMPLETE - cross-backbone comparison:")
         _print_comparison(backbone=None)
 
 
