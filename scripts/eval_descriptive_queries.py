@@ -2,10 +2,10 @@
 Evaluate CLIP-only vs Hybrid (CLIP + BM25) text retrieval on descriptive queries.
 
 Unlike the standard text ablation that uses exact landmark names as queries, this
-script uses 20 free-form descriptive queries - the kind a user would type when they
-recognise a place visually but don't know its name.  The queries are designed so that
-roughly half contain rare keywords that appear in the Wikipedia description text
-(giving BM25 a lexical advantage) and half are purely visual/semantic
+script uses 40 free-form descriptive queries - the kind a user would type when they
+recognise a place visually but don't know its name.  The queries are split evenly
+(20/20) so that half contain rare keywords that appear in the Wikipedia description
+text (giving BM25 a lexical advantage) and half are purely visual/semantic
 (where CLIP's cross-modal embedding should dominate).
 
 This lets us answer: does BM25 help specifically when queries contain content-words
@@ -104,6 +104,66 @@ QUERIES: list[tuple[str, str, str]] = [
         "Shwedagon Pagoda",
         "keyword",
     ),
+    (
+        "octagonal Islamic shrine inside the Al-Aqsa mosque compound on the Temple "
+        "Mount in Jerusalem's Old City",
+        "Dome of the Rock Jerusalem",
+        "keyword",
+    ),
+    (
+        "rock formation off the coast of Bali that is home to an ancient Hindu "
+        "pilgrimage temple",
+        "Tanah Lot Temple Bali",
+        "keyword",
+    ),
+    (
+        "former winter palace of the Dalai Lama overlooking the city of Lhasa in "
+        "the Tibet Autonomous Region",
+        "Potala Palace Tibet",
+        "keyword",
+    ),
+    (
+        "rock-hewn monolithic church dedicated to Saint George in the Amhara region "
+        "of Ethiopia, one of eleven such churches",
+        "Bete Giyorgis Church Ethiopia",
+        "keyword",
+    ),
+    (
+        "second largest mosque in Africa located in a Moroccan coastal city, built "
+        "partly over the Atlantic Ocean",
+        "Hassan II Mosque Casablanca",
+        "keyword",
+    ),
+    (
+        "former prison island in Table Bay off Cape Town that once held Nelson "
+        "Mandela for political imprisonment",
+        "Robben Island South Africa",
+        "keyword",
+    ),
+    (
+        "Vaishnava Hindu and Theravada Buddhist temple complex in Siem Reap, "
+        "considered the largest religious monument in the world",
+        "Angkor Wat",
+        "keyword",
+    ),
+    (
+        "skeletal dome left standing after the 1945 atomic bombing, preserved as a "
+        "peace memorial in a Japanese city",
+        "Hiroshima Peace Memorial",
+        "keyword",
+    ),
+    (
+        "Mughal-era fort serving as the main residence of emperors in Old Delhi, "
+        "built from red sandstone",
+        "Red Fort Delhi",
+        "keyword",
+    ),
+    (
+        "minaret and victory tower built during the Delhi Sultanate, the tallest "
+        "brick minaret in the world",
+        "Qutb Minar",
+        "keyword",
+    ),
     # ── visual / semantic: CLIP's cross-modal embedding should dominate ──────
     (
         "ancient stepped pyramid with feathered serpent carvings at the base of its "
@@ -163,6 +223,66 @@ QUERIES: list[tuple[str, str, str]] = [
         "massive sandstone temples with enormous pharaoh statues carved directly "
         "into a cliff face beside a Nile reservoir",
         "Abu Simbel",
+        "visual",
+    ),
+    (
+        "giant red sandstone monolith rising from a flat desert plain in the "
+        "Australian outback",
+        "Uluru",
+        "visual",
+    ),
+    (
+        "snow-capped solitary volcanic peak with a perfectly symmetric cone "
+        "silhouette near a lake",
+        "Mount Fuji",
+        "visual",
+    ),
+    (
+        "golden pavilion temple reflected in a still pond surrounded by manicured "
+        "gardens",
+        "Kinkaku-ji Temple",
+        "visual",
+    ),
+    (
+        "thousands of vermilion-orange gates forming a tunnel-like path up a "
+        "forested hillside shrine",
+        "Fushimi Inari Shrine",
+        "visual",
+    ),
+    (
+        "futuristic resort with three connected towers topped by a boat-shaped "
+        "sky deck overlooking a bay",
+        "Marina Bay Sands Singapore",
+        "visual",
+    ),
+    (
+        "very tall glass and steel skyscraper piercing a desert city skyline at "
+        "sunset",
+        "Burj Khalifa",
+        "visual",
+    ),
+    (
+        "twin steel-and-glass skyscrapers connected by a sky bridge in a Southeast "
+        "Asian capital",
+        "Petronas Towers",
+        "visual",
+    ),
+    (
+        "white sail-shaped shell roof segments forming a performing arts venue on "
+        "a harbour foreshore",
+        "Sydney Opera House",
+        "visual",
+    ),
+    (
+        "wide curtain of waterfalls spanning a river gorge on the border between "
+        "two southern African countries",
+        "Victoria Falls",
+        "visual",
+    ),
+    (
+        "vast open savanna grassland in East Africa where huge herds migrate "
+        "across the plains each year",
+        "Serengeti National Park",
         "visual",
     ),
 ]
@@ -294,11 +414,11 @@ def run(device: str, top_k: int) -> None:
     _row("All queries", "CLIP", all_clip)
     _row("All queries", "Hybrid", all_hybrid)
     print()
-    _row("Keyword-rich (n=10)", "CLIP", kw_clip)
-    _row("Keyword-rich (n=10)", "Hybrid", kw_hybrid)
+    _row("Keyword-rich (n=20)", "CLIP", kw_clip)
+    _row("Keyword-rich (n=20)", "Hybrid", kw_hybrid)
     print()
-    _row("Visual (n=10)", "CLIP", vis_clip)
-    _row("Visual (n=10)", "Hybrid", vis_hybrid)
+    _row("Visual (n=20)", "CLIP", vis_clip)
+    _row("Visual (n=20)", "Hybrid", vis_hybrid)
 
     delta_kw = kw_hybrid["hits1"] - kw_clip["hits1"]
     delta_vis = vis_hybrid["hits1"] - vis_clip["hits1"]
