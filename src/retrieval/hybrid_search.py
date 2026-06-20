@@ -182,13 +182,25 @@ class HybridSearcher:
         top_k: int = TOP_K,
         confidence_threshold: float = CONFIDENCE_THRESHOLD,
         clip_weight: float = 0.7,
+        fusion: str = "weighted",
+        rrf_k: int = 60,
     ) -> list[SearchResult]:
         """
         Return top_k landmarks ranked by the combined CLIP + BM25 score.
-        clip_weight controls the blend: 1.0 = pure CLIP, 0.0 = pure BM25.
+
+        fusion="weighted" (default): combined = clip_weight * clip_score +
+            (1 - clip_weight) * bm25_normalised. Requires both score scales to
+            be roughly comparable, which they aren't really (CLIP cosine vs.
+            BM25 raw score) - clip_weight is a hand-tuned compromise.
+
+        fusion="rrf": Reciprocal Rank Fusion. Ignores raw score magnitude
+            entirely and combines based on rank position in each list:
+                rrf_score = 1/(rrf_k + clip_rank) + 1/(rrf_k + bm25_rank)
+            Sidesteps the score-scale mismatch, but also throws away magnitude
+            information (a landmark that's an overwhelming CLIP favourite gets
+            no extra credit over one that barely won by rank).
         """
         n = self._index.ntotal
-        bm25_weight = 1.0 - clip_weight
 
         # CLIP scores (retrieve all N landmarks, not just top_k)
         emb = _encode_text(query, self._model, self._tokenizer, self._device)
@@ -210,13 +222,26 @@ class HybridSearcher:
         else:
             bm25_scores = np.zeros(n, dtype=np.float32)
         bm25_max = bm25_scores.max()
+        has_bm25_signal = bm25_max >= 1e-6
 
-        # Fall back to CLIP-only when BM25 has no signal (near-zero max score)
-        if bm25_max < 1e-6:
-            combined = clip_scores
+        if fusion == "rrf":
+            if not has_bm25_signal:
+                # No keyword signal at all - fall back to CLIP rank only.
+                combined = clip_scores
+            else:
+                clip_ranks = np.empty(n, dtype=np.int64)
+                clip_ranks[np.argsort(clip_scores)[::-1]] = np.arange(1, n + 1)
+                bm25_ranks = np.empty(n, dtype=np.int64)
+                bm25_ranks[np.argsort(bm25_scores)[::-1]] = np.arange(1, n + 1)
+                combined = 1.0 / (rrf_k + clip_ranks) + 1.0 / (rrf_k + bm25_ranks)
         else:
-            bm25_scores = bm25_scores / bm25_max  # normalise to [0, 1]
-            combined = clip_weight * clip_scores + bm25_weight * bm25_scores
+            bm25_weight = 1.0 - clip_weight
+            # Fall back to CLIP-only when BM25 has no signal (near-zero max score)
+            if not has_bm25_signal:
+                combined = clip_scores
+            else:
+                bm25_scores = bm25_scores / bm25_max  # normalise to [0, 1]
+                combined = clip_weight * clip_scores + bm25_weight * bm25_scores
 
         top_indices = np.argsort(combined)[::-1][:top_k]
 

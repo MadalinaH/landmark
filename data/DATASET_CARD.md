@@ -68,10 +68,17 @@ mean/std) is applied at embedding time.
 
 **Geographic skew:** Europe + Vienna represent 39% of landmarks while
 Oceania (7%) and Natural landmarks (3%) are substantially underrepresented.
-This directly impacts retrieval accuracy: Oceanian and natural landmarks
-have fewer semantically distinct neighbours in the embedding space, making
-misclassification more likely. The geographic bias audit (see
-`evaluation/bias_chart.png`) quantifies this per region.
+The geographic bias audit (see `evaluation/bias_chart.png`) shows this
+imbalance does *not* translate into lower accuracy for the underrepresented
+regions, however - Oceania, Africa, and Natural landmarks all score 100%
+Hits@1, while the most-represented regions, Vienna (90%) and Europe (97%),
+score lowest. The mechanism appears to be visual homogeneity rather than
+example count: Vienna's landmarks include several architecturally similar
+Baroque/Gothic churches and palaces, which are easily confused with each
+other regardless of how many examples exist. Underrepresented regions with
+visually distinctive landmarks (e.g. Uluru, Victoria Falls) have few or no
+visually similar neighbours anywhere in the index, making them easier, not
+harder, to retrieve correctly.
 
 **Language:** All descriptions are English-only. Landmark names in
 non-Latin scripts (e.g. Fushimi Inari, Angkor Wat) are transliterated.

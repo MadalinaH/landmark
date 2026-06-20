@@ -110,9 +110,13 @@ encoder specifically.
 ## Limitations
 
 **Geographic bias:** The training dataset skews heavily towards European
-landmarks (39% Europe + Vienna). Retrieval accuracy is lower for
-underrepresented regions. See `evaluation/bias_chart.png` for per-region
-Hits@1.
+landmarks (39% Europe + Vienna). Counterintuitively, the per-region audit
+(`evaluation/bias_chart.png`) shows the *most*-represented regions, Vienna
+(90%) and Europe (97%), score lowest on Hits@1, while underrepresented
+regions (Oceania, Africa, Natural) score 100%. Representation count alone
+does not predict accuracy - visual homogeneity within a region (e.g.
+Vienna's many similar Baroque/Gothic churches) appears to matter more than
+how many examples exist.
 
 **Small dataset:** 1,184 training pairs is small for fine-tuning a
 vision-language model. Partial freezing mitigates overfitting but does

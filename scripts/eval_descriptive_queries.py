@@ -334,13 +334,16 @@ def run(device: str, top_k: int) -> None:
     rows = []
     for query, gt, qtype in QUERIES:
         clip_results = ts.search(query, top_k=top_k)
-        hybrid_results = hs.search(query, top_k=top_k)
+        hybrid_results = hs.search(query, top_k=top_k, fusion="weighted")
+        rrf_results = hs.search(query, top_k=top_k, fusion="rrf")
 
         clip_rank = _rank_of_ground_truth(clip_results, gt)
         hybrid_rank = _rank_of_ground_truth(hybrid_results, gt)
+        rrf_rank = _rank_of_ground_truth(rrf_results, gt)
 
         clip_top = clip_results[0].name if clip_results else "-"
         hybrid_top = hybrid_results[0].name if hybrid_results else "-"
+        rrf_top = rrf_results[0].name if rrf_results else "-"
 
         rows.append(
             {
@@ -349,19 +352,19 @@ def run(device: str, top_k: int) -> None:
                 "query_type": qtype,
                 "clip_rank": clip_rank,
                 "hybrid_rank": hybrid_rank,
+                "rrf_rank": rrf_rank,
                 "clip_top1": clip_top,
                 "hybrid_top1": hybrid_top,
+                "rrf_top1": rrf_top,
                 "clip_hit1": clip_rank == 1,
                 "hybrid_hit1": hybrid_rank == 1,
+                "rrf_hit1": rrf_rank == 1,
                 "clip_hit3": clip_rank is not None and clip_rank <= 3,
                 "hybrid_hit3": hybrid_rank is not None and hybrid_rank <= 3,
+                "rrf_hit3": rrf_rank is not None and rrf_rank <= 3,
                 "clip_rr": 1.0 / clip_rank if clip_rank else 0.0,
                 "hybrid_rr": 1.0 / hybrid_rank if hybrid_rank else 0.0,
-                "winner": (
-                    "hybrid"
-                    if (hybrid_rank or 999) < (clip_rank or 999)
-                    else ("clip" if (clip_rank or 999) < (hybrid_rank or 999) else "tie")
-                ),
+                "rrf_rr": 1.0 / rrf_rank if rrf_rank else 0.0,
             }
         )
 
@@ -376,29 +379,32 @@ def run(device: str, top_k: int) -> None:
 
     all_clip = stats(rows, "clip")
     all_hybrid = stats(rows, "hybrid")
+    all_rrf = stats(rows, "rrf")
     kw_rows = [r for r in rows if r["query_type"] == "keyword"]
     vis_rows = [r for r in rows if r["query_type"] == "visual"]
     kw_clip = stats(kw_rows, "clip")
     kw_hybrid = stats(kw_rows, "hybrid")
+    kw_rrf = stats(kw_rows, "rrf")
     vis_clip = stats(vis_rows, "clip")
     vis_hybrid = stats(vis_rows, "hybrid")
+    vis_rrf = stats(vis_rows, "rrf")
 
     # ── Print per-query table ────────────────────────────────────────────────
-    W = 90
+    W = 100
     print("\n" + "═" * W)
-    print("  DESCRIPTIVE QUERY EVALUATION - CLIP-only vs Hybrid (CLIP + BM25)")
+    print("  DESCRIPTIVE QUERY EVALUATION - CLIP-only vs Weighted-Hybrid vs RRF-Hybrid")
     print("═" * W)
 
     for qtype_label, subset in [("KEYWORD-RICH queries", kw_rows), ("VISUAL queries", vis_rows)]:
         print(f"\n  ── {qtype_label} ──")
-        print(f"  {'Ground truth':<40} {'CLIP':^15} {'Hybrid':^15} {'Winner':<8}")
+        print(f"  {'Ground truth':<35} {'CLIP':^14} {'Weighted':^14} {'RRF':^14}")
         print("  " + "─" * (W - 2))
         for r in subset:
-            gt_short = r["ground_truth"][:38]
-            clip_col = f"#{r['clip_rank']} {r['clip_top1'][:10]}" if r["clip_rank"] else "miss"
-            hyb_col = f"#{r['hybrid_rank']} {r['hybrid_top1'][:10]}" if r["hybrid_rank"] else "miss"
-            w = r["winner"].upper() if r["winner"] != "tie" else "-"
-            print(f"  {gt_short:<40} {clip_col:^15} {hyb_col:^15} {w:<8}")
+            gt_short = r["ground_truth"][:33]
+            clip_col = f"#{r['clip_rank']} {r['clip_top1'][:9]}" if r["clip_rank"] else "miss"
+            hyb_col = f"#{r['hybrid_rank']} {r['hybrid_top1'][:9]}" if r["hybrid_rank"] else "miss"
+            rrf_col = f"#{r['rrf_rank']} {r['rrf_top1'][:9]}" if r["rrf_rank"] else "miss"
+            print(f"  {gt_short:<35} {clip_col:^14} {hyb_col:^14} {rrf_col:^14}")
 
     # ── Summary table ────────────────────────────────────────────────────────
     print("\n" + "─" * W)
@@ -412,26 +418,32 @@ def run(device: str, top_k: int) -> None:
         print(f"  {label:<25} {model:<10} {h1_pct:>8} {h3_pct:>8} {s['mrr']:>8.3f}  {ci:>15}")
 
     _row("All queries", "CLIP", all_clip)
-    _row("All queries", "Hybrid", all_hybrid)
+    _row("All queries", "Weighted", all_hybrid)
+    _row("All queries", "RRF", all_rrf)
     print()
     _row("Keyword-rich (n=20)", "CLIP", kw_clip)
-    _row("Keyword-rich (n=20)", "Hybrid", kw_hybrid)
+    _row("Keyword-rich (n=20)", "Weighted", kw_hybrid)
+    _row("Keyword-rich (n=20)", "RRF", kw_rrf)
     print()
     _row("Visual (n=20)", "CLIP", vis_clip)
-    _row("Visual (n=20)", "Hybrid", vis_hybrid)
+    _row("Visual (n=20)", "Weighted", vis_hybrid)
+    _row("Visual (n=20)", "RRF", vis_rrf)
 
-    delta_kw = kw_hybrid["hits1"] - kw_clip["hits1"]
-    delta_vis = vis_hybrid["hits1"] - vis_clip["hits1"]
-    print(f"\n  BM25 Δ Hits@1 - keyword queries: {delta_kw:+d}   visual queries: {delta_vis:+d}")
+    delta_kw_w = kw_hybrid["hits1"] - kw_clip["hits1"]
+    delta_vis_w = vis_hybrid["hits1"] - vis_clip["hits1"]
+    delta_kw_r = kw_rrf["hits1"] - kw_clip["hits1"]
+    delta_vis_r = vis_rrf["hits1"] - vis_clip["hits1"]
+    print(f"\n  Weighted Δ Hits@1 - keyword queries: {delta_kw_w:+d}   visual queries: {delta_vis_w:+d}")
+    print(f"  RRF      Δ Hits@1 - keyword queries: {delta_kw_r:+d}   visual queries: {delta_vis_r:+d}")
     print("-" * W)
 
     # ── Save ────────────────────────────────────────────────────────────────
     output = {
         "queries": rows,
         "summary": {
-            "all": {"clip": all_clip, "hybrid": all_hybrid},
-            "keyword": {"clip": kw_clip, "hybrid": kw_hybrid},
-            "visual": {"clip": vis_clip, "hybrid": vis_hybrid},
+            "all": {"clip": all_clip, "hybrid": all_hybrid, "rrf": all_rrf},
+            "keyword": {"clip": kw_clip, "hybrid": kw_hybrid, "rrf": kw_rrf},
+            "visual": {"clip": vis_clip, "hybrid": vis_hybrid, "rrf": vis_rrf},
         },
     }
     out_path = Path(__file__).parents[1] / "evaluation" / "descriptive_query_results.json"
