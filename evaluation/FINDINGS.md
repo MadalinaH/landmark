@@ -165,7 +165,87 @@ descriptive queries with known ground truth - a direction for future work.
 
 ---
 
-## 3. Summary
+## 3. Descriptive Query Evaluation - Does BM25 Help, and Does Fusion Method Matter?
+
+### Method
+
+Section 2 tested BM25 outside its design envelope (landmark-name queries).
+This evaluation instead uses 40 hand-written descriptive queries - the kind a
+user would type when they recognise a place but don't know its name - split
+evenly into 20 "keyword-rich" queries (containing rare, distinctive words
+expected to overlap with the landmark's Wikipedia description, e.g. "ceremonial
+capital of the Achaemenid Empire") and 20 "visual" queries (generic visual
+descriptions with no rare keyword overlap, e.g. "stepped pyramid in the
+jungle"). The keyword/visual label is a manual judgment call made when writing
+each query, not derived from any automated metric.
+
+Three retrieval strategies are compared:
+
+- **CLIP-only** - pure semantic similarity, no lexical signal.
+- **Weighted hybrid** - `combined = 0.7 * clip_score + 0.3 * bm25_normalised`
+  (the system's deployed default).
+- **RRF (Reciprocal Rank Fusion)** - `score = 1/(60 + clip_rank) + 1/(60 +
+  bm25_rank)`, combining on rank position rather than raw score magnitude.
+  Added specifically to test whether sidestepping the CLIP/BM25 score-scale
+  mismatch (cosine similarity vs. BM25's raw, unbounded score) would
+  outperform the hand-tuned fixed weighting.
+
+### Results
+
+| Subset              | Model    | Hits@1      | Hits@3      |   MRR | 95% CI (H@1) |
+|----------------------|----------|-------------|-------------|-------|--------------|
+| Keyword-rich (n=20)  | CLIP     | 16/20 (80%) | 19/20 (95%) | 0.875 | [0.60, 0.95] |
+| Keyword-rich (n=20)  | Weighted | 18/20 (90%) | 19/20 (95%) | 0.925 | [0.75, 1.00] |
+| Keyword-rich (n=20)  | RRF      | 17/20 (85%) | 19/20 (95%) | 0.892 | [0.70, 1.00] |
+| Visual (n=20)        | CLIP     | 16/20 (80%) | 17/20 (85%) | 0.825 | [0.60, 0.95] |
+| Visual (n=20)        | Weighted | 12/20 (60%) | 19/20 (95%) | 0.758 | [0.40, 0.80] |
+| Visual (n=20)        | RRF      | 13/20 (65%) | 19/20 (95%) | 0.792 | [0.45, 0.85] |
+| All (n=40)           | CLIP     | 32/40 (80%) | 36/40 (90%) | 0.850 | [0.68, 0.93] |
+| All (n=40)           | Weighted | 30/40 (75%) | 38/40 (95%) | 0.842 | [0.60, 0.88] |
+| All (n=40)           | RRF      | 30/40 (75%) | 38/40 (95%) | 0.842 | [0.60, 0.88] |
+
+Δ Hits@1 vs. CLIP-only: Weighted +10pp keyword / −20pp visual. RRF +5pp
+keyword / −15pp visual.
+
+### Interpretation
+
+**BM25's effect is not uniform - it is conditional on keyword rarity.** On
+keyword-rich queries it improves Hits@1 (both fusion methods); on generic
+visual queries using common nouns shared across many descriptions ("desert",
+"falls", "pyramid", "volcanic") it reduces Hits@1, because the fixed weighting
+cannot distinguish a disambiguating keyword from a generic one.
+
+**RRF does not fix this - it flattens it.** Switching from raw-score blending
+to rank-based fusion produced a smaller gain on keyword queries (+5pp vs.
++10pp) and a smaller loss on visual queries (−15pp vs. −20pp), but the
+aggregate Hits@1 across all 40 queries is identical (75% either way - both
+underperform CLIP-only's 80%). The mechanism is straightforward: RRF discards
+score magnitude, so a CLIP score of 0.95 and a CLIP score of 0.55 both just
+count as "rank 1" - it can express *that* CLIP won, not *how confidently*.
+That dulls both the upside (a strong keyword match can no longer cut through
+as decisively) and the downside (a weak, spurious BM25 keyword overlap can no
+longer drag the ranking down as far).
+
+Concrete example: for the query *"ancient Zoroastrian royal city... ceremonial
+capital of the Achaemenid Empire"* (ground truth: Persepolis), CLIP-only
+ranks Persepolis #2; the weighted hybrid promotes it to #1; RRF also promotes
+it to #1 - all three fusion approaches agree here because the keyword overlap
+is strong on both raw-score and rank terms. But for *"Sigiriya Sri Lanka"*
+(a keyword-rich query CLIP misses entirely), the weighted hybrid's raw BM25
+score is strong enough to pull the correct answer to #1, while RRF - which
+only sees BM25's *rank*, not its score's magnitude - is not, and the query
+still misses (ranked #3).
+
+**Conclusion: neither fusion method addresses the actual root cause** - the
+inability to tell a rare, disambiguating keyword from a generic one that
+happens to appear in many descriptions. An IDF-weighted BM25 contribution
+(downweighting common nouns, upweighting rare ones) targets that root cause
+directly and remains the more promising next step over either fixed-weight
+blending or RRF.
+
+---
+
+## 4. Summary
 
 | Design choice | Metric | Effect |
 |---------------|--------|--------|
@@ -174,12 +254,20 @@ descriptive queries with known ground truth - a direction for future work.
 | Fine-tuning (vs baseline CLIP) | CI lower bound | +0.04 (0.91 → 0.95) |
 | BM25 hybrid (on name queries) | Hits@1 | −0.7% (within noise) |
 | BM25 hybrid (on name queries) | MRR | −0.004 (within noise) |
+| BM25 weighted hybrid (keyword-rich descriptive queries) | Hits@1 | +10pp (16 → 18/20) |
+| BM25 weighted hybrid (visual descriptive queries) | Hits@1 | −20pp (16 → 12/20) |
+| BM25 RRF (keyword-rich descriptive queries) | Hits@1 | +5pp (16 → 17/20) |
+| BM25 RRF (visual descriptive queries) | Hits@1 | −15pp (16 → 13/20) |
 
 Fine-tuning delivers a consistent, measurable improvement to image retrieval.
 The remaining failures are attributable to genuine visual ambiguity or dataset
-gaps rather than model deficiency. BM25 is neutral on the evaluated query type
-and is expected to provide positive signal on descriptive queries, which is
-its primary use case in the deployed system.
+gaps rather than model deficiency. BM25 is neutral on landmark-name queries
+(outside its design envelope) but, on descriptive queries, has a strong effect
+that is conditional on keyword rarity rather than uniformly positive or
+negative. Switching the fusion method from fixed-weight blending to
+Reciprocal Rank Fusion flattens this effect in both directions without fixing
+its underlying cause - an IDF-weighted BM25 contribution remains the more
+targeted next step.
 
 Both models achieve near-ceiling performance on text retrieval with landmark
 name queries (99% Hits@1), confirming that CLIP's shared embedding space
